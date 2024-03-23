@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <title>
+        Ticketon Уволить сотрудника
+    </title>
+    <meta name="description" content="Page Titile">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no, minimal-ui">
+    <!-- Call App Mode on ios devices -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!-- Remove Tap Highlight on Windows Phone IE -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <!-- base css -->
+    <link rel="stylesheet" media="screen, print" href="css/vendors.bundle.css">
+    <link rel="stylesheet" media="screen, print" href="css/app.bundle.css">
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="img/favicon/site.webmanifest">
+    <!-- <link rel="stylesheet" media="screen, print" href="css/your_styles.css"> -->
+    <!-- page related CSS below -->
+    <link rel="stylesheet" media="screen, print" href="css/formplugins/select2/select2.bundle.css">
+</head>
+
+<body class="mod-bg-1 ">
+    <h1 class="visually-hidden">Страница увольнения сотрудника FREEDOM Ticketon</h1>
+
+    <script>
+        'use strict';
+
+        var classHolder = document.getElementsByTagName("BODY")[0],
+
+            themeSettings = (localStorage.getItem('themeSettings')) ? JSON.parse(localStorage.getItem('themeSettings')) :
+                {},
+            themeURL = themeSettings.themeURL || '',
+            themeOptions = themeSettings.themeOptions || '';
+
+        if (themeSettings.themeOptions) {
+            classHolder.className = themeSettings.themeOptions;
+        }
+        if (themeSettings.themeURL && !document.getElementById('mytheme')) {
+            var cssfile = document.createElement('link');
+            cssfile.id = 'mytheme';
+            cssfile.rel = 'stylesheet';
+            cssfile.href = themeURL;
+            document.getElementsByTagName('head')[0].appendChild(cssfile);
+        }
+        var saveSettings = function () {
+            themeSettings.themeOptions = String(classHolder.className).split(/[^\w-]+/).filter(function (item) {
+                return /^(nav|header|mod|display)-/i.test(item);
+            }).join(' ');
+            if (document.getElementById('mytheme')) {
+                themeSettings.themeURL = document.getElementById('mytheme').getAttribute("href");
+            };
+            localStorage.setItem('themeSettings', JSON.stringify(themeSettings));
+        }
+        var resetSettings = function () {
+            localStorage.setItem("themeSettings", "");
+        }
+
+    </script>
+
+    <!-- BEGIN Page Wrapper -->
+    <div class="page-wrapper">
+        <div class="page-inner">
+            <!-- BEGIN Left Aside -->
+            <aside class="page-sidebar">
+                <div class="page-logo page-logo--white">
+                    <a href="index.html"
+                        class="page-logo-link press-scale-down d-flex align-items-center position-relative"
+                        aria-label="Ссылка на главную страницу">
+                        <img src="img/F.png" alt="FREEDOM Ticketon" aria-roledescription="logo"
+                            aria-label="Ссылка на главную страницу">
+                    </a>
+                </div>
+                <!-- BEGIN PRIMARY NAVIGATION -->
+                <nav id="js-primary-nav" class="primary-nav" role="navigation">
+                    <div class="nav-filter">
+                        <div class="position-relative">
+                            <input type="text" id="nav_filter_input" placeholder="Фильтр меню" class="form-control"
+                                tabindex="0">
+                            <button type="button" class="btn-primary btn-search-close js-waves-off"
+                                aria-label="Кнопка открытия поиска" data-action="toggle" data-class="list-filter-active"
+                                data-target=".page-sidebar">
+                                <i class="fal fa-chevron-up"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <img src="img/avatars/avatar-admin.png" class="profile-image rounded-circle"
+                            alt="Dr. Codex Lantern">
+                        <div class="info-card-text">
+                            <a href="#" class="d-flex align-items-center text-white">
+                                <span class="text-truncate text-truncate-sm d-inline-block">
+                                    Байдаулетов Асхат
+                                </span>
+                            </a>
+                            <span class="d-inline-block text-truncate text-truncate-sm">Администратор</span>
+                        </div>
+                        <img src="img/card-backgrounds/cover-2-lg.png" class="cover" alt="cover">
+                        <button type="button" class="pull-trigger-btn" data-action="toggle"
+                            data-class="list-filter-active" data-target=".page-sidebar" data-focus="nav_filter_input"
+                            aria-label="Кнопка закрытия поиска">
+                            <i class="fal fa-angle-down"></i>
+                        </button>
+                    </div>
+                    <ul id="js-nav-menu" class="nav-menu">
+                        
+                        <li>
+                            <!-- <a href="summary_table-admin.html" data-filter-tags="сводная таблица">
+                                <i class="fal fa-th-list"></i>
+                                <span class="nav-link-text"
+                                    data-i18n="nav.application_intel_analytics_dashboard">Сводная таблица</span>
+                            </a> -->
+                            <a class="nav-menu__btn waves-effect waves-themed" href="#"
+                                data-filter-tags="сводная таблица" aria-expanded="false" aria-controls="list">
+                                <i class="fal fa-th-list"></i>
+                                <span class="nav-link-text">Сводная таблица</span>
+                            </a>
+                            <ul class="nav-menu__list">
+                                <li>
+                                    <a href="summary_table-admin.html" data-filter-tags="версия администратора">
+                                        <i class="point"></i>
+                                        <span class="nav-link-text"
+                                            data-i18n="nav.application_intel_analytics_dashboard">Администратор</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="summary_table-employee.html" data-filter-tags="версия сотрудника">
+                                        <i class="point"></i>
+                                        <span class="nav-link-text"
+                                            data-i18n="nav.application_intel_analytics_dashboard">Сотрудник</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a class="nav-menu__btn waves-effect waves-themed" href="#" data-filter-tags="сотрудники"
+                                aria-expanded="false" aria-controls="list">
+                                <i class="fal fa-solid fa-user-secret"></i>
+                                <span class="nav-link-text">Сотрудники</span>
+                            </a>
+                            <ul class="nav-menu__list">
+                                <li>
+                                    <a href="add_an_employee.html"
+                                        data-filter-tags="Добавить сотрудника">
+                                        <i class="point"></i>
+                                        <span class="nav-link-text"
+                                            data-i18n="nav.application_intel_analytics_dashboard">Добавить
+                                            сотрудника</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="add_data.html" data-filter-tags="Добавить данные">
+                                        <i class="point"></i>
+                                        <span class="nav-link-text"
+                                            data-i18n="nav.application_intel_marketing_dashboard">Добавить данные</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="edit_data.html" data-filter-tags="Изменить данные">
+                                        <i class="point"></i>
+                                        <span class="nav-link-text"
+                                            data-i18n="nav.application_intel_introduction">Изменить данные</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="dismiss.html" class="active" data-filter-tags="Уволить сотрудника">
+                                        <i class="point"></i>
+                                        <span class="nav-link-text" data-i18n="nav.application_intel_privacy">Уволить
+                                            сотрудника</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="edit_password.html" data-filter-tags="Изменить пароль">
+                                        <i class="point"></i>
+                                        <span class="nav-link-text"
+                                            data-i18n="nav.application_intel_build_notes">Изменить пароль</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#" data-filter-tags="планировщик задач">
+                                <i class="fal fa-table"></i>
+                                <span class="nav-link-text"
+                                    data-i18n="nav.application_intel_analytics_dashboard">Планировщик задач</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="nav-menu__btn waves-effect waves-themed" href="#"
+                                data-filter-tags="отделы" aria-expanded="false" aria-controls="list">
+                                <i class="fal fa-tag"></i>
+                                <span class="nav-link-text">Отделы</span>
+                            </a>
+                            <ul class="nav-menu__list">
+                                <li>
+                                    <a href="add_department.html" data-filter-tags="Добавить отдел">
+                                        <i class="point"></i>
+                                        <span class="nav-link-text"
+                                            data-i18n="nav.application_intel_analytics_dashboard">Добавить отдел</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="edit_department.html" data-filter-tags="Изменить отдел">
+                                        <i class="point"></i>
+                                        <span class="nav-link-text"
+                                            data-i18n="nav.application_intel_marketing_dashboard">Изменить отдел</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="rem_department.html" data-filter-tags="Удалить отдел">
+                                        <i class="point"></i>
+                                        <span class="nav-link-text"
+                                            data-i18n="nav.application_intel_introduction">Удалить отдел</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="link_department.html" data-filter-tags="Привязать к отделу">
+                                        <i class="point"></i>
+                                        <span class="nav-link-text" data-i18n="nav.application_intel_privacy">Привязать к отделу</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        
+                    </ul>
+                    <!-- <div class="filter-message js-filter-message bg-success-600"></div> -->
+                </nav>
+                <!-- END PRIMARY NAVIGATION -->
+            </aside>
+            <!-- END Left Aside -->
+            <div class="page-content-wrapper">
+                <header class="page-header" role="banner">
+                    <div class="header-inner">
+                        <div class="page-logo">
+                            <a href="index.html"
+                                class="page-logo-link press-scale-down d-flex align-items-center position-relative"
+                                data-toggle="modal" data-target="#modal-shortcut">
+                                <img src="img/F_white.png" alt="FREEDOM Ticketon" aria-roledescription="logo"
+                                    aria-label="Ссылка на главную страницу">
+                                <!-- <span class="page-logo-text mr-1">SmartAdmin WebApp</span> -->
+                                <span
+                                    class="position-absolute text-white opacity-50 small pos-top pos-right mr-2 mt-n2"></span>
+                                <i class="fal fa-angle-down d-inline-block ml-1 fs-lg color-primary-300"></i>
+                            </a>
+                        </div>
+    
+                        <!-- Начало кнопки скрытия сайдбара -->
+                        <div class="hidden-md-down dropdown-icon-menu position-relative">
+                            <button type="button" class="header-btn btn js-waves-off" data-action="toggle" data-class="nav-function-minify" title="Minify Navigation" aria-label="Кнопка скрытия сайдбара">
+                                <i class="ni ni-minify-nav"></i>
+                            </button>
+                        </div>
+                        <!-- Конец кнопки скрытия сайдбара -->
+    
+                        <div class="hidden-lg-up">
+                            <button href="#" class="header-btn btn press-scale-down" data-action="toggle"
+                                data-class="mobile-nav-on" aria-label="Кнопка бургер-меню">
+                                <i class="ni ni-menu"></i>
+                            </button>
+                        </div>
+    
+                        <div class="ml-auto d-flex">
+                            <div id="clickbox" class="ml-auto__block">
+                                <button type="button" data-toggle="dropdown" title="drlantern@gotbootstrap.com"
+                                    class="header-icon d-flex align-items-center justify-content-center ml-2"
+                                    aria-label="Кнопка открытия меню пользователя">
+                                    <img src="img/avatars/avatar-admin.png" class="profile-image rounded-circle"
+                                        alt="Dr. Codex Lantern">
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-animated dropdown-lg">
+                                    <div class="dropdown-header bg-trans-gradient d-flex flex-row py-4 rounded-top">
+                                        <div class="d-flex flex-row align-items-center mt-1 mb-1 color-white">
+                                            <span class="mr-2">
+                                                <img src="img/avatars/avatar-admin.png" class="rounded-circle profile-image"
+                                                    alt="Dr. Codex Lantern">
+                                            </span>
+                                            <div class="info-card-text">
+                                                <div class="fs-lg text-truncate text-truncate-lg">Байдаулетов Асхат</div>
+                                                <span class="text-truncate text-truncate-md opacity-80">Администратор</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="dropdown-divider m-0"></div>
+                                    <a href="#" class="dropdown-item" data-action="app-reset">
+                                        <span data-i18n="drpdwn.reset_layout">Задачи на месяц</span>
+                                    </a>
+                                    <a href="#" class="dropdown-item" data-toggle="modal" data-target=".js-modal-settings">
+                                        <span data-i18n="drpdwn.settings">Сводная таблица</span>
+                                    </a>
+                                    <div class="dropdown-divider m-0"></div>
+                                    <a class="dropdown-item fw-500 pt-3 pb-3" href="page_login.html">
+                                        <span data-i18n="drpdwn.page-logout">Выйти</span>
+                                        <span class="float-right fw-n">baidauletov</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <!-- END Page Header -->
+
+                <!-- BEGIN Page Content -->
+
+                <main id="js-page-content" role="main" class="page-content">
+                    <ol class="breadcrumb page-breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html">FREEDOM Ticketon</a></li>
+                        <li class="breadcrumb-item">Сотрудники</li>
+                        <li class="breadcrumb-item active">Уволить сотрудника</li>
+                        <!-- <li class="position-absolute pos-top pos-right d-none d-sm-block"><span class="js-get-date">Monday, March 18, 2024</span></li> -->
+                    </ol>
+                    <div class="subheader">
+                        <h2 class="subheader-title">
+                            <i class="fal fa-solid fa-user-secret"></i> Уволить сотрудника
+                        </h2>
+                        <!-- <div class="subheader-block">
+                            Right content of header
+                        </div> -->
+                    </div>
+                    <div class="row">
+                        <div class="col-xl-6 col-xl-6-form">
+                            <div id="panel-1" class="panel">
+                                <div class="panel-hdr">
+                                    <h2>
+                                        Заполните форму
+                                    </h2>
+                                    <div class="panel-toolbar">
+                                        <button class="btn btn-panel waves-effect waves-themed"
+                                            data-action="panel-fullscreen" data-toggle="tooltip" data-offset="0,10"
+                                            data-original-title="На весь экран"></button>
+                                    </div>
+                                </div>
+                                <div class="panel-container show">
+                                    <div class="panel-content">
+                                        <div class="panel-tag">
+                                            Пожалуйста, перед отправкой убедитесь, что все поля заполнены верно
+                                        </div>
+                                        <form id="dismiss" novalidate="" action="#">
+                                            <div class="form-group">
+                                                <label class="form-label" for="employee-select">Сотрудник</label>
+                                                <select class="select2 form-control w-100" name="employee"
+                                                    id="employee-select">
+                                                    <option value="" disabled selected>Выберите сотрудника</option>
+                                                    <optgroup label="role-1">
+                                                        <option value="1-1">1-1</option>
+                                                        <option value="1-2">1-2</option>
+                                                        <option value="1-3">1-3</option>
+                                                        <option value="1-4">1-4</option>
+                                                    </optgroup>
+                                                    <optgroup label="role-2">
+                                                        <option value="2-1">2-1</option>
+                                                        <option value="2-2">2-2</option>
+                                                        <option value="2-3">2-3</option>
+                                                    </optgroup>
+                                                    <optgroup label="role-3">
+                                                        <option value="3-1">3-1</option>
+                                                        <option value="3-2">3-2</option>
+                                                    </optgroup>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label class="form-label" for="date-dismiss">Дата увольнения</label>
+                                                <input class="form-control" id="date-dismiss" type="date" name="date-dismiss" required>
+                                                <div class="invalid-feedback">Уажите дату</div>
+                                            </div>
+                                            <div class="center">
+                                                <button class="btn btn--form" type="submit">Уволить</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+
+                <div class="page-content-overlay" data-action="toggle" data-class="mobile-nav-on"></div>
+                <!-- END Page Content -->
+
+                <!-- BEGIN Page Footer -->
+
+                <!-- <footer class="page-footer" role="contentinfo"></footer> -->
+
+                <!-- END Page Footer -->
+
+
+            </div>
+        </div>
+    </div>
+    <script src="js/vendors.bundle.js"></script>
+    <script src="js/app.bundle.js"></script>
+    <!--------- Подключение плагина Select2 ------------->
+    <script src="js/formplugins/select2/select2.bundle.js"></script>
+    <!--------- Инициализация плагина Select2 ------------->
+    <script>
+        $(document).ready(function () {
+            $(function () {
+                $('.select2').select2();
+
+                $(".select2-placeholder-multiple").select2(
+                    {
+                        placeholder: "Select State"
+                    });
+                $(".js-hide-search").select2(
+                    {
+                        minimumResultsForSearch: 1 / 0
+                    });
+                $(".js-max-length").select2(
+                    {
+                        maximumSelectionLength: 2,
+                        placeholder: "Select maximum 2 items"
+                    });
+                $(".select2-placeholder").select2(
+                    {
+                        placeholder: "Select a state",
+                        allowClear: true
+                    });
+                $(".js-select2-icons").select2(
+                    {
+                        minimumResultsForSearch: 1 / 0,
+                        templateResult: icon,
+                        templateSelection: icon,
+                        escapeMarkup: function (elm) {
+                            return elm
+                        }
+                    });
+
+                function icon(elm) {
+                    elm.element;
+                    return elm.id ? "<i class='" + $(elm.element).data("icon") + " mr-2'></i>" + elm.text : elm.text
+                }
+
+                $(".js-data-example-ajax").select2(
+                    {
+                        ajax:
+                        {
+                            url: "https://api.github.com/search/repositories",
+                            dataType: 'json',
+                            delay: 250,
+                            data: function (params) {
+                                return {
+                                    q: params.term, // search term
+                                    page: params.page
+                                };
+                            },
+                            processResults: function (data, params) {
+                                params.page = params.page || 1;
+
+                                return {
+                                    results: data.items,
+                                    pagination:
+                                    {
+                                        more: (params.page * 30) < data.total_count
+                                    }
+                                };
+                            },
+                            cache: true
+                        },
+                        placeholder: 'Search for a repository',
+                        escapeMarkup: function (markup) {
+                            return markup;
+                        }, // let our custom formatter work
+                        minimumInputLength: 1,
+                        templateResult: formatRepo,
+                        templateSelection: formatRepoSelection
+                    });
+
+                function formatRepo(repo) {
+                    if (repo.loading) {
+                        return repo.text;
+                    }
+
+                    var markup = "<div class='select2-result-repository clearfix d-flex'>" +
+                        "<div class='select2-result-repository__avatar mr-2'><img src='" + repo.owner.avatar_url + "' class='width-2 height-2 mt-1 rounded' /></div>" +
+                        "<div class='select2-result-repository__meta'>" +
+                        "<div class='select2-result-repository__title fs-lg fw-500'>" + repo.full_name + "</div>";
+
+                    if (repo.description) {
+                        markup += "<div class='select2-result-repository__description fs-xs opacity-80 mb-1'>" + repo.description + "</div>";
+                    }
+
+                    markup += "<div class='select2-result-repository__statistics d-flex fs-sm'>" +
+                        "<div class='select2-result-repository__forks mr-2'><i class='fal fa-lightbulb'></i> " + repo.forks_count + " Forks</div>" +
+                        "<div class='select2-result-repository__stargazers mr-2'><i class='fal fa-star'></i> " + repo.stargazers_count + " Stars</div>" +
+                        "<div class='select2-result-repository__watchers mr-2'><i class='fal fa-eye'></i> " + repo.watchers_count + " Watchers</div>" +
+                        "</div>" +
+                        "</div></div>";
+
+                    return markup;
+                }
+
+                function formatRepoSelection(repo) {
+                    return repo.full_name || repo.text;
+                }
+
+            });
+        });
+
+    </script>
+    <!-------- Валидация формы -------->
+    <script>
+        $(".btn--form").click(function (event) {
+
+            // Fetch form to apply custom Bootstrap validation
+            var form = $("#dismiss")
+
+            if (form[0].checkValidity() === false) {
+                event.preventDefault()
+                event.stopPropagation()
+            }
+
+            form.addClass('was-validated');
+            // Perform ajax submit here...
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.6.4.min.js"></script>
+    <script>
+
+        // $(function() {
+        //     $.get("https://armata-dv.ru/test.php", { action: "primer", method: "get" }, function (data) {
+        //         // alert("Ответ:  " + data);
+        //         const response = document.querySelector('#response');
+        //         response.textContent= `Ответ: ${data}`;
+        //         console.log(data);
+        //     }); 
+        // })
+
+        $(function () {
+            $('#form').on('submit', function () {
+                $.post("test2.php", {
+                    action: "test_1",                    data: $('#form').serialize()
+                    // name: $("input[name='name']").val(),
+                    // number: $("input[name='number']").val(),
+                },
+                    function (data) {
+                        console.log(data);
+                        // console.log(data.otvet.name);
+                    }, "json"
+                );
+                return false;
+            });
+
+
+        })
+
+    </script>
+</head>
+
+<body>
+    <div id="response"></div>
+    <div id="res"></div>
+
+    <form id="form" action="test2.php" method="post">
+        <input type="text" name="name">
+        <input type="number" name="number">
+        <!-- <input type="hidden" name="action" value="test_2"> -->
+        <button type="submit">Сохранить</button>
+    </form>
+</body>
+
+</html>
