@@ -10035,7 +10035,7 @@ background: linear-gradient(90deg, rgba(54,112,72,1) 7%, rgba(8,175,60,1) 99%);
 .header-icon:not(.btn)[data-toggle="dropdown"]+.dropdown-menu {
   top: 5.0625rem !important;
 }
-.bg-brand--white {
+.bg-brand-white {
   background: #ffffff;
 }
 @media (min-width: 992px) {
@@ -10083,30 +10083,30 @@ background: linear-gradient(90deg, rgba(54,112,72,1) 7%, rgba(8,175,60,1) 99%);
   display: none;
 }
 
-.thead--color {
+.thead-color {
   background-color: #08af3c;
 }
 
 .overflow {
   overflow: scroll;
 }
-.th--green {
+.th-green {
   /* background: #0b7f45; */
   background: #54ae81;
 }
-.th--yellow {
+.th-yellow {
   background: #ffce67;
 }
-.th--red {
+.th-red {
   background: #f79679;
 }
-.th--blue {
+.th-blue {
   background: #a4c6fb;
 }
-.th--white-green {
+.th-white-green {
   background: #b9e27c;
 }
-.tr--gray {
+.tr-gray {
   background: #dfdfdf;
 }
 .p-s {
@@ -10115,27 +10115,27 @@ background: linear-gradient(90deg, rgba(54,112,72,1) 7%, rgba(8,175,60,1) 99%);
 .p-m {
   padding: 0.5rem!important;
 }
-.tr--gray:hover {
+.tr-gray:hover {
   background: #dfdfdf!important;
   box-shadow: none!important;
 }
 
-.road__input {
+.info__input {
   width: 100%;
   position: relative;
   z-index: 1;
 }
 
-.road__hover {
+.info--hover {
   position: relative;
 }
 
-.road__hover:hover .road__btn {
+.info--hover:hover .info__btn {
   display: block;
 }
 
 
-.road__btn {
+.info__btn {
   border: none;
   width: 20px;
   height: 20px;
@@ -10159,7 +10159,7 @@ background: linear-gradient(90deg, rgba(54,112,72,1) 7%, rgba(8,175,60,1) 99%);
   resize: none;
 }
 
-.road__comment {
+.info__comment {
   position: absolute;
   bottom: 25px;
   padding: 8px;
@@ -10175,10 +10175,10 @@ background: linear-gradient(90deg, rgba(54,112,72,1) 7%, rgba(8,175,60,1) 99%);
   display: none;
   box-shadow: 0px 0px 10px -2px rgba(0, 0, 0, 0.5);
 }
-.road__comment.opacity {
+.info__comment.opacity {
   visibility: hidden;
 }
-.road__comment::before {
+.info__comment::before {
   content: '';
   width: 0;
   height: 0;
@@ -10190,7 +10190,7 @@ background: linear-gradient(90deg, rgba(54,112,72,1) 7%, rgba(8,175,60,1) 99%);
   left: 0;
 }
 
-.road__hover:hover .road__comment {
+.info--hover:hover .info__comment {
   display: block;
 }
 
