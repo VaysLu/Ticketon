@@ -13,6 +13,9 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <!-- Remove Tap Highlight on Windows Phone IE -->
     <meta name="msapplication-tap-highlight" content="no">
+
+    <!-- Table sortered -->
+    <link rel="stylesheet" href="css/formplugins/table-sortered/theme.default.min.css">
     <!-- base css -->
     <link rel="stylesheet" media="screen, print" href="css/vendors.bundle.css">
     <link rel="stylesheet" media="screen, print" href="css/app.bundle.css">
@@ -22,6 +25,8 @@
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
     <link rel="manifest" href="img/favicon/site.webmanifest">
     <!-- <link rel="stylesheet" media="screen, print" href="css/your_styles.css"> -->
+
+   
 </head>
 
 <body class="mod-bg-1 ">
@@ -358,7 +363,7 @@
                                 <div class="panel-container show overflow">
                                     <div class="panel-content">
                                         <div class="frame-wrap table-responsive-lg">
-                                            <table class="table m-0 table-bordered table-striped table-hover ">
+                                            <table class="table m-0 table-bordered table-striped table-hover tablesorter" id="myTable">
                                                 <thead class="thead-color">
                                                     <tr>
                                                         <th></th>
@@ -405,8 +410,7 @@
                                                     <tr>
                                                         <th class="th-green p-m" colspan="30">Январь 2024</th>
                                                     </tr>
-                                                </thead>
-                                                <tbody>
+                                                    <!-------------->
                                                     <tr>
                                                         <th class="th-green p-m" style="min-width: 225px;">Норма часов в
                                                             текущем месяце</th>
@@ -416,6 +420,18 @@
                                                         <th class="p-m">Отдел</th>
                                                         <td colspan="29"></td>
                                                     </tr>
+                                                    <!------------>
+                                                </thead>
+                                                <tbody>
+                                                    <!-- <tr>
+                                                        <th class="th-green p-m" style="min-width: 225px;">Норма часов в
+                                                            текущем месяце</th>
+                                                        <td colspan="29"></td>
+                                                    </tr> -->
+                                                    <!-- <tr class="tr-gray">
+                                                        <th class="p-m">Отдел</th>
+                                                        <td colspan="29"></td>
+                                                    </tr> -->
                                                     <tr class="p-s">
                                                         <th>ФИО сотрудника</th>
                                                         <td></td>
@@ -436,6 +452,126 @@
                                                         <td>
                                                             <div class="info">
                                                                 <span class="info__text">300</span>
+                                                                <input type="number"
+                                                                    class="info__input input-department">
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="info">
+                                                                <span class="info__text">300</span>
+                                                                <input type="number"
+                                                                    class="info__input input-department">
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="info">
+                                                                <span class="info__text">300</span>
+                                                                <input type="number"
+                                                                    class="info__input input-department">
+                                                            </div>
+                                                        </td>
+                                                        <td class="info info--hover">
+                                                            <div class="info">
+                                                                <span class="info__text">300</span>
+                                                                <input type="number"
+                                                                    class="info__input input-department">
+                                                            </div>
+                                                            <div class="demo">
+                                                                <button type="button" class="btn info__btn"
+                                                                    data-toggle="modal"
+                                                                    data-target="#default-example-modal-sm-center">
+                                                                </button>
+                                                                <div class="info__comment"></div>
+                                                            </div>
+                                                        </td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td class="info info--hover">
+                                                            <div class="info">
+                                                                <span class="info__text">300</span>
+                                                                <input type="number"
+                                                                    class="info__input input-department">
+                                                            </div>
+                                                            <div class="demo">
+                                                                <button type="button" class="btn info__btn"
+                                                                    data-toggle="modal"
+                                                                    data-target="#default-example-modal-sm-center">
+                                                                </button>
+                                                                <div class="info__comment"></div>
+                                                            </div>
+                                                        </td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td class="info info--hover">
+                                                            <div class="info">
+                                                                <span class="info__text">300</span>
+                                                                <input type="number"
+                                                                    class="info__input input-department">
+                                                            </div>
+                                                            <div class="demo">
+                                                                <button type="button" class="btn info__btn"
+                                                                    data-toggle="modal"
+                                                                    data-target="#default-example-modal-sm-center">
+                                                                </button>
+                                                                <div class="info__comment"></div>
+                                                            </div>
+                                                        </td>
+                                                        <td class="info info--hover">
+                                                            <div class="info">
+                                                                <span class="info__text">300</span>
+                                                                <input type="number"
+                                                                    class="info__input input-department">
+                                                            </div>
+                                                            <div class="demo">
+                                                                <button type="button" class="btn info__btn"
+                                                                    data-toggle="modal"
+                                                                    data-target="#default-example-modal-sm-center">
+                                                                </button>
+                                                                <div class="info__comment"></div>
+                                                            </div>
+                                                        </td>
+                                                        <td class="info info--hover">
+                                                            <div class="info">
+                                                                <span class="info__text">300</span>
+                                                                <input type="number"
+                                                                    class="info__input input-department">
+                                                            </div>
+                                                            <div class="demo">
+                                                                <button type="button" class="btn info__btn"
+                                                                    data-toggle="modal"
+                                                                    data-target="#default-example-modal-sm-center">
+                                                                </button>
+                                                                <div class="info__comment"></div>
+                                                            </div>
+                                                        </td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr class="p-s">
+                                                        <th>ФИО сотрудника</th>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td>
+                                                            <div class="info">
+                                                                <span class="info__text">30</span>
+                                                                <input type="number" class="info__input input-department">
+                                                            </div>
+                                                        </td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td>
+                                                            <div class="info">
+                                                                <span class="info__text">30</span>
                                                                 <input type="number"
                                                                     class="info__input input-department">
                                                             </div>
@@ -658,6 +794,16 @@
         /////////////////////////
 
 
+    </script>
+
+    <!-- load jQuery and tablesorter scripts -->
+    <!-- <script type="text/javascript" src="js/jquery-3.7.1.js"></script> -->
+    <script type="text/javascript" src="js/formplugins/table-sortered/jquery.tablesorter.js"></script>
+    <!-- tablesorter widgets (optional) -->
+    <script type="text/javascript" src="js/formplugins/table-sortered/jquery.tablesorter.widgets.js"></script>
+
+    <script>
+        $ ( function () {   $ ( "#myTable" ). tablesorter (); }); 
     </script>
 </body>
 

@@ -10115,6 +10115,21 @@ background: linear-gradient(90deg, rgba(54,112,72,1) 7%, rgba(8,175,60,1) 99%);
 .p-m {
   padding: 0.5rem!important;
 }
+.fs-1 {
+  font-size: 1rem;
+}
+.fs-2 {
+  font-size: 1.2rem;
+}
+.w-2 {
+  width: 20%;
+}
+.w-3 {
+  width: 30%;
+}
+
+
+
 .tr-gray:hover {
   background: #dfdfdf!important;
   box-shadow: none!important;
@@ -10194,6 +10209,38 @@ background: linear-gradient(90deg, rgba(54,112,72,1) 7%, rgba(8,175,60,1) 99%);
   display: block;
 }
 
+.subheader-block__date {
+  font-size: 1.5rem;
+}
+.textarea-input {
+  height: 100px;
+  font-size: 1em;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+.subheader-block__input {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: #666666;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  color: rgba(0, 0, 0, 0);
+  opacity: 1;
+  display: block;
+  background: url(../img/svg/calendar.svg) no-repeat;
+  width: 30px;
+  height: 30px;
+  border-width: thin;
+}
 
 
 /*********************************************/
