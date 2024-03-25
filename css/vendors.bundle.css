@@ -271,11 +271,30 @@ progress {
 [type="number"]::-webkit-inner-spin-button,
 [type="number"]::-webkit-outer-spin-button {
   height: auto; }
-
+/**************************** SEARCH ************************/
 [type="search"] {
-  outline-offset: -2px;
-  -webkit-appearance: none; }
-
+  display: block;
+  /* width: 100%; */
+  height: calc(0.5em + 1rem + 2px);
+  padding: 0.5rem 0.875rem;
+  font-size: 0.8125rem;
+  font-weight: 400;
+  line-height: 1.47;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #E5E5E5;
+  border-radius: 4px;
+  -webkit-transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out, -webkit-box-shadow 0.15s ease-in-out;
+}
+[type="search"]:focus {
+  border-color: #00ff80;
+  box-shadow: 0px 0px 9px 3px rgba(0, 255, 128, 1);
+}
+/**************************** SEARCH ************************/
 [type="search"]::-webkit-search-decoration {
   -webkit-appearance: none; }
 
@@ -1687,8 +1706,8 @@ select.form-control:focus::-ms-value {
   line-height: 1.5;
   border-radius: 4px; }
 
-select.form-control[size], select.form-control[multiple] {
-  height: auto; }
+/* select.form-control[size], select.form-control[multiple] {
+  height: auto; } */
 
 textarea.form-control {
   height: auto; }
@@ -3120,7 +3139,7 @@ input[type="button"].btn-block {
   font-size: 0.75rem; }
 
 .custom-select-lg {
-  height: calc(1.5em + 1.5rem + 2px);
+  /* height: calc(1.5em + 1.5rem + 2px); */
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
   padding-left: 1.5rem;

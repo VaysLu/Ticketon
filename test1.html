@@ -32,7 +32,7 @@
     <!-- <link rel="stylesheet" href="css/formplugins/flatpick/flatpick.css"> -->
 
 
-    <link rel="stylesheet" href="css/formplugins/flatpick/flatpick.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <link rel="stylesheet" href="css/formplugins/flatpick/style.css">
 
 
@@ -409,10 +409,20 @@
                                                 id="myTable">
                                                 <thead class="thead-color">
                                                     <tr class="tablesorter-ignoreRow">
-                                                        <th class="no-sorter"></th>
-                                                        <th class="text-center" colspan="9">
+                                                        <th class="th-green p-m" colspan="31" id="month-Year">Январь
+                                                            2024</th>
+                                                    </tr>
+                                                    
+                                                    <tr class="tablesorter-ignoreRow">
+                                                        <th class="th-green p-m" style="min-width: 225px;">Норма часов в
+                                                            текущем месяце</th>
+                                                        <td class="thead-color" colspan="30"></td>
+                                                    </tr>
+                                                    <tr class="tablesorter-ignoreRow">
+                                                        <th class="text-center" colspan="10">
                                                             <span class="no-sorter">Основная часть</span>
                                                         </th>
+                                                        <th></th>
                                                         <th class="th-white-green-n"></th>
                                                         <th class="text-center" colspan="9">Дополнительные выплаты</th>
                                                         <th class="th-blue"></th>
@@ -422,8 +432,10 @@
                                                         </th>
                                                     </tr>
                                                     <tr class="text-center">
+                                                        <th class="sorter-false filter-select filter-exact p-m tr-gray"
+                                                            data-placeholder="Все">Отдел</th>
                                                         <th class="sorter-false filter-select filter-exact"
-                                                            data-placeholder="Все">Ф.И.О.</th>
+                                                            data-placeholder="Все" style="min-width: 225px;">Ф.И.О.</th>
                                                         <th class="sorter-false">Оклад</th>
                                                         <th class="sorter-false">KPI</th>
                                                         <th class="sorter-false">ИТОГО</th>
@@ -463,27 +475,16 @@
                                                         <th class="sorter-false th-yellow-n">Остаток после выплаты</th>
                                                     </tr>
                                                 </thead>
-                                                <thead>
-                                                    <tr class="tablesorter-ignoreRow">
-                                                        <th class="th-green p-m" colspan="30" id="month-Year">Январь
-                                                            2024</th>
-                                                    </tr>
-                                                    <!-------------->
-                                                    <tr class="tablesorter-ignoreRow">
-                                                        <th class="th-green p-m" style="min-width: 225px;">Норма часов в
-                                                            текущем месяце</th>
-                                                        <td class="thead-color" colspan="29"></td>
-                                                    </tr>
+                                                <!-- <thead>
                                                     <tr class="tr-gray tablesorter-ignoreRow">
                                                         <th class="p-m">Отдел</th>
                                                         <td colspan="29"></td>
                                                     </tr>
-                                                    <!------------>
-                                                </thead>
+                                                </thead> -->
                                                 <tbody>
-                                                    
                                                     <tr class="p-s">
-                                                        <th>ФИО сотрудника 1</th>
+                                                        <td>Руководство</td>
+                                                        <td>ФИО сотрудника 1</td>
                                                         <td></td>
                                                         <td></td>
                                                         <td></td>
@@ -604,7 +605,8 @@
                                                         <td></td>
                                                     </tr>
                                                     <tr class="p-s">
-                                                        <th>ФИО сотрудника 2</th>
+                                                        <td>ФИНАНСЫ</td>
+                                                        <td>ФИО сотрудника 2</td>
                                                         <td></td>
                                                         <td></td>
                                                         <td></td>
@@ -749,13 +751,10 @@
         </div>
     </div>
 
-    <!------------------ Скрипт шаблона ----------------------->
+
     <script src="js/vendors.bundle.js"></script>
-
-    <!------------------ Скрипт шаблона ----------------------->
     <script src="js/app.bundle.js"></script>
-
-    <!---------- Скрипт на внесение изменений в таблице -------------->
+    <!---------- Скрипт на столбик Дорожные -------------->
     <script>
         const infoEl = document.querySelectorAll('.info');
 
@@ -839,17 +838,12 @@
         })
 
     </script>
-
     <!--------------- Подключение плагина Flatpickr ----------------->
     <script type="text/javascript" src="js/formplugins/flatpick/flatpick.js"></script>
-
-    <!--------------- Русификатор плагина Flatpickr ----------------->
     <script type="text/javascript" src="js/formplugins/flatpick/ru.js"></script>
 
-    <!--------------- Виджет отображения месяцев в плагине Flatpickr ----------------->
     <script type="text/javascript" src="js/formplugins/flatpick/flatpick-monthYear.js"></script>
-
-    <!-----------------  Скрипт календаря по месяцам ----------------------->
+    
     <script>
         flatpickr('.date', {
             plugins: [
@@ -917,16 +911,12 @@
         }
 
     </script>
-    
     <!-- load jQuery and tablesorter scripts -->
     <script type="text/javascript" src="js/formplugins/table-sortered/jquery.tablesorter.js"></script>
-    
     <!-- tablesorter widgets (optional) -->
     <script type="text/javascript" src="js/formplugins/table-sortered/jquery.tablesorter.widgets.js"></script>
-    
     <!--------- Подключение плагина Select2 ------------->
     <script src="js/formplugins/select2/select2.bundle.js"></script>
-
     <!--------- Инициализация плагина Select2 ------------->
     <script>
         $(document).ready(function () {
@@ -1033,7 +1023,6 @@
         });
 
     </script>
-
     <!-------------- Подключение виджета filter select2 ----------------->
     <script>
         $(function () {
@@ -1051,20 +1040,25 @@
                 },
             });
 
-            const selectEl = document.querySelector('select.tablesorter-filter');
-            selectEl.classList.add('js-hide-search', 'form-control');
+            const selectEl = document.querySelectorAll('select.tablesorter-filter');
 
-            const thEl1 = document.querySelector('td[data-column="10"]');
-            const thEl2 = document.querySelector('td[data-column="20"]');
-            const thEl3 = document.querySelector('td[data-column="24"]');
+            selectEl.forEach(element => {
+                element.classList.add('js-hide-search', 'form-control');
+            });
+            
+            const thEl0 = document.querySelector('td[data-column="0"]');
+            const thEl1 = document.querySelector('td[data-column="11"]');
+            const thEl2 = document.querySelector('td[data-column="21"]');
+            const thEl3 = document.querySelector('td[data-column="25"]');
             const thEl4 = [
-                document.querySelector('td[data-column="25"]'),
                 document.querySelector('td[data-column="26"]'),
                 document.querySelector('td[data-column="27"]'),
                 document.querySelector('td[data-column="28"]'),
-                document.querySelector('td[data-column="29"]')
+                document.querySelector('td[data-column="29"]'),
+                document.querySelector('td[data-column="30"]')
             ]
 
+            thEl0.classList.add('tr-gray');
             thEl1.classList.add('th-white-green-n');
             thEl2.classList.add('th-blue');
             thEl3.classList.add('th-red');
@@ -1075,7 +1069,6 @@
 
         });
     </script>
-
     <!----------------- Кнопка скачать файл ---------------------->
     <script>
         const downloadBtn = document.querySelector('.download-exl');

@@ -406,7 +406,7 @@
 
 	$.extend( tscss, {
 		filterRow      : 'tablesorter-filter-row',
-		filter         : 'tablesorter-filter',
+		filter         : 'tablesorter-filter', 
 		filterDisabled : 'disabled',
 		filterRowHide  : 'hideme'
 	});

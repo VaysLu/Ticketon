@@ -4294,10 +4294,12 @@ S2.define('select2/dropdown/attachBody',[
 
     $dropdown.removeClass('select2');
     $dropdown.addClass('select2-container--open');
+    let zIndex = 'z-index';
 
     $dropdown.css({
       position: 'absolute',
-      top: -999999
+      top: -999999,
+      zIndex: 9999,
     });
 
     this.$container = $container;
