@@ -10260,7 +10260,7 @@ input::-webkit-inner-spin-button {
   width: 43px;
 }
 
-input[type="date"]::-webkit-calendar-picker-indicator {
+.subheader-block__input::-webkit-calendar-picker-indicator {
   color: rgba(0, 0, 0, 0);
   opacity: 1;
   display: block;
