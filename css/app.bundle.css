@@ -10345,3 +10345,6 @@ input::-webkit-inner-spin-button {
   -o-transform: scale(1.2);
 }
 /*********************************************/
+.task-scheduler {
+  min-width: 800px;
+}
