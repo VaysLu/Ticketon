@@ -25,6 +25,8 @@
 
     <!-- page related CSS below -->
     <link rel="stylesheet" media="screen, print" href="css/formplugins/select2/select2.bundle.css">
+
+    <link rel="stylesheet" href="css/formplugins/flatpick/flatpick.css">
 </head>
 
 <body class="mod-bg-1 ">
@@ -364,14 +366,15 @@
                             <!-- <span class="subheader-block__date">01.03.2024</span> -->
                             <select class="select2 form-control w-100" name="department" id="department-select"
                                 onchange="theSelect()">
-                                <option value="" disabled selected>Укажите отдел</option>
+                                <option value="" disabled selected>Выберите отдел</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
                                 <option value="3">3</option>
                                 <option value="4">4</option>
                                 <option value="5">5</option>
                             </select>
-                            <input class="subheader-block__input" type="date" name="date-work">
+                            <!-- <input class="subheader-block__input" type="date" name="date-work"> -->
+                            <input type="text" class="date">
                         </div>
                     </div>
 
@@ -1568,22 +1571,6 @@
         }
     </script>
 
-    <!--------------- Получение текущей даты, и вывод выбранной даты на страницу -------------------->
-    <script>
-        var date = new Date();
-        var currentDate = date.toISOString().substring(0, 10);
-        const subheaderInput = document.querySelector('.subheader-block__input');
-        const tableDate = document.querySelector('.panel-hdr__date');
-        tableDate.textContent = currentDate.split('-').reverse().join('.');
-        subheaderInput.value = currentDate;
-
-        subheaderInput.addEventListener('input', () => {
-            const tableDate = document.querySelector('.panel-hdr__date');
-            const newDate = subheaderInput.value.split('-').reverse().join('.');
-            tableDate.textContent = newDate;
-        })
-    </script>
-
     <!------------ Вывод в консоль выбранного значения из селекта ----------------->
     <script>
         function theSelect() {
@@ -1616,6 +1603,145 @@
             console.log(sel);
         }
 
+
+    </script>
+
+    <!--------------- Подключение плагина Flatpickr ----------------->
+    <script type="text/javascript" src="js/formplugins/flatpick/flatpick.js"></script>
+
+    <!--------------- Русификатор плагина Flatpickr ----------------->
+    <script type="text/javascript" src="js/formplugins/flatpick/ru.js"></script>
+
+    <!-----------------  Скрипт календаря по месяцам ----------------------->
+    <script>
+        flatpickr('.date', {
+            altInput: true,
+            // altFormat: "F j, Y",
+            // dateFormat: "Y-m-d",
+            dateFormat: "d-m-Y",
+            "locale": "ru",
+            disableMobile: "true"
+        });
+
+        const tableDate = document.querySelector('.panel-hdr__date'); // Получаем строку с датой в таблице
+
+        // Получаем текущую дату и записываем в строку таблицы
+        var date = new Date();
+        var currentDate = date.toISOString().substring(0, 10);
+        tableDate.textContent = currentDate.split('-').reverse().join('.');
+
+        const prevMonth = document.querySelector('.flatpickr-prev-month');
+        const nextMonth = document.querySelector('.flatpickr-next-month');
+        const selectFlat = document.querySelector('.flatpickr-monthDropdown-months');
+        const arrowUp = document.querySelector('.arrowUp');
+        const arrowDown = document.querySelector('.arrowDown');
+        const inputYear = document.querySelector('.cur-year');
+
+        inputYear.disabled = true;
+        selectFlat.disabled = true;
+        selectFlat.classList.add('no-click');
+        arrowUp.classList.add('display-none');
+        arrowDown.classList.add('display-none');
+
+        prevMonth.addEventListener('click', () => {
+            setTimeout(calendar, 1000);
+        });
+        nextMonth.addEventListener('click', () => {
+            setTimeout(calendar, 1000);
+        });
+
+        calendar();
+
+        function calendar() {
+            let container = document.querySelector('.dayContainer');
+
+            container.addEventListener('click', (e) => {
+                let date = e.target.getAttribute('aria-label');
+                // console.log(e.target);
+
+                const year = date.split(' ')[2];
+
+                const dayNum = date.split(' ')[1];
+                const dayArr = dayNum.split('');
+                dayArr.pop();
+                const day = dayArr.join('');
+                
+                const month = date.split(' ')[0];
+
+                const result = [];
+
+                translateMonth();
+
+                function translateMonth() {
+                    if (month === 'Январь') {
+                        const numberMonth = '01';
+                        result.push(day);
+                        result.push(numberMonth);
+                        result.push(year);
+                    } else if (month === 'Февраль') {
+                        const numberMonth = '02';
+                        result.push(day);
+                        result.push(numberMonth);
+                        result.push(year);
+                    } else if (month === 'Март') {
+                        const numberMonth = '03';
+                        result.push(day);
+                        result.push(numberMonth);
+                        result.push(year);
+                    } else if (month === 'Апрель') {
+                        const numberMonth = '04';
+                        result.push(day);
+                        result.push(numberMonth);
+                        result.push(year);
+                    } else if (month === 'Май') {
+                        const numberMonth = '05';
+                        result.push(day);
+                        result.push(numberMonth);
+                        result.push(year);
+                    } else if (month === 'Июнь') {
+                        const numberMonth = '06';
+                        result.push(day);
+                        result.push(numberMonth);
+                        result.push(year);
+                    } else if (month === 'Июль') {
+                        const numberMonth = '07';
+                        result.push(day);
+                        result.push(numberMonth);
+                        result.push(year);
+                    } else if (month === 'Август') {
+                        const numberMonth = '08';
+                        result.push(day);
+                        result.push(numberMonth);
+                        result.push(year);
+                    } else if (month === 'Сентябрь') {
+                        const numberMonth = '09';
+                        result.push(day);
+                        result.push(numberMonth);
+                        result.push(year);
+                    } else if (month === 'Октябрь') {
+                        const numberMonth = '10';
+                        result.push(day);
+                        result.push(numberMonth);
+                        result.push(year);
+                    } else if (month === 'Ноябрь') {
+                        const numberMonth = '11';
+                        result.push(day);
+                        result.push(numberMonth);
+                        result.push(year);
+                    } else if (month === 'Декабрь') {
+                        const numberMonth = '12';
+                        result.push(day);
+                        result.push(numberMonth);
+                        result.push(year);
+                    }
+                }
+
+                tableDate.textContent = result.join('.')
+                // console.log(result.join('.'));
+
+                setTimeout(calendar, 1000);
+            })
+        }
 
     </script>
 </body>
