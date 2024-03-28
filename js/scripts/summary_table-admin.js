@@ -126,8 +126,6 @@ flatpickr('.date', {
 
         $("#formDate").submit();
 
-       
-        fp.clear();
     }
 });
 
@@ -203,7 +201,7 @@ downloadBtn.addEventListener('click', () => {
 $(document).ready(function () {
     $(function () {
         $('.select2').select2({
-            dropdownParent: $('.select-wrapper')
+
         });
 
         $(".select2-placeholder-multiple").select2(
@@ -243,7 +241,6 @@ $(document).ready(function () {
     });
 
     const tdEl = document.querySelector('td[data-column="0"]');
-    // console.log(tdEl);
     tdEl.classList.add('position-relativ');
 });
 

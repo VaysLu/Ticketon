@@ -10409,11 +10409,12 @@ td {
   color: #000!important;
 }
 
-/* @media screen and (max-width: 540px) {
-  .position-relativ {
-    position: relative!important;
-  }
-} */
+.position-relativ {
+  position: relative!important;
+}
+.tablesorter-admin .select2-container--open .select2-dropdown {
+  left: -1px!important;
+}
 
 
 /*********************************************/

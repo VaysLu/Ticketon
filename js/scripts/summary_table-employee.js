@@ -58,8 +58,6 @@ flatpickr('.date', {
 
         $("#formDate").submit();
 
-       
-        fp.clear();
     }
 });
 
@@ -166,7 +164,6 @@ $(document).ready(function () {
     });
     
     const tdEl = document.querySelector('td[data-column="0"]');
-    // console.log(tdEl);
     tdEl.classList.add('position-relativ');
 });
 
