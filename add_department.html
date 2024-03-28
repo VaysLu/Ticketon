@@ -338,7 +338,7 @@
                                         <div class="panel-tag">
                                             Пожалуйста, перед отправкой убедитесь, что все поля заполнены верно
                                         </div>
-                                        <form id="add-department" novalidate="" action="#">
+                                        <form id="formData" novalidate="" action="#">
                                             <div class="form-group">
                                                 <label class="form-label" for="name-department">Название отдела</label>
                                                 <input type="text" id="name-department" name="name-department" class="form-control"
@@ -369,24 +369,15 @@
             </div>
         </div>
     </div>
-    <script src="js/vendors.bundle.js"></script>
-    <script src="js/app.bundle.js"></script>
-    <!-------- Валидация формы -------->
-    <script>
-        $(".btn--form").click(function (event) {
 
-            // Fetch form to apply custom Bootstrap validation
-            var form = $("#add-department")
+    <!----------------- Скрипт шаблона ---------------------->
+    <script type="text/javascript" src="js/vendors.bundle.js"></script>
 
-            if (form[0].checkValidity() === false) {
-                event.preventDefault()
-                event.stopPropagation()
-            }
+    <!----------------- Скрипт шаблона ---------------------->
+    <script type="text/javascript" src="js/app.bundle.js"></script>
 
-            form.addClass('was-validated');
-            // Perform ajax submit here...
-        });
-    </script>
+    <!----------------------- Скрипт валидатора формы ------------------------->
+    <script type="text/javascript" src="js/formplugins/form-validate/form-validate.js"></script>
 </body>
 
 </html>

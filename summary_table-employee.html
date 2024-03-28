@@ -13,6 +13,9 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <!-- Remove Tap Highlight on Windows Phone IE -->
     <meta name="msapplication-tap-highlight" content="no">
+
+    <!-- Table sortered -->
+    <link rel="stylesheet" href="css/formplugins/table-sortered/theme.default.min.css">
     <!-- base css -->
     <link rel="stylesheet" media="screen, print" href="css/vendors.bundle.css">
     <link rel="stylesheet" media="screen, print" href="css/app.bundle.css">
@@ -22,9 +25,19 @@
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
     <link rel="manifest" href="img/favicon/site.webmanifest">
     <!-- <link rel="stylesheet" media="screen, print" href="css/your_styles.css"> -->
+
+    <!-- page related CSS below -->
+    <link rel="stylesheet" media="screen, print" href="css/formplugins/select2/select2.bundle-table.css">
+
+    <!-- <link rel="stylesheet" href="css/formplugins/flatpick/flatpick.css"> -->
+
+
+    <link rel="stylesheet" href="css/formplugins/flatpick/flatpick.css">
+    <link rel="stylesheet" href="css/formplugins/flatpick/style.css">
+
 </head>
 
-<body class="mod-bg-1 ">
+<body class="mod-bg-1">
     <h1 class="visually-hidden">Сводная таблица FREEDOM Ticketon</h1>
 
     <script>
@@ -108,13 +121,8 @@
                         </button>
                     </div>
                     <ul id="js-nav-menu" class="nav-menu">
-                        
+
                         <li>
-                            <!-- <a href="summary_table-admin.html" data-filter-tags="сводная таблица">
-                                <i class="fal fa-th-list"></i>
-                                <span class="nav-link-text"
-                                    data-i18n="nav.application_intel_analytics_dashboard">Сводная таблица</span>
-                            </a> -->
                             <a class="nav-menu__btn waves-effect waves-themed" href="#"
                                 data-filter-tags="сводная таблица" aria-expanded="false" aria-controls="list">
                                 <i class="fal fa-th-list"></i>
@@ -122,7 +130,8 @@
                             </a>
                             <ul class="nav-menu__list">
                                 <li>
-                                    <a href="summary_table-admin.html" data-filter-tags="версия администратора">
+                                    <a href="summary_table-admin.html" 
+                                        data-filter-tags="версия администратора">
                                         <i class="point"></i>
                                         <span class="nav-link-text"
                                             data-i18n="nav.application_intel_analytics_dashboard">Администратор</span>
@@ -336,9 +345,13 @@
                         <h2 class="subheader-title">
                             <i class="fal fa-th-list"></i> Сводная таблица
                         </h2>
-                        <!-- <div class="subheader-block">
-                            Right content of header
-                        </div> -->
+                        <div class="subheader-block">
+                            <form action="" method="GET" id="formDate">
+                                <input class="first-date" type="hidden" value="" name="firstDate">
+                                <input class="last-date" type="hidden" value="" name="lastDate">
+                                <input type="text" class="date">
+                            </form>
+                        </div>
                     </div>
 
                     <div class="row">
@@ -357,67 +370,82 @@
                                 </div>
                                 <div class="panel-container show overflow">
                                     <div class="panel-content">
-                                        <div class="frame-wrap table-responsive-lg">
-                                            <table class="table m-0 table-bordered table-striped table-hover ">
-                                                <thead class="thead-color">
-                                                    <tr>
-                                                        <th></th>
-                                                        <th colspan="9">Основная часть</th>
-                                                        <th class="th-white-green"></th>
-                                                        <th colspan="9">Дополнительные выплаты</th>
-                                                        <th class="th-blue"></th>
-                                                        <th colspan="3">Удержания</th>
-                                                        <th class="th-red"></th>
-                                                        <th colspan="5" class="th-yellow">Итоговые выплаты</th>
+                                        <div class="frame-wrap">
+                                            <table
+                                                class="table m-0 table-bordered table-striped table-hover tablesorter tablesorter-admin"
+                                                id="myTable">
+                                                <thead>
+                                                    <tr class="tablesorter-ignoreRow">
+                                                        <th class="th-green"></th>
+                                                        <th class="th-green"></th>
+                                                        <th class="text-center th-white-green-n" colspan="10">
+                                                            <span class="no-sorter">Основная часть</span>
+                                                        </th>
+                                                        <th class="text-center th-white-blue" colspan="10">Дополнительные выплаты</th>
+                                                        <th class="text-center th-red" colspan="4">Удержания</th>
+                                                        <th colspan="5" class="th-yellow-n text-center">Итоговые выплаты
+                                                        </th>
                                                     </tr>
                                                     <tr class="text-center">
-                                                        <th>Ф.И.О.</th>
-                                                        <th>Оклад</th>
-                                                        <th>KPI</th>
-                                                        <th>ИТОГО</th>
-                                                        <th>Процент исполнения KPI в&nbsp;текущем месяце</th>
-                                                        <th>Сумма согласно выполнению KPI</th>
-                                                        <th>Дорожные</th>
-                                                        <th>Стандартная стоимость часа работы</th>
-                                                        <th>Итоговая стоимость часа работы</th>
-                                                        <th>Количество отработанных часов</th>
-                                                        <th class="th-white-green">ИТОГО ЗП </th>
-                                                        <th>Отпускные</th>
-                                                        <th>Больничные</th>
-                                                        <th>Командировочные</th>
-                                                        <th>Затраты на&nbsp;компанию (компенсация расходов)</th>
-                                                        <th>Сверхурочные часы (количество часов)</th>
-                                                        <th>Сумма за&nbsp;сверхурочные (X2)</th>
-                                                        <th>За&nbsp;дополнительную работу и&nbsp;бонусы</th>
-                                                        <th>Часы сверх нормы месяца</th>
-                                                        <th>Сумма за&nbsp;часы сверх нормы месяца</th>
-                                                        <th class="th-blue">ИТОГО дополнительные выплаты</th>
-                                                        <th>Удержания</th>
-                                                        <th>Штрафы по&nbsp;отчетам и&nbsp;нарушениям</th>
-                                                        <th>Возмещение займа у&nbsp;компании</th>
-                                                        <th class="th-red">ИТОГО удержания</th>
-                                                        <th class="th-yellow">ИТОГО к&nbsp;получению</th>
-                                                        <th class="th-yellow">Первый транш (Оклад)</th>
-                                                        <th class="th-yellow">Второй транш (КПИ)</th>
-                                                        <th class="th-yellow">Третий транш (Доп.выплаты)</th>
-                                                        <th class="th-yellow">Остаток после выплаты</th>
+                                                        <th class="sorter-false filter-select filter-exact th-green"
+                                                            data-placeholder="Все" style="min-width: 225px;">Ф.И.О.</th>
+                                                        <th class="sorter-false filter-select filter-exact th-green"
+                                                            data-placeholder="Все" style="min-width: 225px;">Отдел</th>
+                                                        <th class="sorter-false th-white-green-n">Оклад</th>
+                                                        <th class="sorter-false th-white-green-n">KPI</th>
+                                                        <th class="sorter-false th-white-green-n">ИТОГО</th>
+                                                        <th class="sorter-false th-white-green-n">Процент исполнения KPI в&nbsp;текущем
+                                                            месяце</th>
+                                                        <th class="sorter-false th-white-green-n">Сумма согласно выполнению KPI</th>
+                                                        <th class="sorter-false th-white-green-n">Дорожные</th>
+                                                        <th class="sorter-false th-white-green-n">Стандартная стоимость часа работы</th>
+                                                        <th class="sorter-false th-white-green-n">Итоговая стоимость часа работы</th>
+                                                        <th class="sorter-false th-white-green-n">Количество отработанных часов</th>
+                                                        <th class="sorter-false th-white-green-n">ИТОГО ЗП </th>
+                                                        <th class="sorter-false th-white-blue">Отпускные</th>
+                                                        <th class="sorter-false th-white-blue">Больничные</th>
+                                                        <th class="sorter-false th-white-blue">Командировочные</th>
+                                                        <th class="sorter-false th-white-blue">Затраты на&nbsp;компанию (компенсация
+                                                            расходов)</th>
+                                                        <th class="sorter-false th-white-blue">Сверхурочные часы (количество часов)
+                                                        </th>
+                                                        <th class="sorter-false th-white-blue">Сумма за&nbsp;сверхурочные (X2)</th>
+                                                        <th class="sorter-false th-white-blue">За&nbsp;дополнительную работу
+                                                            и&nbsp;бонусы</th>
+                                                        <th class="sorter-false th-white-blue">Часы сверх нормы месяца</th>
+                                                        <th class="sorter-false th-white-blue">Сумма за&nbsp;часы сверх нормы месяца
+                                                        </th>
+                                                        <th class="sorter-false th-white-blue">ИТОГО дополнительные
+                                                            выплаты</th>
+                                                        <th class="sorter-false th-red">Удержания</th>
+                                                        <th class="sorter-false th-red">Штрафы по&nbsp;отчетам
+                                                            и&nbsp;нарушениям</th>
+                                                        <th class="sorter-false th-red">Возмещение займа у&nbsp;компании</th>
+                                                        <th class="sorter-false th-red">ИТОГО удержания</th>
+                                                        <th class="sorter-false th-yellow-n">ИТОГО к&nbsp;получению</th>
+                                                        <th class="sorter-false th-yellow-n">Первый транш (Оклад)</th>
+                                                        <th class="sorter-false th-yellow-n">Второй транш (КПИ)</th>
+                                                        <th class="sorter-false th-yellow-n">Третий транш (Доп.выплаты)
+                                                        </th>
+                                                        <th class="sorter-false th-yellow-n">Остаток после выплаты</th>
                                                     </tr>
-                                                    <tr>
-                                                        <th class="th-green p-m" colspan="30">Январь 2024</th>
+                                                </thead>
+                                                <thead>
+                                                    <tr class="tablesorter-ignoreRow">
+                                                        <th class="th-green p-m month-Year-first" colspan="31">Январь
+                                                            2024</th>
+                                                    </tr>
+                                                    <tr class="tablesorter-ignoreRow">
+                                                        <th class="th-green p-m" >Норма часов в
+                                                            текущем месяце</th>
+                                                        <td class="thead-color" colspan="30"></td>
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <tr>
-                                                        <th class="th-green p-m" style="min-width: 225px;">Норма часов в
-                                                            текущем месяце</th>
-                                                        <td colspan="29"></td>
-                                                    </tr>
-                                                    <tr class="tr-gray">
-                                                        <th class="p-m">Отдел</th>
-                                                        <td colspan="29"></td>
-                                                    </tr>
-                                                    <tr class="p-s">
-                                                        <th>ФИО сотрудника</th>
+
+                                                    <tr class="p-s text-center">
+                                                        <th>ФИО сотрудника 1</th>
+                                                        <td>Руководство</td>
                                                         <td></td>
                                                         <td></td>
                                                         <td></td>
@@ -452,7 +480,7 @@
                                                                 <span class="info__text">300</span>
                                                             </div>
                                                             <div class="demo">
-                                                                <div class="info__comment">вфывф</div>
+                                                                <div class="info__comment">SDdwddcsdcew ddfdsfdf</div>
                                                             </div>
                                                         </td>
                                                         <td></td>
@@ -462,7 +490,95 @@
                                                                 <span class="info__text">300</span>
                                                             </div>
                                                             <div class="demo">
-                                                                <div class="info__comment">вфывфывывф</div>
+                                                                <div class="info__comment">12313213c sadsad adsad</div>
+                                                            </div>
+                                                        </td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td class="info info--hover">
+                                                            <div class="info">
+                                                                <span class="info__text">300</span>
+                                                            </div>
+                                                            <div class="demo">
+                                                                <div class="info__comment"></div>
+                                                            </div>
+                                                        </td>
+                                                        <td class="info info--hover">
+                                                            <div class="info">
+                                                                <span class="info__text">300</span>
+                                                            </div>
+                                                            <div class="demo">
+                                                                <div class="info__comment"></div>
+                                                            </div>
+                                                        </td>
+                                                        <td class="info info--hover">
+                                                            <div class="info">
+                                                                <span class="info__text">300</span>
+                                                            </div>
+                                                            <div class="demo">
+                                                                <div class="info__comment"></div>
+                                                            </div>
+                                                        </td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td>
+                                                            <div class="info">
+                                                                <span class="info__text">40020</span>
+                                                            </div>
+                                                        </td>
+                                                        <td></td>
+                                                    </tr>
+                                                    <tr class="p-s text-center">
+                                                        <th>ФИО сотрудника 2</th>
+                                                        <td>ФИНАНСЫ</td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td>
+                                                            <div class="info">
+                                                                <span class="info__text">40020</span>
+                                                            </div>
+                                                        </td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td>
+                                                            <div class="info">
+                                                                <span class="info__text">300</span>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="info">
+                                                                <span class="info__text">300</span>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="info">
+                                                                <span class="info__text">300</span>
+                                                            </div>
+                                                        </td>
+                                                        <td class="info info--hover">
+                                                            <div class="info">
+                                                                <span class="info__text">300</span>
+                                                            </div>
+                                                            <div class="demo">
+                                                                <div class="info__comment">SDdwddcsdcew ddfdsfdf</div>
+                                                            </div>
+                                                        </td>
+                                                        <td></td>
+                                                        <td></td>
+                                                        <td class="info info--hover">
+                                                            <div class="info">
+                                                                <span class="info__text">300</span>
+                                                            </div>
+                                                            <div class="demo">
+                                                                <div class="info__comment">12313213c sadsad adsad</div>
                                                             </div>
                                                         </td>
                                                         <td></td>
@@ -496,7 +612,11 @@
                                                         <td></td>
                                                         <td></td>
                                                         <td></td>
-                                                        <td></td>
+                                                        <td>
+                                                            <div class="info">
+                                                                <span class="info__text">40020</span>
+                                                            </div>
+                                                        </td>
                                                         <td></td>
                                                     </tr>
                                                 </tbody>
@@ -508,49 +628,49 @@
                         </div>
                     </div>
                 </main>
-
-
-
-
                 <div class="modal fade" id="default-example-modal-sm-center" tabindex="-1" role="dialog"
                     aria-hidden="true">
                     <div class="modal-dialog modal-sm modal-dialog-centered" role="document">
                         <div class="modal-content">
                             <div class="modal-body">
-                                <textarea class="textarea" value="" name="сomment" id="" cols="37" rows="5" placeholder="Добавьте комментарий"></textarea>
+                                <textarea class="textarea" value="" name="сomment" id="" cols="37" rows="5"
+                                    placeholder="Добавьте комментарий"></textarea>
                             </div>
                         </div>
                     </div>
                 </div>
-
-
-
-
                 <div class="page-content-overlay" data-action="toggle" data-class="mobile-nav-on"></div>
-
             </div>
         </div>
     </div>
-    <script src="js/vendors.bundle.js"></script>
-    <script src="js/app.bundle.js"></script>
 
-    <script>
-        // Скрипт на текст-ареа
+    <!------------------ Скрипт шаблона ----------------------->
+    <script type="text/javascript" src="js/vendors.bundle.js"></script>
 
-        document.addEventListener("DOMContentLoaded", () => {
-            const tableComment = document.querySelectorAll('.info__comment');
+    <!------------------ Скрипт шаблона ----------------------->
+    <script type="text/javascript" src="js/app.bundle.js"></script>
 
-            tableComment.forEach((item) => {
-                if (item.textContent !== '') {
-                    item.classList.remove('opacity');
-                } else {
-                    item.classList.add('opacity');
-                }
-            })
-        });
+    <!--------------- Подключение плагина Flatpickr ----------------->
+    <script type="text/javascript" src="js/formplugins/flatpick/flatpick.js"></script>
 
-        /////////////////////////
-    </script>
+    <!--------------- Русификатор плагина Flatpickr ----------------->
+    <script type="text/javascript" src="js/formplugins/flatpick/ru.js"></script>
+
+    <!--------------- Виджет отображения месяцев в плагине Flatpickr ----------------->
+    <script type="text/javascript" src="js/formplugins/flatpick/flatpick-monthYear.js"></script>
+
+    <!-- load jQuery and tablesorter scripts -->
+    <script type="text/javascript" src="js/formplugins/table-sortered/jquery.tablesorter.js"></script>
+
+    <!-- tablesorter widgets (optional) -->
+    <script type="text/javascript" src="js/formplugins/table-sortered/jquery.tablesorter.widgets.js"></script>
+
+    <!--------- Подключение плагина Select2 ------------->
+    <script type="text/javascript" src="js/formplugins/select2/select2.bundle.js"></script>
+
+    <!--------------------- Скрипт для работы страницы ---------------------->
+    <script type="text/javascript" src="js/scripts/summary_table-employee.js"></script>
+
 </body>
 
 </html>

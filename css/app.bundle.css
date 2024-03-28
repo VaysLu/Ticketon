@@ -10300,8 +10300,12 @@ input::-webkit-inner-spin-button {
   right: 0;
 } */
 
-.task-scheduler th,
+/* .task-scheduler th,
 .task-scheduler td {
+  border: 1px solid #b2b0b0 !important;
+} */
+th,
+td {
   border: 1px solid #b2b0b0 !important;
 }
 
@@ -10415,4 +10419,26 @@ input::-webkit-inner-spin-button {
 /*********************************************/
 .task-scheduler {
   min-width: 800px;
+}
+
+.th-white-blue {
+  background: #9ebcf9!important;
+}
+
+.alert--none {
+  position: static!important;
+  padding: 0.5rem!important;
+  margin-bottom: 1rem!important;
+  color: #fd3995;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  display: none;
+}
+
+.alert-show {
+  border-color: #fd3995;
+  display: block;
 }

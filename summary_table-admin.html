@@ -388,7 +388,12 @@
 
                                 </svg>
                             </button>
-                            <input type="text" class="date">
+
+                            <form action="" method="GET" id="formDate">
+                                <input class="first-date" type="hidden" value="" name="firstDate">
+                                <input class="last-date" type="hidden" value="" name="lastDate">
+                                <input type="text" class="date">
+                            </form>
                         </div>
                     </div>
 
@@ -409,57 +414,56 @@
                                 <div class="panel-container show overflow">
                                     <div class="panel-content">
                                         <div class="frame-wrap">
-                                            <!-- table-responsive-lg -->
                                             <table
                                                 class="table m-0 table-bordered table-striped table-hover tablesorter tablesorter-admin"
                                                 id="myTable">
-                                                <thead class="thead-color">
+                                                <thead>
                                                     <tr class="tablesorter-ignoreRow">
-                                                        <th class="no-sorter"></th>
-                                                        <th class="text-center" colspan="9">
+                                                        <th class="th-green"></th>
+                                                        <th class="th-green"></th>
+                                                        <th class="text-center th-white-green-n" colspan="10">
                                                             <span class="no-sorter">Основная часть</span>
                                                         </th>
-                                                        <th class="th-white-green-n"></th>
-                                                        <th class="text-center" colspan="9">Дополнительные выплаты</th>
-                                                        <th class="th-blue"></th>
-                                                        <th class="text-center" colspan="3">Удержания</th>
-                                                        <th class="th-red"></th>
+                                                        <th class="text-center th-white-blue" colspan="10">Дополнительные выплаты</th>
+                                                        <th class="text-center th-red" colspan="4">Удержания</th>
                                                         <th colspan="5" class="th-yellow-n text-center">Итоговые выплаты
                                                         </th>
                                                     </tr>
                                                     <tr class="text-center">
-                                                        <th class="sorter-false filter-select filter-exact"
-                                                            data-placeholder="Все">Ф.И.О.</th>
-                                                        <th class="sorter-false">Оклад</th>
-                                                        <th class="sorter-false">KPI</th>
-                                                        <th class="sorter-false">ИТОГО</th>
-                                                        <th class="sorter-false">Процент исполнения KPI в&nbsp;текущем
+                                                        <th class="sorter-false filter-select filter-exact th-green"
+                                                            data-placeholder="Все" style="min-width: 225px;">Ф.И.О.</th>
+                                                        <th class="sorter-false filter-select filter-exact th-green"
+                                                            data-placeholder="Все" style="min-width: 225px;">Отдел</th>
+                                                        <th class="sorter-false th-white-green-n">Оклад</th>
+                                                        <th class="sorter-false th-white-green-n">KPI</th>
+                                                        <th class="sorter-false th-white-green-n">ИТОГО</th>
+                                                        <th class="sorter-false th-white-green-n">Процент исполнения KPI в&nbsp;текущем
                                                             месяце</th>
-                                                        <th class="sorter-false">Сумма согласно выполнению KPI</th>
-                                                        <th class="sorter-false">Дорожные</th>
-                                                        <th class="sorter-false">Стандартная стоимость часа работы</th>
-                                                        <th class="sorter-false">Итоговая стоимость часа работы</th>
-                                                        <th class="sorter-false">Количество отработанных часов</th>
+                                                        <th class="sorter-false th-white-green-n">Сумма согласно выполнению KPI</th>
+                                                        <th class="sorter-false th-white-green-n">Дорожные</th>
+                                                        <th class="sorter-false th-white-green-n">Стандартная стоимость часа работы</th>
+                                                        <th class="sorter-false th-white-green-n">Итоговая стоимость часа работы</th>
+                                                        <th class="sorter-false th-white-green-n">Количество отработанных часов</th>
                                                         <th class="sorter-false th-white-green-n">ИТОГО ЗП </th>
-                                                        <th class="sorter-false">Отпускные</th>
-                                                        <th class="sorter-false">Больничные</th>
-                                                        <th class="sorter-false">Командировочные</th>
-                                                        <th class="sorter-false">Затраты на&nbsp;компанию (компенсация
+                                                        <th class="sorter-false th-white-blue">Отпускные</th>
+                                                        <th class="sorter-false th-white-blue">Больничные</th>
+                                                        <th class="sorter-false th-white-blue">Командировочные</th>
+                                                        <th class="sorter-false th-white-blue">Затраты на&nbsp;компанию (компенсация
                                                             расходов)</th>
-                                                        <th class="sorter-false">Сверхурочные часы (количество часов)
+                                                        <th class="sorter-false th-white-blue">Сверхурочные часы (количество часов)
                                                         </th>
-                                                        <th class="sorter-false">Сумма за&nbsp;сверхурочные (X2)</th>
-                                                        <th class="sorter-false">За&nbsp;дополнительную работу
+                                                        <th class="sorter-false th-white-blue">Сумма за&nbsp;сверхурочные (X2)</th>
+                                                        <th class="sorter-false th-white-blue">За&nbsp;дополнительную работу
                                                             и&nbsp;бонусы</th>
-                                                        <th class="sorter-false">Часы сверх нормы месяца</th>
-                                                        <th class="sorter-false">Сумма за&nbsp;часы сверх нормы месяца
+                                                        <th class="sorter-false th-white-blue">Часы сверх нормы месяца</th>
+                                                        <th class="sorter-false th-white-blue">Сумма за&nbsp;часы сверх нормы месяца
                                                         </th>
-                                                        <th class="sorter-false th-blue">ИТОГО дополнительные
+                                                        <th class="sorter-false th-white-blue">ИТОГО дополнительные
                                                             выплаты</th>
-                                                        <th class="sorter-false">Удержания</th>
-                                                        <th class="sorter-false">Штрафы по&nbsp;отчетам
+                                                        <th class="sorter-false th-red">Удержания</th>
+                                                        <th class="sorter-false th-red">Штрафы по&nbsp;отчетам
                                                             и&nbsp;нарушениям</th>
-                                                        <th class="sorter-false">Возмещение займа у&nbsp;компании</th>
+                                                        <th class="sorter-false th-red">Возмещение займа у&nbsp;компании</th>
                                                         <th class="sorter-false th-red">ИТОГО удержания</th>
                                                         <th class="sorter-false th-yellow-n">ИТОГО к&nbsp;получению</th>
                                                         <th class="sorter-false th-yellow-n">Первый транш (Оклад)</th>
@@ -471,25 +475,19 @@
                                                 </thead>
                                                 <thead>
                                                     <tr class="tablesorter-ignoreRow">
-                                                        <th class="th-green p-m" colspan="30" id="month-Year">Январь
-                                                            2024</th>
+                                                        <th class="th-green p-m month-Year-first" colspan="31">Январь 2024</th>
                                                     </tr>
-                                                    <!-------------->
                                                     <tr class="tablesorter-ignoreRow">
-                                                        <th class="th-green p-m" style="min-width: 225px;">Норма часов в
+                                                        <th class="th-green p-m" >Норма часов в
                                                             текущем месяце</th>
-                                                        <td class="thead-color" colspan="29"></td>
+                                                        <td class="thead-color" colspan="30"></td>
                                                     </tr>
-                                                    <tr class="tr-gray tablesorter-ignoreRow">
-                                                        <th class="p-m">Отдел</th>
-                                                        <td colspan="29"></td>
-                                                    </tr>
-                                                    <!------------>
                                                 </thead>
                                                 <tbody>
 
-                                                    <tr class="p-s">
+                                                    <tr class="p-s text-center">
                                                         <th>ФИО сотрудника 1</th>
+                                                        <td>Руководство</td>
                                                         <td></td>
                                                         <td></td>
                                                         <td></td>
@@ -499,7 +497,7 @@
                                                             <div class="info">
                                                                 <span class="info__text">40020</span>
                                                                 <input type="number"
-                                                                    class="info__input input-department">
+                                                                    class="text-center info__input input-department">
                                                             </div>
                                                         </td>
                                                         <td></td>
@@ -510,28 +508,28 @@
                                                             <div class="info">
                                                                 <span class="info__text">300</span>
                                                                 <input type="number"
-                                                                    class="info__input input-department">
+                                                                    class="text-center info__input input-department">
                                                             </div>
                                                         </td>
                                                         <td>
                                                             <div class="info">
                                                                 <span class="info__text">300</span>
                                                                 <input type="number"
-                                                                    class="info__input input-department">
+                                                                    class="text-center info__input input-department">
                                                             </div>
                                                         </td>
                                                         <td>
                                                             <div class="info">
                                                                 <span class="info__text">300</span>
                                                                 <input type="number"
-                                                                    class="info__input input-department">
+                                                                    class="text-center info__input input-department">
                                                             </div>
                                                         </td>
                                                         <td class="info info--hover">
                                                             <div class="info">
                                                                 <span class="info__text">300</span>
                                                                 <input type="number"
-                                                                    class="info__input input-department">
+                                                                    class="text-center info__input input-department">
                                                             </div>
                                                             <div class="demo">
                                                                 <button type="button" class="btn info__btn"
@@ -547,7 +545,7 @@
                                                             <div class="info">
                                                                 <span class="info__text">300</span>
                                                                 <input type="number"
-                                                                    class="info__input input-department">
+                                                                    class="text-center info__input input-department">
                                                             </div>
                                                             <div class="demo">
                                                                 <button type="button" class="btn info__btn"
@@ -564,7 +562,7 @@
                                                             <div class="info">
                                                                 <span class="info__text">300</span>
                                                                 <input type="number"
-                                                                    class="info__input input-department">
+                                                                    class="text-center info__input input-department">
                                                             </div>
                                                             <div class="demo">
                                                                 <button type="button" class="btn info__btn"
@@ -578,7 +576,7 @@
                                                             <div class="info">
                                                                 <span class="info__text">300</span>
                                                                 <input type="number"
-                                                                    class="info__input input-department">
+                                                                    class="text-center info__input input-department">
                                                             </div>
                                                             <div class="demo">
                                                                 <button type="button" class="btn info__btn"
@@ -592,7 +590,7 @@
                                                             <div class="info">
                                                                 <span class="info__text">300</span>
                                                                 <input type="number"
-                                                                    class="info__input input-department">
+                                                                    class="text-center info__input input-department">
                                                             </div>
                                                             <div class="demo">
                                                                 <button type="button" class="btn info__btn"
@@ -606,11 +604,18 @@
                                                         <td></td>
                                                         <td></td>
                                                         <td></td>
-                                                        <td></td>
+                                                        <td>
+                                                            <div class="info">
+                                                                <span class="info__text">40020</span>
+                                                                <input type="number"
+                                                                    class="text-center info__input input-department">
+                                                            </div>
+                                                        </td>
                                                         <td></td>
                                                     </tr>
-                                                    <tr class="p-s">
-                                                        <th>ФИО сотрудника 2</th>
+                                                    <tr class="p-s text-center">
+                                                        <td>ФИО сотрудника 2</td>
+                                                        <td>ФИНАНСЫ</td>
                                                         <td></td>
                                                         <td></td>
                                                         <td></td>
@@ -620,7 +625,7 @@
                                                             <div class="info">
                                                                 <span class="info__text">30</span>
                                                                 <input type="number"
-                                                                    class="info__input input-department">
+                                                                    class="text-center info__input input-department">
                                                             </div>
                                                         </td>
                                                         <td></td>
@@ -631,28 +636,28 @@
                                                             <div class="info">
                                                                 <span class="info__text">30</span>
                                                                 <input type="number"
-                                                                    class="info__input input-department">
+                                                                    class="text-center info__input input-department">
                                                             </div>
                                                         </td>
                                                         <td>
                                                             <div class="info">
                                                                 <span class="info__text">300</span>
                                                                 <input type="number"
-                                                                    class="info__input input-department">
+                                                                    class="text-center info__input input-department">
                                                             </div>
                                                         </td>
                                                         <td>
                                                             <div class="info">
                                                                 <span class="info__text">300</span>
                                                                 <input type="number"
-                                                                    class="info__input input-department">
+                                                                    class="text-center info__input input-department">
                                                             </div>
                                                         </td>
                                                         <td class="info info--hover">
                                                             <div class="info">
                                                                 <span class="info__text">300</span>
                                                                 <input type="number"
-                                                                    class="info__input input-department">
+                                                                    class="text-center info__input input-department">
                                                             </div>
                                                             <div class="demo">
                                                                 <button type="button" class="btn info__btn"
@@ -668,7 +673,7 @@
                                                             <div class="info">
                                                                 <span class="info__text">300</span>
                                                                 <input type="number"
-                                                                    class="info__input input-department">
+                                                                    class="text-center info__input input-department">
                                                             </div>
                                                             <div class="demo">
                                                                 <button type="button" class="btn info__btn"
@@ -685,7 +690,7 @@
                                                             <div class="info">
                                                                 <span class="info__text">300</span>
                                                                 <input type="number"
-                                                                    class="info__input input-department">
+                                                                    class="text-center info__input input-department">
                                                             </div>
                                                             <div class="demo">
                                                                 <button type="button" class="btn info__btn"
@@ -699,7 +704,7 @@
                                                             <div class="info">
                                                                 <span class="info__text">300</span>
                                                                 <input type="number"
-                                                                    class="info__input input-department">
+                                                                    class="text-center info__input input-department">
                                                             </div>
                                                             <div class="demo">
                                                                 <button type="button" class="btn info__btn"
@@ -713,7 +718,7 @@
                                                             <div class="info">
                                                                 <span class="info__text">300</span>
                                                                 <input type="number"
-                                                                    class="info__input input-department">
+                                                                    class="text-center info__input input-department">
                                                             </div>
                                                             <div class="demo">
                                                                 <button type="button" class="btn info__btn"
@@ -727,7 +732,13 @@
                                                         <td></td>
                                                         <td></td>
                                                         <td></td>
-                                                        <td></td>
+                                                        <td>
+                                                            <div class="info">
+                                                                <span class="info__text">40020</span>
+                                                                <input type="number"
+                                                                    class="text-center info__input input-department">
+                                                            </div>
+                                                        </td>
                                                         <td></td>
                                                     </tr>
                                                 </tbody>
@@ -756,95 +767,10 @@
     </div>
 
     <!------------------ Скрипт шаблона ----------------------->
-    <script src="js/vendors.bundle.js"></script>
+    <script type="text/javascript" src="js/vendors.bundle.js"></script>
 
     <!------------------ Скрипт шаблона ----------------------->
-    <script src="js/app.bundle.js"></script>
-
-    <!---------- Скрипт на внесение изменений в таблице -------------->
-    <script>
-        const infoEl = document.querySelectorAll('.info');
-
-        infoEl.forEach((item) => {
-            item.addEventListener('click', () => {
-                const spanEl = item.querySelector('.info__text');
-                const inputEl = item.querySelector('.info__input');
-
-                const text = spanEl.textContent;
-                inputEl.value = text;
-
-                if (inputEl.classList.contains('input-department')) {
-                    inputEl.classList.remove('input-department');
-                    spanEl.classList.add('input-department');
-                    inputEl.focus();
-                }
-
-                inputBlur();
-
-            })
-        })
-
-        function inputBlur() {
-            const inputEl = document.querySelector('input:focus');
-
-            inputEl.onblur = function () {
-
-                const spanEl = document.querySelector('.info__text.input-department');
-
-                spanEl.textContent = inputEl.value;
-
-                spanEl.classList.remove('input-department');
-                inputEl.classList.add('input-department');
-
-            }
-        }
-        //////////////////////////////////
-
-        // Скрипт на текст-ареа
-
-        const tableEditBtns = document.querySelectorAll('.info__btn');
-
-        document.addEventListener("DOMContentLoaded", () => {
-            const tableComment = document.querySelectorAll('.info__comment');
-
-            tableComment.forEach((item) => {
-                if (item.textContent !== '') {
-                    item.classList.remove('opacity');
-                } else {
-                    item.classList.add('opacity');
-                }
-            })
-
-
-            for (let i = 0; i < tableEditBtns.length; i++) {
-                const tableComment = tableEditBtns[i].nextElementSibling;
-
-                tableComment.setAttribute('tabindex', `${i}`);
-            }
-
-        });
-
-        let tableComment;
-        const tableTextArea = document.querySelector('.textarea');
-
-        tableEditBtns.forEach(btn => {
-            btn.addEventListener('click', () => {
-                tableComment = btn.nextElementSibling;
-                tableTextArea.value = tableComment.textContent;
-            })
-        });
-
-        tableTextArea.addEventListener('input', () => {
-            tableComment.textContent = tableTextArea.value;
-
-            if (!tableComment.textContent) {
-                tableComment.classList.add('opacity');
-            } else {
-                tableComment.classList.remove('opacity');
-            }
-        })
-
-    </script>
+    <script type="text/javascript" src="js/app.bundle.js"></script>
 
     <!--------------- Подключение плагина Flatpickr ----------------->
     <script type="text/javascript" src="js/formplugins/flatpick/flatpick.js"></script>
@@ -855,76 +781,6 @@
     <!--------------- Виджет отображения месяцев в плагине Flatpickr ----------------->
     <script type="text/javascript" src="js/formplugins/flatpick/flatpick-monthYear.js"></script>
 
-    <!-----------------  Скрипт календаря по месяцам ----------------------->
-    <script>
-        flatpickr('.date', {
-            plugins: [
-                new monthSelectPlugin({
-                    shorthand: true,
-                    dateFormat: "m.y",
-                    altFormat: "F Y",
-                    theme: "white"
-                })
-            ],
-            "locale": "ru",
-            disableMobile: "true"
-        });
-
-
-        const prevMonth = document.querySelector('.flatpickr-prev-month');
-        const nextMonth = document.querySelector('.flatpickr-next-month');
-
-        prevMonth.addEventListener('click', calendar);
-        nextMonth.addEventListener('click', calendar);
-        calendar();
-
-        function calendar() {
-            let months = document.querySelectorAll('.flatpickr-monthSelect-month');
-
-            months.forEach(element => {
-                element.addEventListener('click', () => {
-                    const selectMonth = document.querySelector('.flatpickr-monthSelect-month.selected');
-                    const monthText = selectMonth.textContent;
-                    const yearEl = selectMonth.getAttribute('aria-label').split('').reverse();
-                    const monthYear = document.querySelector('#month-Year');
-
-                    const year = [
-                        yearEl[0],
-                        yearEl[1],
-                        yearEl[2],
-                        yearEl[3]
-                    ]
-                    let month;
-                    if (monthText === 'Янв') {
-                        month = 'Январь';
-                    } else if (monthText === 'Фев') {
-                        month = 'Февраль';
-                    } else if (monthText === 'Апр') {
-                        month = 'Апрель';
-                    } else if (monthText === 'Авг') {
-                        month = 'Август';
-                    } else if (monthText === 'Сен') {
-                        month = 'Сентябрь';
-                    } else if (monthText === 'Окт') {
-                        month = 'Октябрь';
-                    } else if (monthText === 'Ноя') {
-                        month = 'Ноябрь';
-                    } else if (monthText === 'Дек') {
-                        month = 'Декабрь';
-                    } else {
-                        month = monthText;
-                    }
-
-                    const result = year.reverse();
-
-                    monthYear.textContent = `${month} ${result.join('')}`;
-                    console.log(`${month} ${result.join('')}`);
-                })
-            });
-        }
-
-    </script>
-
     <!-- load jQuery and tablesorter scripts -->
     <script type="text/javascript" src="js/formplugins/table-sortered/jquery.tablesorter.js"></script>
 
@@ -932,172 +788,10 @@
     <script type="text/javascript" src="js/formplugins/table-sortered/jquery.tablesorter.widgets.js"></script>
 
     <!--------- Подключение плагина Select2 ------------->
-    <script src="js/formplugins/select2/select2.bundle.js"></script>
+    <script type="text/javascript" src="js/formplugins/select2/select2.bundle.js"></script>
 
-    <!-------------- Подключение виджета filter select2 ----------------->
-    <script>
-        $(function () {
-
-            $('#myTable').tablesorter({
-                theme: 'blue',
-                widgets: ['zebra', 'filter'],
-                widgetOptions: {
-                    filter_reset: '.reset'
-                },
-                headers: {
-                    'no-sorter': {
-                        sorter: false,
-                    },
-                },
-            });
-
-            const selectEl = document.querySelector('select.tablesorter-filter');
-            selectEl.classList.add('js-hide-search', 'form-control');
-
-            const thEl1 = document.querySelector('td[data-column="10"]');
-            const thEl2 = document.querySelector('td[data-column="20"]');
-            const thEl3 = document.querySelector('td[data-column="24"]');
-            const thEl4 = [
-                document.querySelector('td[data-column="25"]'),
-                document.querySelector('td[data-column="26"]'),
-                document.querySelector('td[data-column="27"]'),
-                document.querySelector('td[data-column="28"]'),
-                document.querySelector('td[data-column="29"]')
-            ]
-
-            thEl1.classList.add('th-white-green-n');
-            thEl2.classList.add('th-blue');
-            thEl3.classList.add('th-red');
-
-            thEl4.forEach(element => {
-                element.classList.add('th-yellow-n');
-            });
-
-            const selectTd = document.querySelector('td[data-column="0"]');
-            selectTd.classList.add('select-wrapper');
-        });
-    </script>
-
-    <!----------------- Кнопка скачать файл ---------------------->
-    <script>
-        const downloadBtn = document.querySelector('.download-exl');
-        downloadBtn.addEventListener('click', () => {
-            console.log('download');
-        })
-    </script>
-
-    <!--------- Инициализация плагина Select2 ------------->
-    <script>
-        $(document).ready(function () {
-            $(function () {
-                $('.select2').select2({
-                    dropdownParent: $('.select-wrapper')
-                });
-
-                $(".select2-placeholder-multiple").select2(
-                    {
-                        placeholder: "Select State"
-                    });
-                $(".js-hide-search").select2(
-                    {
-                        dropdownParent: $('.select-wrapper'),
-                        minimumResultsForSearch: 1 / 0
-                    });
-                $(".js-max-length").select2(
-                    {
-                        maximumSelectionLength: 2,
-                        placeholder: "Select maximum 2 items"
-                    });
-                $(".select2-placeholder").select2(
-                    {
-                        placeholder: "Select a state",
-                        allowClear: true
-                    });
-                $(".js-select2-icons").select2(
-                    {
-                        minimumResultsForSearch: 1 / 0,
-                        templateResult: icon,
-                        templateSelection: icon,
-                        escapeMarkup: function (elm) {
-                            return elm
-                        }
-                    });
-
-                function icon(elm) {
-                    elm.element;
-                    return elm.id ? "<i class='" + $(elm.element).data("icon") + " mr-2'></i>" + elm.text : elm.text
-                }
-
-                $(".js-data-example-ajax").select2(
-                    {
-                        ajax:
-                        {
-                            url: "https://api.github.com/search/repositories",
-                            dataType: 'json',
-                            delay: 250,
-                            data: function (params) {
-                                return {
-                                    q: params.term, // search term
-                                    page: params.page
-                                };
-                            },
-                            processResults: function (data, params) {
-                                params.page = params.page || 1;
-
-                                return {
-                                    results: data.items,
-                                    pagination:
-                                    {
-                                        more: (params.page * 30) < data.total_count
-                                    }
-                                };
-                            },
-                            cache: true
-                        },
-                        placeholder: 'Search for a repository',
-                        escapeMarkup: function (markup) {
-                            return markup;
-                        }, // let our custom formatter work
-                        minimumInputLength: 1,
-                        templateResult: formatRepo,
-                        templateSelection: formatRepoSelection
-                    });
-
-                function formatRepo(repo) {
-                    if (repo.loading) {
-                        return repo.text;
-                    }
-
-                    var markup = "<div class='select2-result-repository clearfix d-flex'>" +
-                        "<div class='select2-result-repository__avatar mr-2'><img src='" + repo.owner.avatar_url + "' class='width-2 height-2 mt-1 rounded' /></div>" +
-                        "<div class='select2-result-repository__meta'>" +
-                        "<div class='select2-result-repository__title fs-lg fw-500'>" + repo.full_name + "</div>";
-
-                    if (repo.description) {
-                        markup += "<div class='select2-result-repository__description fs-xs opacity-80 mb-1'>" + repo.description + "</div>";
-                    }
-
-                    markup += "<div class='select2-result-repository__statistics d-flex fs-sm'>" +
-                        "<div class='select2-result-repository__forks mr-2'><i class='fal fa-lightbulb'></i> " + repo.forks_count + " Forks</div>" +
-                        "<div class='select2-result-repository__stargazers mr-2'><i class='fal fa-star'></i> " + repo.stargazers_count + " Stars</div>" +
-                        "<div class='select2-result-repository__watchers mr-2'><i class='fal fa-eye'></i> " + repo.watchers_count + " Watchers</div>" +
-                        "</div>" +
-                        "</div></div>";
-
-                    return markup;
-                }
-
-                function formatRepoSelection(repo) {
-                    return repo.full_name || repo.text;
-                }
-
-            });
-            const tdEl = document.querySelector('td[data-column="0"]');
-            // console.log(tdEl);
-            tdEl.classList.add('position-relativ');
-        });
-
-    </script>
+    <!--------------------- Скрипт для работы страницы ---------------------->
+    <script type="text/javascript" src="js/scripts/summary_table-admin.js"></script>
 
 </body>
 
