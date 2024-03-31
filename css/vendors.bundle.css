@@ -4641,7 +4641,9 @@ a.close.disabled {
   overflow: hidden; }
   .modal-open .modal {
     overflow-x: hidden;
-    overflow-y: auto; }
+    overflow-y: auto; 
+    z-index: 99991;
+  }
 
 .modal {
   position: fixed;
@@ -4739,7 +4741,9 @@ a.close.disabled {
   .modal-backdrop.fade {
     opacity: 0; }
   .modal-backdrop.show {
-    opacity: 0.2; }
+    opacity: 0.2;
+    z-index: 9999; 
+  }
 
 .modal-header {
   display: -webkit-box;

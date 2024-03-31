@@ -22,10 +22,13 @@
     <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
     <link rel="manifest" href="img/favicon/site.webmanifest">
 
-    <link rel="stylesheet" href="css/production-calendar/production-calendar-v2.css">
+
+    <!-- <link rel="stylesheet" href="css/production-calendar/production-calendar-v2.css"> -->
 
     <!-- page related CSS below -->
     <link rel="stylesheet" media="screen, print" href="css/formplugins/select2/select2.bundle.css">
+
+    <link rel="stylesheet" href="css/formplugins/flatpick/flatpick.css">
 
 </head>
 
@@ -408,196 +411,25 @@
                         <div class="col-lg-12">
                             <div id="panel-3" class="panel">
                                 <div class="panel-hdr">
-                                    <script>
-                                        // заполните таблицу месяцев заголовками столбцов
-                                        function day_title(day_name) {
-                                            document.write("<div class='c-cal__col'>" + day_name + "</div>");
-                                        }
-                                        // заполняет таблицу месяцев цифрами
-                                        function fill_table(month, month_length, indexMonth) {
-                                            day = 1;
-                                            // начните с новой таблицы месяцев
-                                            document.write("<div class='c-main c-main-" + indexMonth + "'>");
 
-                                            // заголовки колонок
-                                            document.write("<div class='c-cal__row'>");
-                                            day_title("Пн");
-                                            day_title("Вт");
-                                            day_title("Ср");
-                                            day_title("Чт");
-                                            day_title("Пт");
-                                            day_title("Сб");
-                                            day_title("Вс");
-                                            document.write("</div>");
-
-                                            // ячейки блокнота перед первым днем месяца
-                                            document.write("<div class='c-cal__row'>");
-                                            for (var i = 1; i < start_day; i++) {
-                                                if (start_day > 7) {
-                                                } else {
-                                                    document.write("<div class='c-cal__cel'></div>");
-                                                }
-                                            }
-
-                                            // заполните первую неделю днями
-                                            for (var i = start_day; i < 8; i++) {
-                                                document.write(
-                                                    "<div data-day='2023-" +
-                                                    indexMonth +
-                                                    "-" +
-                                                    day +
-                                                    "'class='c-cal__cel'><p>" +
-                                                    day +
-                                                    "</p></div>"
-                                                );
-                                                day++;
-                                            }
-                                            document.write("</div>");
-
-                                            // заполните оставшиеся недели
-                                            while (day <= month_length) {
-                                                document.write("<div class='c-cal__row'>");
-                                                for (var i = 1; i <= 7 && day <= month_length; i++) {
-                                                    if (day >= 1 && day <= 9) {
-                                                        document.write(
-                                                            "<div data-day='2024-" +
-                                                            indexMonth +
-                                                            "-" +
-                                                            day +
-                                                            "'class='c-cal__cel'><p>" +
-                                                            day +
-                                                            "</p></div>"
-                                                        );
-                                                        day++;
-                                                    } else {
-                                                        document.write(
-                                                            "<div data-day='2024-" +
-                                                            indexMonth +
-                                                            "-" +
-                                                            day +
-                                                            "' class='c-cal__cel'><p>" +
-                                                            day +
-                                                            "</p></div>"
-                                                        );
-                                                        day++;
-                                                    }
-                                                }
-                                                document.write("</div>");
-                                                // первый день следующего месяца
-                                                start_day = i;
-                                            }
-
-                                            document.write("</div>");
-                                        }
-                                    </script>
-                                    <header>
-                                        <div class="wrapper">
-                                            <div class="c-monthyear">
-                                                <div class="c-month">
-                                                    <span id="prev" class="prev fal fa-angle-left"
-                                                        aria-hidden="true"></span>
-                                                    <div id="c-paginator">
-                                                        <span class="c-paginator__month">ЯНВАРЬ</span>
-                                                        <span class="c-paginator__month">ФЕВРАЛЬ</span>
-                                                        <span class="c-paginator__month">МАРТ</span>
-                                                        <span class="c-paginator__month">АПРЕЛЬ</span>
-                                                        <span class="c-paginator__month">МАЙ</span>
-                                                        <span class="c-paginator__month">ИЮНЬ</span>
-                                                        <span class="c-paginator__month">ИЮЛЬ</span>
-                                                        <span class="c-paginator__month">АВГУСТ</span>
-                                                        <span class="c-paginator__month">СЕНТЯБРЬ</span>
-                                                        <span class="c-paginator__month">ОКТЯБРЬ</span>
-                                                        <span class="c-paginator__month">НОЯБРЬ</span>
-                                                        <span class="c-paginator__month">ДЕКАБРЬ</span>
-                                                    </div>
-                                                    <span id="next" class="next fal fa-angle-right"
-                                                        aria-hidden="true"></span>
-                                                </div>
-                                                <!-- Тут указуется текущий год -->
-                                                <span class="c-paginator__year"></span>
-                                            </div>
-
-                                            <div class="panel-toolbar">
-                                                <button class="btn btn-panel" data-action="panel-fullscreen"
-                                                    data-toggle="tooltip" data-offset="0,10"
-                                                    data-original-title="На весь экран"></button>
-                                            </div>
-                                        </div>
-
-                                    </header>
-                                    <!-- justify-content-center -->
-                                    <!-- <div class="panel-toolbar">
-                                        <button class="btn btn-panel" data-action="panel-fullscreen"
-                                            data-toggle="tooltip" data-offset="0,10"
-                                            data-original-title="На весь экран"></button>
-                                    </div> -->
                                 </div>
                                 <div class="panel-container show overflow">
                                     <div class="panel-content">
 
-
-
-                                        <div class="wrapper">
-                                            <div class="c-calendar">
-                                                <div class="c-calendar__style c-aside">
-                                                    <a class="c-add o-btn js-event__add" href="javascript:;">добавить
-                                                        событие<span class="fal fa-plus"></span></a>
-                                                    <div class="c-aside__day">
-                                                        <span class="c-aside__num"></span> <span
-                                                            class="c-aside__month"></span>
-                                                    </div>
-                                                    <div class="c-aside__eventList">
-                                                    </div>
-                                                </div>
-                                                <div class="c-cal__container c-calendar__style">
-                                                    <script>
-
-                                                        // CAHNGE the below variable to the CURRENT YEAR
-                                                        year = 2024;
-
-                                                        // first day of the week of the new year
-                                                        today = new Date("January 1, " + year);
-                                                        start_day = today.getDay() + 1;
-                                                        fill_table("Январь", 31, "01");
-                                                        fill_table("Февраль", 28, "02");
-                                                        fill_table("Март", 31, "03");
-                                                        fill_table("Апрель", 30, "04");
-                                                        fill_table("Май", 31, "05");
-                                                        fill_table("Июнь", 30, "06");
-                                                        fill_table("Июль", 31, "07");
-                                                        fill_table("Август", 31, "08");
-                                                        fill_table("Сентябрь", 30, "09");
-                                                        fill_table("Октябрь", 31, "10");
-                                                        fill_table("Ноябрь", 30, "11");
-                                                        fill_table("Декабрь", 31, "12");
-                                                    </script>
-                                                </div>
-                                            </div>
-
-                                            <div class="c-event__creator c-calendar__style js-event__creator">
-                                                <a href="javascript:;" class="o-btn o-btn--close js-event__close"><span
-                                                        class="fa fa-close"><i class="fal fa-times"></i></span></a>
-                                                <form id="addEvent">
-                                                    <input placeholder="Название события" type="text" name="name" style="display: none;">
-                                                    <input type="date" name="date" style="display: none;">
-                                                    <textarea placeholder="Описание" name="notes" cols="30"
-                                                        rows="10" style="display: none;"></textarea>
-
-                                                    <select name="tags" class="js-hide-search form-control">
-                                                        <option value="event">Рабочий день</option>
-                                                        <option value="important">Выходной день</option>
-                                                        <option value="birthday">Праздничный день</option>
-                                                        <!-- <option value="festivity">festivity</option> -->
-                                                    </select>
-                                                </form>
-                                                <a href="javascript:;" class="o-btn o-btn--center js-event__save">СОХРАНИТЬ <span
-                                                        class="fal fa-save"></span></a>
-                                                <!-- <button type="button" class="o-btn js-event__save">
-                                                    СОХРАНИТЬ <span class="fal fa-save"></span>
-                                                </button> -->
-                                            </div>
+                                        <div style="display: flex; flex-wrap: wrap;">
+                                            <input type="text" class="date1" style="display: none;">
+                                            <input type="text" class="date2" style="display: none;">
+                                            <input type="text" class="date3" style="display: none;">
+                                            <input type="text" class="date4" style="display: none;">
+                                            <input type="text" class="date5" style="display: none;">
+                                            <input type="text" class="date6" style="display: none;">
+                                            <input type="text" class="date7" style="display: none;">
+                                            <input type="text" class="date8" style="display: none;">
+                                            <input type="text" class="date9" style="display: none;">
+                                            <input type="text" class="date10" style="display: none;">
+                                            <input type="text" class="date11" style="display: none;">
+                                            <input type="text" class="date12" style="display: none;">
                                         </div>
-
                                     </div>
                                 </div>
                             </div>
@@ -617,53 +449,130 @@
     <script src="js/vendors.bundle.js"></script>
     <script src="js/app.bundle.js"></script>
 
-    <script src="js/production-calendar/production-calendar-v2.js"></script>
 
     <script src="js/formplugins/select2/select2.bundle.js"></script>
 
+    <!--------------- Подключение плагина Flatpickr ----------------->
+    <script type="text/javascript" src="js/formplugins/flatpick/flatpick.js"></script>
+
+    <!--------------- Русификатор плагина Flatpickr ----------------->
+    <script type="text/javascript" src="js/formplugins/flatpick/ru.js"></script>
+
+    <!-- <script src="js/production-calendar/production-calendar-v2.js"></script> -->
+
     <script>
-        $(document).ready(function () {
-    $(function () {
-        $('.select2').select2({
+        // $(document).ready(function () {
+        //     $(function () {
+        //         $(".js-hide-search").select2(
+        //             {
+        //                 dropdownParent: $('#addEvent'),
+        //                 minimumResultsForSearch: 1 / 0,
+        //             });
+        //     });
+        // });
+    </script>
+
+    <script>
+        
+
+        flatpickr('.date1', {
+            altInput: true,
+            dateFormat: "Y-m-d",
+            "locale": "ru",
+            disableMobile: "true",
+            inline: true,
+            defaultDate: "2024-01-01"
             
         });
-
-        $(".select2-placeholder-multiple").select2(
-            {
-                placeholder: "Select State"
-            });
-        $(".js-hide-search").select2(
-            {
-                dropdownParent: $('#addEvent'),
-                minimumResultsForSearch: 1 / 0
-            });
-        $(".js-max-length").select2(
-            {
-                maximumSelectionLength: 2,
-                placeholder: "Select maximum 2 items"
-            });
-        $(".select2-placeholder").select2(
-            {
-                placeholder: "Select a state",
-                allowClear: true
-            });
-        $(".js-select2-icons").select2(
-            {
-                minimumResultsForSearch: 1 / 0,
-                templateResult: icon,
-                templateSelection: icon,
-                escapeMarkup: function (elm) {
-                    return elm
-                }
-            });
-
-        function icon(elm) {
-            elm.element;
-            return elm.id ? "<i class='" + $(elm.element).data("icon") + " mr-2'></i>" + elm.text : elm.text
-        }
-
-    });
-});
+        flatpickr('.date2', {
+            altInput: true,
+            dateFormat: "Y-m-d",
+            "locale": "ru",
+            disableMobile: "true",
+            inline: true,
+            defaultDate: "2024-02-01"
+            
+        });
+        flatpickr('.date3', {
+            altInput: true,
+            dateFormat: "Y-m-d",
+            "locale": "ru",
+            disableMobile: "true",
+            inline: true,
+            defaultDate: "2024-03-01"
+        });
+        flatpickr('.date4', {
+            altInput: true,
+            dateFormat: "Y-m-d",
+            "locale": "ru",
+            disableMobile: "true",
+            inline: true,
+            defaultDate: "2024-04-01"
+        });
+        flatpickr('.date5', {
+            altInput: true,
+            dateFormat: "Y-m-d",
+            "locale": "ru",
+            disableMobile: "true",
+            inline: true,
+            defaultDate: "2024-05-01"
+        });
+        flatpickr('.date6', {
+            altInput: true,
+            dateFormat: "Y-m-d",
+            "locale": "ru",
+            disableMobile: "true",
+            inline: true,
+            defaultDate: "2024-06-01"
+        });
+        flatpickr('.date7', {
+            altInput: true,
+            dateFormat: "Y-m-d",
+            "locale": "ru",
+            disableMobile: "true",
+            inline: true,
+            defaultDate: "2024-07-01"
+        });
+        flatpickr('.date8', {
+            altInput: true,
+            dateFormat: "Y-m-d",
+            "locale": "ru",
+            disableMobile: "true",
+            inline: true,
+            defaultDate: "2024-08-01"
+        });
+        flatpickr('.date9', {
+            altInput: true,
+            dateFormat: "Y-m-d",
+            "locale": "ru",
+            disableMobile: "true",
+            inline: true,
+            defaultDate: "2024-09-01"
+        });
+        flatpickr('.date10', {
+            altInput: true,
+            dateFormat: "Y-m-d",
+            "locale": "ru",
+            disableMobile: "true",
+            inline: true,
+            defaultDate: "2024-10-01"
+        });
+        flatpickr('.date11', {
+            altInput: true,
+            dateFormat: "Y-m-d",
+            "locale": "ru",
+            disableMobile: "true",
+            inline: true,
+            defaultDate: "2024-11-01"
+        });
+        flatpickr('.date12', {
+            altInput: true,
+            dateFormat: "Y-m-d",
+            "locale": "ru",
+            disableMobile: "true",
+            inline: true,
+            defaultDate: "2024-12-01"
+        });
     </script>
 
 </body>

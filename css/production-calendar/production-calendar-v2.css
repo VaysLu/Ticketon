@@ -317,6 +317,9 @@ header > .wrapper a {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
+  align-items: flex-start;
+  height: calc(100vh);
+  overflow: auto;
 }
 .c-calendar__style {
   background-color: #08763f;
@@ -329,22 +332,38 @@ header > .wrapper a {
 }
 .c-cal__container {
   position: relative;
-  width: calc(100% - 300px);
-  height: 0;
-  padding-bottom: 65%;
-  overflow: hidden;
+  width: 100%;
+  /* width: calc(100% - 380px); */
+  /* height: 0; */
+  /* padding-bottom: 65%; */
+  /*overflow: hidden;
+  */background: transparent!important;
+  box-shadow: none!important;
+  display: grid;
+  gap: 20px;
+  flex: 1;
+}
+.name-month {
+  font-size: 1.3rem;
+  color: #FFFFFF;
 }
 .c-main {
-  position: absolute;
-  top: 0;
+  /* position: absolute; */
+  background-color: #08763f;
+  /* top: 0;
   left: 0;
   bottom: 0;
-  right: 0;
+  right: 0; */
   width: 100%;
   padding: 10px;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
+  border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
 }
 .c-main-01 {
   left: 0;
@@ -485,8 +504,11 @@ header > .wrapper a {
   background-color: #F57170;
 }
 .c-aside {
-  width: 300px;
+  /* width: 300px; */
   padding: 20px;
+  position: sticky;
+  top: 15px;
+  flex: 1;
 }
 .c-aside__day {
   font-size: 28px;
@@ -528,7 +550,7 @@ header > .wrapper a {
   top: 50%;
   left: 50%;
   max-width: 300px;
-  max-height: 170px;
+  max-height: 360px;
   width: 100%;
   height: 100%;
   z-index: 99991;
@@ -593,4 +615,47 @@ select::-ms-expand {
 }
 input {
   height: 40px;
+}
+
+.visib {
+  visibility: hidden;
+}
+
+.head-event {
+  position: relative;
+}
+
+.eve::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  left: -20px;
+  display: block;
+  width: 10px;
+  height: 10px;
+  background-color: #F5F5F5;
+  z-index: 10;
+  padding: 0;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.eve--import::before {
+  background-color: #F57170;
+}
+
+.eve--birth::before {
+  background-color: #FACC2E;
+}
+
+.head-event p{
+  margin: 0;
 }

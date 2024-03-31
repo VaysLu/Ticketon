@@ -24,6 +24,9 @@
 
     <link rel="stylesheet" href="css/production-calendar/production-calendar.css">
 
+    <!-- page related CSS below -->
+    <link rel="stylesheet" media="screen, print" href="css/formplugins/select2/select2.bundle.css">
+
 </head>
 
 <body class="mod-bg-1 ">
@@ -384,7 +387,7 @@
                 <!-- the #js-page-content id is needed for some plugins to initialize -->
                 <main id="js-page-content" role="main" class="page-content">
                     <ol class="breadcrumb page-breadcrumb">
-                        <li class="breadcrumb-item"><a href="index.html">FREEDOM Ticketon</a></li>
+                        <li class="breadcrumb-item"><a href="./">FREEDOM Ticketon</a></li>
                         <li class="breadcrumb-item active">Производственный календарь</li>
                     </ol>
                     <div class="subheader">
@@ -405,118 +408,162 @@
                         <div class="col-lg-12">
                             <div id="panel-3" class="panel">
                                 <div class="panel-hdr">
-                                    <script>
-                                        // fill the month table with column headings
-                                        function day_title(day_name) {
-                                            document.write("<div class='c-cal__col'>" + day_name + "</div>");
-                                        }
-                                        // fills the month table with numbers
-                                        function fill_table(month, month_length, indexMonth) {
-                                            day = 1;
-                                            // begin the new month table
-                                            document.write("<div class='c-main c-main-" + indexMonth + "'>");
-                                            //document.write("<b>"+month+" "+year+"</b>")
+                                    <!-- Сюда скрипт -->
+                                    <!-- <script>
 
-                                            // column headings
-                                            document.write("<div class='c-cal__row'>");
-                                            day_title("Пн");
-                                            day_title("Вт");
-                                            day_title("Ср");
-                                            day_title("Чт");
-                                            day_title("Пт");
-                                            day_title("Сб");
-                                            day_title("Вс");
-                                            document.write("</div>");
+                                        const years = [
+                                            2020,
+                                            2021,
+                                            2022,
+                                            2023,
+                                            2024
+                                        ];
 
-                                            // pad cells before first day of month
-                                            document.write("<div class='c-cal__row'>");
-                                            for (var i = 1; i < start_day; i++) {
-                                                if (start_day > 7) {
-                                                } else {
-                                                    document.write("<div class='c-cal__cel'></div>");
-                                                }
+                                        for (let i = 0; i < years.length; i++) {
+                                            let year = years[i];
+                                            // заполните таблицу месяцев заголовками столбцов
+                                            function day_title(day_name) {
+                                                document.write("<div class='c-cal__col'>" + day_name + "</div>");
                                             }
+                                            // заполняет таблицу месяцев цифрами
+                                            function fill_table(month, month_length, indexMonth) {
+                                                day = 1;
+                                                // начните с новой таблицы месяцев
+                                                document.write("<div class='c-main c-main-" + indexMonth + "'>");
+                                                document.write("<b class='name-month'>" + month + " " + years[i] + "</b>")
 
-                                            // fill the first week of days
-                                            for (var i = start_day; i < 8; i++) {
-                                                document.write(
-                                                    "<div data-day='2023-" +
-                                                    indexMonth +
-                                                    "-0" +
-                                                    day +
-                                                    "'class='c-cal__cel'><p>" +
-                                                    day +
-                                                    "</p></div>"
-                                                );
-                                                day++;
-                                            }
-                                            document.write("</div>");
-
-                                            // fill the remaining weeks
-                                            while (day <= month_length) {
+                                                // заголовки колонок
                                                 document.write("<div class='c-cal__row'>");
-                                                for (var i = 1; i <= 7 && day <= month_length; i++) {
-                                                    if (day >= 1 && day <= 9) {
-                                                        document.write(
-                                                            "<div data-day='2024-" +
-                                                            indexMonth +
-                                                            "-0" +
-                                                            day +
-                                                            "'class='c-cal__cel'><p>" +
-                                                            day +
-                                                            "</p></div>"
-                                                        );
-                                                        day++;
+                                                day_title("Пн");
+                                                day_title("Вт");
+                                                day_title("Ср");
+                                                day_title("Чт");
+                                                day_title("Пт");
+                                                day_title("Сб");
+                                                day_title("Вс");
+                                                document.write("</div>");
+
+                                                // ячейки блокнота перед первым днем месяца
+                                                document.write("<div class='c-cal__row'>");
+                                                for (var i = 1; i < start_day; i++) {
+                                                    if (start_day > 7) {
                                                     } else {
-                                                        document.write(
-                                                            "<div data-day='2024-" +
-                                                            indexMonth +
-                                                            "-" +
-                                                            day +
-                                                            "' class='c-cal__cel'><p>" +
-                                                            day +
-                                                            "</p></div>"
-                                                        );
-                                                        day++;
+                                                        document.write("<div class='c-cal__cel'></div>");
                                                     }
                                                 }
+
+                                                // заполните первую неделю днями
+                                                for (var i = start_day; i < 8; i++) {
+                                                    document.write(
+                                                        "<div data-day='2024-" +
+                                                        indexMonth +
+                                                        "-0" +
+                                                        day +
+                                                        "'class='c-cal__cel'><p>" +
+                                                        day +
+                                                        "</p></div>"
+                                                    );
+                                                    day++;
+                                                }
                                                 document.write("</div>");
-                                                // the first day of the next month
-                                                start_day = i;
+
+                                                // заполните оставшиеся недели
+                                                while (day <= month_length) {
+                                                    document.write("<div class='c-cal__row'>");
+                                                    for (var i = 1; i <= 7 && day <= month_length; i++) {
+                                                        if (day >= 1 && day <= 9) {
+                                                            document.write(
+                                                                "<div data-day='2024-" +
+                                                                indexMonth +
+                                                                "-0" +
+                                                                day +
+                                                                "'class='c-cal__cel'><p>" +
+                                                                day +
+                                                                "</p></div>"
+                                                            );
+                                                            day++;
+                                                        } else {
+                                                            document.write(
+                                                                "<div data-day='2024-" +
+                                                                indexMonth +
+                                                                "-" +
+                                                                day +
+                                                                "' class='c-cal__cel'><p>" +
+                                                                day +
+                                                                "</p></div>"
+                                                            );
+                                                            day++;
+                                                        }
+                                                    }
+                                                    document.write("</div>");
+                                                    // первый день следующего месяца
+                                                    start_day = i;
+                                                }
+
+                                                document.write("</div>");
                                             }
 
-                                            document.write("</div>");
+                                            // первый день недели нового года
+                                            today = new Date("January 1, " + 2017);
+                                            start_day = today.getDay() + 1;
+
+                                            // console.log(today);
+
+                                            // Кол-во дней в году
+                                            function daysInMonth(month, year) {
+                                                return new Date(year, month, 0).getDate();
+                                            }
+
+
+
+
+
+                                            fill_table("Январь", daysInMonth(1, year), "01");
+                                            fill_table("Февраль", daysInMonth(2, year), "02");
+                                            fill_table("Март", daysInMonth(3, year), "03");
+                                            fill_table("Апрель", daysInMonth(4, year), "04");
+                                            fill_table("Май", daysInMonth(5, year), "05");
+                                            fill_table("Июнь", daysInMonth(6, year), "06");
+                                            fill_table("Июль", daysInMonth(7, year), "07");
+                                            fill_table("Август", daysInMonth(8, year), "08");
+                                            fill_table("Сентябрь", daysInMonth(9, year), "09");
+                                            fill_table("Октябрь", daysInMonth(10, year), "10");
+                                            fill_table("Ноябрь", daysInMonth(11, year), "11");
+                                            fill_table("Декабрь", daysInMonth(12, year), "12");
+
                                         }
-                                    </script>
+
+
+                                    </script> -->
                                     <header>
                                         <div class="wrapper">
                                             <div class="c-monthyear">
-                                                <div class="c-month">
-                                                    <span id="prev" class="prev fal fa-angle-left"
-                                                        aria-hidden="true"></span>
-                                                    <div id="c-paginator">
-                                                        <span class="c-paginator__month">ЯНВАРЬ</span>
-                                                        <span class="c-paginator__month">ФЕВРАЛЬ</span>
-                                                        <span class="c-paginator__month">МАРТ</span>
-                                                        <span class="c-paginator__month">АПРЕЛЬ</span>
-                                                        <span class="c-paginator__month">МАЙ</span>
-                                                        <span class="c-paginator__month">ИЮНЬ</span>
-                                                        <span class="c-paginator__month">ИЮЛЬ</span>
-                                                        <span class="c-paginator__month">АВГУСТ</span>
-                                                        <span class="c-paginator__month">СЕНТЯБРЬ</span>
-                                                        <span class="c-paginator__month">ОКТЯБРЬ</span>
-                                                        <span class="c-paginator__month">НОЯБРЬ</span>
-                                                        <span class="c-paginator__month">ДЕКАБРЬ</span>
-                                                    </div>
-                                                    <span id="next" class="next fal fa-angle-right"
-                                                        aria-hidden="true"></span>
-                                                </div>
-                                                <!-- <span class="c-paginator__year">2023</span> -->
+                                                <button class="prev-year"
+                                                    onclick="`${prevYear($('.c-paginator__year').text())}`">
+                                                    <span class="prev fal fa-angle-left" aria-hidden="true"></span>
+                                                </button>
+                                                <!-- Тут указуется текущий год -->
                                                 <span class="c-paginator__year"></span>
+                                                <button class="next-year"
+                                                    onclick="`${nextYear($('.c-paginator__year').text())}`">
+                                                    <span class="next fal fa-angle-right" aria-hidden="true"></span>
+                                                </button>
                                             </div>
-                                            <!-- <div class="c-sort">
-                                            <a class="o-btn c-today__btn" href="javascript:;">TODAY</a>
-                                          </div> -->
+                                            <div class="head-event__block">
+                                                <div class="head-event eve">
+                                                    <p>Рабочий день</p>
+                                                </div>
+                                                <div class="head-event eve eve--import">
+                                                    <p>Выходной день</p>
+                                                </div>
+                                                <div class="head-event eve eve--birth">
+                                                    <p>Праздничный день</p>
+                                                </div>
+                                            </div>
+
+                                            <button class="save-date o-btn" type="button"
+                                                onclick="saveData()">Сохранить</button>
+
                                             <div class="panel-toolbar">
                                                 <button class="btn btn-panel" data-action="panel-fullscreen"
                                                     data-toggle="tooltip" data-offset="0,10"
@@ -525,73 +572,193 @@
                                         </div>
 
                                     </header>
-                                    <!-- justify-content-center -->
-                                    <!-- <div class="panel-toolbar">
-                                        <button class="btn btn-panel" data-action="panel-fullscreen"
-                                            data-toggle="tooltip" data-offset="0,10"
-                                            data-original-title="На весь экран"></button>
-                                    </div> -->
                                 </div>
+
                                 <div class="panel-container show overflow">
                                     <div class="panel-content">
-
-
 
                                         <div class="wrapper">
                                             <div class="c-calendar">
                                                 <div class="c-calendar__style c-aside">
-                                                    <a class="c-add o-btn js-event__add" href="javascript:;">добавить
-                                                        событие<span class="fal fa-plus"></span></a>
+                                                    <a class="c-add o-btn js-event__add" href="javascript:;">добавить<span class="fal fa-plus"></span></a>
                                                     <div class="c-aside__day">
                                                         <span class="c-aside__num"></span> <span
                                                             class="c-aside__month"></span>
                                                     </div>
                                                     <div class="c-aside__eventList">
+                                                        <!--  Notes  -->
                                                     </div>
                                                 </div>
                                                 <div class="c-cal__container c-calendar__style">
                                                     <script>
+                                                        // первый день недели нового года
+                                                        var dateObj = new Date();
+                                                        let hours = dateObj.getHours();
+                                                        if(hours <= 9) {
+                                                            hours = `0${hours}`;
+                                                            // console.log(hours);
+                                                        }
+                                                        let minutes = dateObj.getMinutes();
+                                                        if(minutes <= 9) {
+                                                            minutes = `0${minutes}`;
+                                                            // console.log(minutes);
+                                                        }
+                                                        const defaultYear = dateObj.getFullYear();
 
-                                                        // CAHNGE the below variable to the CURRENT YEAR
-                                                        year = 2024;
+                                                        today = new Date("January 1, " + `${defaultYear}`);
+                                                        start_day = today.getDay();
 
-                                                        // first day of the week of the new year
-                                                        today = new Date("January 1, " + year);
-                                                        start_day = today.getDay() + 1;
-                                                        fill_table("Январь", 31, "01");
-                                                        fill_table("Февраль", 28, "02");
-                                                        fill_table("Март", 31, "03");
-                                                        fill_table("Апрель", 30, "04");
-                                                        fill_table("Май", 31, "05");
-                                                        fill_table("Июнь", 30, "06");
-                                                        fill_table("Июль", 31, "07");
-                                                        fill_table("Август", 31, "08");
-                                                        fill_table("Сентябрь", 30, "09");
-                                                        fill_table("Октябрь", 31, "10");
-                                                        fill_table("Ноябрь", 30, "11");
-                                                        fill_table("Декабрь", 31, "12");
+                                                        // console.log(dateObj);
+                                                        // console.log(hours);
+                                                        // console.log(minutes);
+
+                                                        function getWeekDay(year, month, day, dayOfWeek) {
+                                                            const date = new Date(`${year}-${month}-${day}T${hours}:${minutes}`);
+                                                            const options = { weekday: 'long' };
+                                                            return dayOfWeek = date.toLocaleString('en-US', options);
+                                                        }
+                                                        // console.log(getWeekDay('2024', '01', '07'));
+
+                                                        const years = [
+                                                            dateObj.getUTCFullYear(),
+                                                            dateObj.getUTCFullYear() + 1,
+                                                        ];
+
+                                                        let yearEl = document.querySelector('.c-paginator__year');
+                                                        yearEl.textContent = years[0];
+
+                                                        for (let i = 0; i < years.length; i++) {
+                                                            let year = years[i];
+                                                            // заполните таблицу месяцев заголовками столбцов
+                                                            function day_title(day_name) {
+                                                                document.write(`<div class='c-cal__col'>${day_name}</div>`);
+                                                            }
+                                                            // заполняет таблицу месяцев цифрами
+                                                            function fill_table(month, month_length, indexMonth) {
+                                                                day = 1;
+                                                                // начните с новой таблицы месяцев
+                                                                document.write("<div class='c-main c-main-" + indexMonth + "'>");
+                                                                document.write("<b class='name-month'>" + month + " " + year + "</b>")
+
+                                                                // заголовки колонок
+                                                                document.write("<div class='c-cal__row'>");
+                                                                day_title("Пн");
+                                                                day_title("Вт");
+                                                                day_title("Ср");
+                                                                day_title("Чт");
+                                                                day_title("Пт");
+                                                                day_title("Сб");
+                                                                day_title("Вс");
+                                                                document.write("</div>");
+
+                                                                // ячейки блокнота перед первым днем месяца
+                                                                document.write("<div class='c-cal__row c-cal__row--mod'>");
+                                                                for (var i = 1; i < start_day; i++) {
+                                                                    if (start_day > 7) {
+                                                                    } else {
+                                                                        document.write("<div class='c-cal__cel visib'></div>");
+                                                                    }
+                                                                }
+
+                                                                // заполните первую неделю днями
+                                                                for (var i = start_day; i < 8; i++) {
+                                                                    document.write(
+                                                                        `<div data-day='${year}-` +
+                                                                        indexMonth +
+                                                                        "-0" +
+                                                                        day +
+                                                                        `'class='c-cal__cel c-cal__data' day-week='${getWeekDay(`${year}`, `${indexMonth}`, `0${day}`)}'><p>` +
+                                                                        day +
+                                                                        "</p></div>"
+                                                                    );
+                                                                    day++;
+                                                                }
+                                                                document.write("</div>");
+
+                                                                // заполните оставшиеся недели
+                                                                while (day <= month_length) {
+                                                                    document.write("<div class='c-cal__row c-cal__row--mod'>");
+                                                                    for (var i = 1; i <= 7 && day <= month_length; i++) {
+                                                                        if (day >= 1 && day <= 9) {
+                                                                            document.write(
+                                                                                `<div data-day='${year}-` +
+                                                                                indexMonth +
+                                                                                "-0" +
+                                                                                day +
+                                                                                `'class='c-cal__cel c-cal__data' day-week='${getWeekDay(`${year}`, `${indexMonth}`, `0${day}`)}'><p>` +
+                                                                                day +
+                                                                                "</p></div>"
+                                                                            );
+                                                                            day++;
+                                                                        } else {
+                                                                            document.write(
+                                                                                `<div data-day='${year}-` +
+                                                                                indexMonth +
+                                                                                "-" +
+                                                                                day +
+                                                                                `'class='c-cal__cel c-cal__data' day-week='${getWeekDay(`${year}`, `${indexMonth}`, `${day}`)}'><p>` +
+                                                                                day +
+                                                                                "</p></div>"
+                                                                            );
+                                                                            day++;
+                                                                        }
+                                                                    }
+                                                                    document.write("</div>");
+                                                                    // первый день следующего месяца
+                                                                    start_day = i;
+                                                                }
+
+                                                                document.write("</div>");
+                                                            }
+                                                            // Кол-во дней в году
+                                                            function daysInMonth(month, year) {
+                                                                return new Date(year, month, 0).getDate();
+                                                            }
+                                                            //Заполняет таблицу месяцами
+                                                            function fill_month() {
+                                                                document.write(`<div class="tabel-month-${year} tab-mon">`);
+
+                                                                fill_table("Январь", daysInMonth(1, year), "01");
+                                                                fill_table("Февраль", daysInMonth(2, year), "02");
+                                                                fill_table("Март", daysInMonth(3, year), "03");
+                                                                fill_table("Апрель", daysInMonth(4, year), "04");
+                                                                fill_table("Май", daysInMonth(5, year), "05");
+                                                                fill_table("Июнь", daysInMonth(6, year), "06");
+                                                                fill_table("Июль", daysInMonth(7, year), "07");
+                                                                fill_table("Август", daysInMonth(8, year), "08");
+                                                                fill_table("Сентябрь", daysInMonth(9, year), "09");
+                                                                fill_table("Октябрь", daysInMonth(10, year), "10");
+                                                                fill_table("Ноябрь", daysInMonth(11, year), "11");
+                                                                fill_table("Декабрь", daysInMonth(12, year), "12");
+
+                                                                document.write('</div>');
+                                                            }
+
+                                                            fill_month();
+
+                                                        }
+
                                                     </script>
                                                 </div>
                                             </div>
 
                                             <div class="c-event__creator c-calendar__style js-event__creator">
-                                                <a href="javascript:;" class="o-btn js-event__close">ЗАКРЫТЬ <span
+                                                <a href="javascript:;" class="o-btn o-btn--close js-event__close"><span
                                                         class="fa fa-close"><i class="fal fa-times"></i></span></a>
                                                 <form id="addEvent">
-                                                    <input placeholder="Название события" type="text" name="name">
-                                                    <input type="date" name="date">
-                                                    <textarea placeholder="Описание" name="notes" cols="30"
-                                                        rows="10"></textarea>
-                                                    <select name="tags">
+                                                    <input type="hidden" name="date">
+                                                    <select name="tags" class="js-hide-search form-control">
                                                         <option value="event">Рабочий день</option>
                                                         <option value="important">Выходной день</option>
                                                         <option value="birthday">Праздничный день</option>
-                                                        <!-- <option value="festivity">festivity</option> -->
                                                     </select>
+                                                    <textarea class="text-notes display-none" placeholder="Notes" name="notes" cols="30"
+                                                        rows="10"></textarea>
                                                 </form>
-                                                <br>
-                                                <a href="javascript:;" class="o-btn js-event__save">СОХРАНИТЬ <span
-                                                        class="fal fa-save"></span></a>
+                                                <a href="javascript:;"
+                                                    class="o-btn o-btn--center js-event__save">СОХРАНИТЬ <span
+                                                        class="fal fa-save"></span>
+                                                </a>
                                             </div>
                                         </div>
 
@@ -613,6 +780,9 @@
 
     <script src="js/vendors.bundle.js"></script>
     <script src="js/app.bundle.js"></script>
+
+
+    <script src="js/formplugins/select2/select2.bundle.js"></script>
 
     <script src="js/production-calendar/production-calendar.js"></script>
 
