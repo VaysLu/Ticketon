@@ -1,19 +1,8 @@
-
 body {
   position: realative;
   height: 100%;
 }
-/* body.overlay:before {
-  position: fixed;
-  content: '';
-  display: block;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.4);
-  z-index: 8999;
-} */
+
 .panel {
   position: relative;
 }
@@ -70,8 +59,6 @@ body {
 }
 /* STYLE ===========================================================*/
 header {
-  /* position: fixed; */
-  /* height: 80px; */
   width: 100%;
   z-index: 50;
   background: #08763f;
@@ -80,7 +67,6 @@ header > .wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* padding: 0 20px; */
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -102,8 +88,6 @@ header > .wrapper a {
 }
 .c-month {
   position: relative;
-  /* height: 80px; */
-  /* line-height: 80px; */
   display: flex;
   align-items: center;
 }
@@ -111,9 +95,7 @@ header > .wrapper a {
   position: relative;
   width: 200px;
   display: block;
-  /* height: 80px; */
   height: 40px;
-  /* line-height: 80px; */
   line-height: 40px;
   text-align: center;
   overflow: hidden;
@@ -207,12 +189,14 @@ header > .wrapper a {
   padding: 2px 14px;
   background-color: #2ed315;
 }
-.c-paginator__year {
-  /* height: 80px; */
-  /* line-height: 80px; */
+.c-monthyear__year {
   line-height: 40px;
   padding: 0 12px;
 }
+/* .c-paginator__year {
+  line-height: 40px;
+  padding: 0 12px;
+} */
 .o-btn {
   display: inline-block;
   padding: 0 10px;
@@ -275,7 +259,6 @@ header > .wrapper a {
   box-shadow: 0 0 4px 2px rgba(55, 188, 35, 1);
 }
 .c-calendar {
-  /* padding-top: 80px; */
   display: flex;
   justify-content: space-between;
   flex-direction: row;
@@ -283,9 +266,8 @@ header > .wrapper a {
   height: calc(100vh - 360px);
   overflow: auto;
 }
-.c-calendar__style {
+.wrapper__c-calendar__style {
   background-color: #08763f;
-  /* margin: 20px; */
   margin: 0 20px 20px;
   padding: 20px/2;
   box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.18);
@@ -293,16 +275,12 @@ header > .wrapper a {
   border-radius: 6px;
   -webkit-border-radius: 6px;
 }
-.c-cal__container {
+.c-calendar__c-cal__container {
   position: relative;
   width: 100%;
-  /* width: calc(100% - 380px); */
-  /* height: 0; */
-  /* padding-bottom: 65%; */
   overflow: hidden;
   background: transparent!important;
   box-shadow: none!important;
-  /* display: grid; */
   display: flex;
   gap: 20px;
   flex: 1;
@@ -312,12 +290,7 @@ header > .wrapper a {
   color: #FFFFFF;
 }
 .c-main {
-  /* position: absolute; */
   background-color: #08763f;
-  /* top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0; */
   width: 100%;
   padding: 10px;
   box-sizing: border-box;
@@ -389,7 +362,6 @@ header > .wrapper a {
   transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
   -webkit-transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
   color: #FFFFFF;
-  /* height: 45px; */
 }
 .c-cal__cel p {
   position: absolute;
@@ -415,7 +387,6 @@ header > .wrapper a {
   padding-top: 100%;
 }
 .c-cal__cel:nth-child(1) p {
-  /* background: rgba(215, 16, 15, 0.2); */
   color: #ffffff;
 }
 .c-cal__cel:nth-child(7) p {
@@ -470,10 +441,8 @@ header > .wrapper a {
   background-color: #F57170;
 }
 .c-aside {
-  /* width: 300px; */
   padding: 20px;
   position: sticky;
-  /* top: 15px; */
   top: 0;
   flex: 1;
 }
@@ -512,14 +481,12 @@ header > .wrapper a {
 .c-aside__event--important:before {
   background-color: #F57170;
 }
-.c-event__creator {
+.wrapper__c-event__creator {
   position: fixed;
   top: 50%;
   left: 50%;
   max-width: 300px;
-  /* max-height: 360px; */
   width: 100%;
-  /* height: 100%; */
   z-index: 99999;
   padding: 20px;
   visibility: hidden;
@@ -532,21 +499,21 @@ header > .wrapper a {
   transform: translate(-50%, -50%) scale(0.9);
   -webkit-transform: translate(-50%, -50%) scale(0.9);
 }
-.c-event__creator.long {
+.wrapper__c-event__creator.long {
   transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
   -webkit-transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
-.c-event__creator.elastic {
+.wrapper__c-event__creator.elastic {
   transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   -webkit-transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-.c-event__creator form {
+.wrapper__c-event__creator form {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
 }
-.c-event__creator.isVisible {
+.wrapper__c-event__creator.isVisible {
   transform: translate(-50%, -50%) scale(1);
   -webkit-transform: translate(-50%, -50%) scale(1);
   opacity: 1;
@@ -616,7 +583,7 @@ input {
   line-height: 28px;
 }
 
-.head-event__block {
+.wrapper__head-event__block {
   display: flex;
   justify-content: space-between;
   gap: 20px 40px;
@@ -686,20 +653,17 @@ input {
 }
 
 @media screen and (max-width: 1130px) {
-  .head-event__block {
+  .wrapper__head-event__block {
     flex-direction: column;
     padding: 10px 0;
     gap: 10px 40px;
   }
 }
 @media screen and (max-width: 800px) {
-  .c-cal__container {
+  .c-calendar__c-cal__container {
     flex: 2;
   }
   .c-add{
-    /* letter-spacing: 0; */
-    /* display: flex; */
-    /* align-items: center; */
     height: auto;
   }
   .c-aside {
@@ -761,7 +725,7 @@ input {
 }
 }
 @media screen and (max-width: 540px) {
-  .head-event__block {
+  .wrapper__head-event__block {
     order: 1;
     flex-direction: row;
     width: 100%;
@@ -773,7 +737,7 @@ input {
   .c-monthyear {
     margin: 0;
   }
-  .c-calendar__style {
+  .wrapper__c-calendar__style {
     margin: 0;
   }
 }

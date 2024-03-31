@@ -21,10 +21,10 @@ var monthText = [
 ];
 
 var indexMonth = month;
-var addBtn = $(".js-event__add");
-var saveBtn = $(".js-event__save");
-var closeBtn = $(".js-event__close");
-var winCreator = $(".js-event__creator");
+var addBtn = $("#js-event__add");
+var saveBtn = $("#js-event__save");
+var closeBtn = $("#js-event__close");
+var winCreator = $("#js-event__creator");
 var inputDate = $(this).data();
 // today = year + "-" + month + "-" + day;
 
@@ -35,6 +35,22 @@ if (month < 10) {
 }
 
 // ------ управление функциями -------
+
+// по умолчанию выставление рабочих дней и выходных
+$('div.c-cal__data').each(function () {
+  if ($(this).attr('day-week') === 'Sunday' || $(this).attr('day-week') === 'Saturday') {
+    $(this).addClass('event');
+    $(this).addClass('event--important');
+    $(this).attr('data-notes', '');
+    $(this).attr('data-tags', 'important');
+  }
+  if ($(this).attr('day-week') !== 'Sunday' & $(this).attr('day-week') !== 'Saturday') {
+    $(this).addClass('event');
+    $(this).addClass('event--event');
+    $(this).attr('data-notes', '');
+    $(this).attr('data-tags', 'event');
+  }
+})
 
 
 //высветите значение текущего дня
@@ -193,21 +209,8 @@ dataCel.on("click", function () {
 $(".c-aside__num").text(day);
 $(".c-aside__month").text(monthText[month - 1]);
 
-//
-$('div.c-cal__data').each(function () {
-  if ($(this).attr('day-week') === 'Sunday' || $(this).attr('day-week') === 'Saturday') {
-    $(this).addClass('event');
-    $(this).addClass('event--important');
-    $(this).attr('data-notes', '');
-    $(this).attr('data-tags', 'important');
-  }
-  if ($(this).attr('day-week') !== 'Sunday' & $(this).attr('day-week') !== 'Saturday') {
-    $(this).addClass('event');
-    $(this).addClass('event--event');
-    $(this).attr('data-notes', '');
-    $(this).attr('data-tags', 'event');
-  }
-})
+
+
 
 //Определяем активный календарь
 $(`div.tabel-month-${year}`).addClass('active-year');
@@ -240,7 +243,8 @@ function nextYear(year) {
   $(`.tabel-month-${year}`).addClass('pos-abs');
   $(`div.tabel-month-${year}`).removeClass('active-year');
   const newYear = ++year;
-  $('.c-paginator__year').text(newYear);
+  // $('.c-paginator__year').text(newYear);
+  $('.c-monthyear__year').text(newYear);
   $(`div.tabel-month-${newYear}`).addClass('active-year');
 
   disabled(newYear);
@@ -251,7 +255,8 @@ function prevYear(year) {
   const newYear = --year;
   $(`div.tabel-month-${newYear}`).addClass('active-year');
   $(`.tabel-month-${newYear}`).removeClass('pos-abs');
-  $('.c-paginator__year').text(newYear);
+  // $('.c-paginator__year').text(newYear);
+  $('.c-monthyear__year').text(newYear);
   disabled(newYear);
 }
 
@@ -274,7 +279,8 @@ function disabled(year) {
     $('.next-year').attr('disabled', false);
   }
 }
-disabled($('.c-paginator__year').text())
+disabled($('.c-monthyear__year').text())
+// disabled($('.c-paginator__year').text())
 
 
 

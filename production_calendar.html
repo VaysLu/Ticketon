@@ -539,17 +539,17 @@
                                         <div class="wrapper">
                                             <div class="c-monthyear">
                                                 <button class="prev-year"
-                                                    onclick="`${prevYear($('.c-paginator__year').text())}`">
+                                                    onclick="`${prevYear($('.c-monthyear__year').text())}`">
                                                     <span class="prev fal fa-angle-left" aria-hidden="true"></span>
                                                 </button>
                                                 <!-- Тут указуется текущий год -->
-                                                <span class="c-paginator__year"></span>
+                                                <span class="c-monthyear__year"></span>
                                                 <button class="next-year"
-                                                    onclick="`${nextYear($('.c-paginator__year').text())}`">
+                                                    onclick="`${nextYear($('.c-monthyear__year').text())}`">
                                                     <span class="next fal fa-angle-right" aria-hidden="true"></span>
                                                 </button>
                                             </div>
-                                            <div class="head-event__block">
+                                            <div class="wrapper__head-event__block">
                                                 <div class="head-event eve">
                                                     <p>Рабочий день</p>
                                                 </div>
@@ -579,8 +579,8 @@
 
                                         <div class="wrapper">
                                             <div class="c-calendar">
-                                                <div class="c-calendar__style c-aside">
-                                                    <a class="c-add o-btn js-event__add" href="javascript:;">добавить<span class="fal fa-plus"></span></a>
+                                                <div class="wrapper__c-calendar__style c-aside">
+                                                    <a class="c-add o-btn" id="js-event__add" href="javascript:;">добавить<span class="fal fa-plus"></span></a>
                                                     <div class="c-aside__day">
                                                         <span class="c-aside__num"></span> <span
                                                             class="c-aside__month"></span>
@@ -589,7 +589,7 @@
                                                         <!--  Notes  -->
                                                     </div>
                                                 </div>
-                                                <div class="c-cal__container c-calendar__style">
+                                                <div class="c-calendar__c-cal__container wrapper__c-calendar__style">
                                                     <script>
                                                         // первый день недели нового года
                                                         var dateObj = new Date();
@@ -624,7 +624,8 @@
                                                             dateObj.getUTCFullYear() + 1,
                                                         ];
 
-                                                        let yearEl = document.querySelector('.c-paginator__year');
+                                                        // let yearEl = document.querySelector('.c-paginator__year');
+                                                        let yearEl = document.querySelector('.c-monthyear__year');
                                                         yearEl.textContent = years[0];
 
                                                         for (let i = 0; i < years.length; i++) {
@@ -742,8 +743,8 @@
                                                 </div>
                                             </div>
 
-                                            <div class="c-event__creator c-calendar__style js-event__creator">
-                                                <a href="javascript:;" class="o-btn o-btn--close js-event__close"><span
+                                            <div class="wrapper__c-event__creator wrapper__c-calendar__style" id="js-event__creator">
+                                                <a href="javascript:;" class="o-btn o-btn--close" id="js-event__close"><span
                                                         class="fa fa-close"><i class="fal fa-times"></i></span></a>
                                                 <form id="addEvent">
                                                     <input type="hidden" name="date">
@@ -756,7 +757,7 @@
                                                         rows="10"></textarea>
                                                 </form>
                                                 <a href="javascript:;"
-                                                    class="o-btn o-btn--center js-event__save">СОХРАНИТЬ <span
+                                                    class="o-btn o-btn--center" id="js-event__save">СОХРАНИТЬ <span
                                                         class="fal fa-save"></span>
                                                 </a>
                                             </div>
