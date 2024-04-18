@@ -36,7 +36,7 @@ $(document).ready(function () {
             return elm.id ? "<i class='" + $(elm.element).data("icon") + " mr-2'></i>" + elm.text : elm.text
         }
 
-
+       
     });
 });
 
@@ -97,7 +97,7 @@ const tableDate = document.querySelector('.panel-hdr__date'); // Получае�
 // Получаем текущую дату и записываем в строку таблицы
 var date = new Date();
 var currentDate = date.toISOString().substring(0, 10);
-tableDate.textContent = currentDate.split('-').reverse().join('.');
+//tableDate.textContent = currentDate.split('-').reverse().join('.');
 
 const prevMonth = document.querySelector('.flatpickr-prev-month');
 const nextMonth = document.querySelector('.flatpickr-next-month');
@@ -239,11 +239,44 @@ function theSelect() {
     return department;
 }
 
+ function formAjax(result) {
+if(result.length>0)
+ $("input[name='date-work']").val(result.join('-'));
+$("#task_scheduler-form").submit();
+    // console.log(theSelect());
+/* 
+    $.post("task_scheduler.html", {
+        action: "task_scheduler.html",
+        department: theSelect(),
+        date: tableDate.textContent,
+        // data: $('#form').serialize()
+        // name: $("input[name='name']").val(),
+        // number: $("input[name='number']").val(),
+    },
+        function (data) {
+            console.log(data.department);
+            console.log(data.date);
+            // const fio = document.querySelector('#fio');
+            // fio.value = data.fio;
+            // console.log(data.otvet.name);
+        }, "json"
+    ); */
+} 
+
+
 
 ///////////////////   Скрипт на отправку формы ------------------>
 
-function formAjax(result) {
-    if (result.length > 0)
-        $("input[name='date-work']").val(result.join('-'));
-    $("#task_scheduler-form").submit();
-}
+// $.post("test2.php", {
+//             action: "test_1",
+//             // data: $('#form').serialize()
+//             // name: $("input[name='name']").val(),
+//             // number: $("input[name='number']").val(),
+//         },
+//             function (data) {
+//                 console.log(data);
+//                 const fio = document.querySelector('#fio');
+//                 fio.value = data.fio;
+//                 // console.log(data.otvet.name);
+//             }, "json"
+//         );

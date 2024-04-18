@@ -4763,7 +4763,8 @@ html body {
 
 .panel-toolbar .btn-panel[data-action="panel-fullscreen"],
 .panel-toolbar .btn-panel.js-panel-fullscreen {
-  background: #ffc241;
+  /* background: #ffc241; */
+  background: #03ad57;
 }
 
 .panel-toolbar .btn-panel[data-action="panel-close"],
@@ -10330,11 +10331,20 @@ td {
   flex: 1;
 }
 
-.task-scheduler .info {
+.task-scheduler .info,
+.table-lpp .info {
   position: relative;
+  overflow: auto;
 }
 
-.task-scheduler .info__input {
+.task-scheduler .info:hover,
+.table-lpp .info:hover {
+  outline: 1px solid #54ae81!important;
+  outline-offset: -3px;
+}
+
+.task-scheduler .info__input,
+.table-lpp .info__input {
   position: absolute;
   inset: 0;
   height: 100%;
@@ -10420,6 +10430,7 @@ td {
 /*********************************************/
 .task-scheduler {
   min-width: 800px;
+  table-layout: fixed;
 }
 
 .th-white-blue {
@@ -10442,4 +10453,34 @@ td {
 .alert-show {
   border-color: #fd3995;
   display: block;
+}
+
+.panel-hdr--event {
+  background: #F5F5F5;
+}
+.panel-hdr--important {
+  background: #F57170;
+}
+.panel-hdr--birthday {
+  background: #FACC2E;
+}
+
+.vert-center {
+  text-align: center;
+  vertical-align: middle!important;
+}
+
+.tr-gray .info__input {
+  background-color: transparent;
+}
+
+.panel-content--mh {
+  min-height: calc(100vh - 320px);
+}
+
+.table-lpp th {
+  min-width: 115px;
+}
+.sorter-false--size-xl {
+  min-width: 225px!important;
 }

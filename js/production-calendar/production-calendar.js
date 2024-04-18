@@ -222,10 +222,10 @@ function saveData() {
   var data = [];
   $('div.active-year > div.c-main > div.c-cal__row > div.c-cal__data').each(function () {
     if (typeof $(this).attr('data-tags') === 'undefined' || $(this).attr('data-tags') === '') {
-      $(this).attr('data-tags', 'пуст');
+      $(this).attr('data-tags', '');
     }
     if (typeof $(this).attr('data-notes') === 'undefined' || $(this).attr('data-notes') === '') {
-      $(this).attr('data-notes', 'пуст');
+      $(this).attr('data-notes', '');
     }
 
     data.push([
@@ -235,6 +235,15 @@ function saveData() {
     ])
   })
   console.log(data);
+    $.post("ajax.php", {
+             act: "product_calendar",
+             data: data
+         },
+             function (data) {
+                console.log(data);
+               
+             }, "json"
+         );
 }
 
 
@@ -248,6 +257,7 @@ function nextYear(year) {
   $(`div.tabel-month-${newYear}`).addClass('active-year');
 
   disabled(newYear);
+  formAjax(newYear);
 }
 // Назад на 1 год
 function prevYear(year) {
@@ -258,6 +268,13 @@ function prevYear(year) {
   // $('.c-paginator__year').text(newYear);
   $('.c-monthyear__year').text(newYear);
   disabled(newYear);
+
+  formAjax(newYear);
+}
+
+function formAjax(result) {
+  $("input[name='date-year']").val(result);
+ $("#c-monthYear__form").submit();
 }
 
 var yearFull = dateObj.getUTCFullYear();

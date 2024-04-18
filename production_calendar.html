@@ -537,18 +537,21 @@
                                     </script> -->
                                     <header>
                                         <div class="wrapper">
-                                            <div class="c-monthyear">
-                                                <button class="prev-year"
-                                                    onclick="`${prevYear($('.c-monthyear__year').text())}`">
-                                                    <span class="prev fal fa-angle-left" aria-hidden="true"></span>
-                                                </button>
-                                                <!-- Тут указуется текущий год -->
-                                                <span class="c-monthyear__year"></span>
-                                                <button class="next-year"
-                                                    onclick="`${nextYear($('.c-monthyear__year').text())}`">
-                                                    <span class="next fal fa-angle-right" aria-hidden="true"></span>
-                                                </button>
-                                            </div>
+                                            <!-- <div class="c-monthyear"> -->
+                                                <form class="c-monthyear c-monthYear__form" id="c-monthYear__form" action="#" method="GET">
+                                                    <button class="prev-year"
+                                                        onclick="`${prevYear($('.c-monthyear__year').text())}`">
+                                                        <span class="prev fal fa-angle-left" aria-hidden="true"></span>
+                                                    </button>
+                                                    <!-- Тут указуется текущий год -->
+                                                    <span class="c-monthyear__year"></span>
+                                                    <input class="date-table" type="hidden" name="date-year">
+                                                    <button class="next-year"
+                                                        onclick="`${nextYear($('.c-monthyear__year').text())}`">
+                                                        <span class="next fal fa-angle-right" aria-hidden="true"></span>
+                                                    </button>
+                                                </form>
+                                            <!-- </div> -->
                                             <div class="wrapper__head-event__block">
                                                 <div class="head-event eve">
                                                     <p>Рабочий день</p>
@@ -580,7 +583,9 @@
                                         <div class="wrapper">
                                             <div class="c-calendar">
                                                 <div class="wrapper__c-calendar__style c-aside">
-                                                    <a class="c-add o-btn" id="js-event__add" href="javascript:;">добавить<span class="fal fa-plus"></span></a>
+                                                    <a class="c-add o-btn" id="js-event__add"
+                                                        href="javascript:;">добавить<span
+                                                            class="fal fa-plus"></span></a>
                                                     <div class="c-aside__day">
                                                         <span class="c-aside__num"></span> <span
                                                             class="c-aside__month"></span>
@@ -594,12 +599,12 @@
                                                         // первый день недели нового года
                                                         var dateObj = new Date();
                                                         let hours = dateObj.getHours();
-                                                        if(hours <= 9) {
+                                                        if (hours <= 9) {
                                                             hours = `0${hours}`;
                                                             // console.log(hours);
                                                         }
                                                         let minutes = dateObj.getMinutes();
-                                                        if(minutes <= 9) {
+                                                        if (minutes <= 9) {
                                                             minutes = `0${minutes}`;
                                                             // console.log(minutes);
                                                         }
@@ -743,9 +748,11 @@
                                                 </div>
                                             </div>
 
-                                            <div class="wrapper__c-event__creator wrapper__c-calendar__style" id="js-event__creator">
-                                                <a href="javascript:;" class="o-btn o-btn--close" id="js-event__close"><span
-                                                        class="fa fa-close"><i class="fal fa-times"></i></span></a>
+                                            <div class="wrapper__c-event__creator wrapper__c-calendar__style"
+                                                id="js-event__creator">
+                                                <a href="javascript:;" class="o-btn o-btn--close"
+                                                    id="js-event__close"><span class="fa fa-close"><i
+                                                            class="fal fa-times"></i></span></a>
                                                 <form id="addEvent">
                                                     <input type="hidden" name="date">
                                                     <select name="tags" class="js-hide-search form-control">
@@ -753,12 +760,11 @@
                                                         <option value="important">Выходной день</option>
                                                         <option value="birthday">Праздничный день</option>
                                                     </select>
-                                                    <textarea class="text-notes display-none" placeholder="Notes" name="notes" cols="30"
-                                                        rows="10"></textarea>
+                                                    <textarea class="text-notes display-none" placeholder="Notes"
+                                                        name="notes" cols="30" rows="10"></textarea>
                                                 </form>
-                                                <a href="javascript:;"
-                                                    class="o-btn o-btn--center" id="js-event__save">СОХРАНИТЬ <span
-                                                        class="fal fa-save"></span>
+                                                <a href="javascript:;" class="o-btn o-btn--center"
+                                                    id="js-event__save">СОХРАНИТЬ <span class="fal fa-save"></span>
                                                 </a>
                                             </div>
                                         </div>
