@@ -4727,6 +4727,7 @@ html body {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  gap: 20px;
   /* we curve the last button to make it seamless with panel's border radius */
 }
 
@@ -10484,6 +10485,36 @@ td {
 }
 .sorter-false--size-xl {
   min-width: 225px!important;
-=======
->>>>>>> Stashed changes
+}
+
+.save-date {
+  border: none;
+}
+
+.o-btn {
+  display: inline-block;
+  padding: 0 10px;
+  line-height: 30px;
+  height: 30px;
+  background-color: #37bc23;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-radius: 30px/2;
+  -webkit-border-radius: 8px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  color: #FFFFFF;
+  border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+
+.save-date:hover {
+  color: #05552d;
+}
+
+.o-btn:hover {
+  background-color: #2ed315;
+  box-shadow: 0 0 4px 2px rgba(55, 188, 35, 1);
 }
