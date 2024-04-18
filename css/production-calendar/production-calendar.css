@@ -341,7 +341,6 @@ header > .wrapper a {
 .c-cal__row {
   display: flex;
   justify-content: flex-start;
-  height: 3rem;
 }
 .c-cal__col {
   width: calc(100% / 7);
@@ -362,6 +361,7 @@ header > .wrapper a {
   transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
   -webkit-transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
   color: #FFFFFF;
+  height: 3rem;
 }
 .c-cal__cel p {
   position: absolute;
@@ -741,3 +741,13 @@ input {
     margin: 0;
   }
 }
+
+
+/* хром, сафари */
+.panel-container::-webkit-scrollbar { width: 0; }
+
+/* ie 10+ */
+.panel-container { -ms-overflow-style: none; }
+
+/* фф (свойство больше не работает, других способов тоже нет)*/
+.panel-container { overflow: -moz-scrollbars-none; }

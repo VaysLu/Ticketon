@@ -10463,6 +10463,7 @@ td {
 }
 .panel-hdr--birthday {
   background: #FACC2E;
+<<<<<<< Updated upstream
 }
 
 .vert-center {
@@ -10483,4 +10484,6 @@ td {
 }
 .sorter-false--size-xl {
   min-width: 225px!important;
+=======
+>>>>>>> Stashed changes
 }
