@@ -29,6 +29,7 @@ function inputBlur() {
     inputEl.onblur = function () {
 
         const spanEl = document.querySelector('.info__text.input-department');
+        // const spanEl = document.querySelector('.info__text');
 
         spanEl.innerText = inputEl.value;
         infoEl.classList.remove('info-active');
@@ -37,3 +38,9 @@ function inputBlur() {
 
     }
 }
+
+$(document).on("input", "textarea", function () {
+
+    $(this).outerHeight(38).outerHeight(this.scrollHeight);
+    
+    });

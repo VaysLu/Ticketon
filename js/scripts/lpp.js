@@ -8,14 +8,13 @@ $(function () {
         theme: 'blue',
         widgets: ['zebra', 'filter'],
         widgetOptions: {
-            filter_reset: '.reset'
+            filter_reset: '.reset',
         },
         headers: {
             '.no-sorter': {
                 sorter: false,
             },
         },
-        
     });
 
     const selectEl = document.querySelectorAll('select.tablesorter-filter');

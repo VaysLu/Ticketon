@@ -393,7 +393,7 @@
                                     <div class="panel-toolbar">
                                         <button class="save-date o-btn" type="button"
                                                 onclick="saveData()">Сохранить</button>
-                                                
+
                                         <button class="btn btn-panel" data-action="panel-fullscreen"
                                             data-toggle="tooltip" data-offset="0,10"
                                             data-original-title="На весь экран"></button>
@@ -417,13 +417,12 @@
                                                         <th>Фактическое время</th>
                                                     </tr>
                                                 </thead>
-                                                <tbody>
+                                                <tbody class="table-employee-data">
                                                     <tr>
-                                                        <td rowspan="13" class="br-1">ФИО сотрудника</td>
-                                                        <td class="info">
+                                                        <td rowspan="13" class="br-1 data-name">Иванов</td>
+                                                        <td class="info" >
                                                             <div>
-                                                                <span class="info__text">Lorem, ipsum dolor sit
-                                                                    amet</span>
+                                                                <span class="info__text plan-for-day">Пример 1</span>
                                                                 <textarea
                                                                     class="info__input input-department textarea-input"
                                                                     cols="30" row="10"></textarea>
@@ -431,15 +430,14 @@
                                                         </td>
                                                         <td class="text-center info">
                                                             <div>
-                                                                <span class="info__text">60</span>
+                                                                <span class="info__text planned-time">60</span>
                                                                 <input type="number"
                                                                     class="info__input input-department">
                                                             </div>
                                                         </td>
                                                         <td class="info">
                                                             <div>
-                                                                <span class="info__text">Lorem ipsum dolor sit amet
-                                                                    consectetur</span>
+                                                                <span class="info__text fact-of-day">Пример 1-2</span>
                                                                 <textarea
                                                                     class="info__input input-department textarea-input"
                                                                     cols="30" row="10"></textarea>
@@ -447,7 +445,7 @@
                                                         </td>
                                                         <td class="text-center info">
                                                             <div>
-                                                                <span class="info__text">20</span>
+                                                                <span class="info__text fact-time">20</span>
                                                                 <input type="number"
                                                                     class="info__input input-department">
                                                             </div>
@@ -456,7 +454,7 @@
                                                     <tr>
                                                         <td class="info">
                                                             <div>
-                                                                <span class="info__text"></span>
+                                                                <span class="info__text plan-for-day">Ещё один пример 1</span>
                                                                 <textarea
                                                                     class="info__input input-department textarea-input"
                                                                     cols="30" row="10"></textarea>
@@ -464,14 +462,14 @@
                                                         </td>
                                                         <td class="text-center info">
                                                             <div>
-                                                                <span class="info__text"></span>
+                                                                <span class="info__text planned-time"> 31</span>
                                                                 <input type="number"
                                                                     class="info__input input-department">
                                                             </div>
                                                         </td>
                                                         <td class="info">
                                                             <div>
-                                                                <span class="info__text"></span>
+                                                                <span class="info__text fact-of-day">Ещё один пример 1-2</span>
                                                                 <textarea
                                                                     class="info__input input-department textarea-input"
                                                                     cols="30" row="10"></textarea>
@@ -479,39 +477,7 @@
                                                         </td>
                                                         <td class="text-center info">
                                                             <div>
-                                                                <span class="info__text"></span>
-                                                                <input type="number"
-                                                                    class="info__input input-department">
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="info">
-                                                            <div>
-                                                                <span class="info__text"></span>
-                                                                <textarea
-                                                                    class="info__input input-department textarea-input"
-                                                                    cols="30" row="10"></textarea>
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-center info">
-                                                            <div>
-                                                                <span class="info__text"></span>
-                                                                <input type="number"
-                                                                    class="info__input input-department">
-                                                            </div>
-                                                        </td>
-                                                        <td class="info">
-                                                            <div>
-                                                                <span class="info__text"></span>
-                                                                <textarea
-                                                                    class="info__input input-department textarea-input"
-                                                                    cols="30" row="10"></textarea>
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-center info">
-                                                            <div>
-                                                                <span class="info__text"></span>
+                                                                <span class="info__text fact-time">21</span>
                                                                 <input type="number"
                                                                     class="info__input input-department">
                                                             </div>
@@ -520,7 +486,7 @@
                                                     <tr>
                                                         <td class="info">
                                                             <div>
-                                                                <span class="info__text"></span>
+                                                                <span class="info__text plan-for-day"></span>
                                                                 <textarea
                                                                     class="info__input input-department textarea-input"
                                                                     cols="30" row="10"></textarea>
@@ -528,14 +494,14 @@
                                                         </td>
                                                         <td class="text-center info">
                                                             <div>
-                                                                <span class="info__text"></span>
+                                                                <span class="info__text planned-time"></span>
                                                                 <input type="number"
                                                                     class="info__input input-department">
                                                             </div>
                                                         </td>
                                                         <td class="info">
                                                             <div>
-                                                                <span class="info__text"></span>
+                                                                <span class="info__text fact-of-day"></span>
                                                                 <textarea
                                                                     class="info__input input-department textarea-input"
                                                                     cols="30" row="10"></textarea>
@@ -543,39 +509,7 @@
                                                         </td>
                                                         <td class="text-center info">
                                                             <div>
-                                                                <span class="info__text"></span>
-                                                                <input type="number"
-                                                                    class="info__input input-department">
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="info">
-                                                            <div>
-                                                                <span class="info__text"></span>
-                                                                <textarea
-                                                                    class="info__input input-department textarea-input"
-                                                                    cols="30" row="10"></textarea>
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-center info">
-                                                            <div>
-                                                                <span class="info__text"></span>
-                                                                <input type="number"
-                                                                    class="info__input input-department">
-                                                            </div>
-                                                        </td>
-                                                        <td class="info">
-                                                            <div>
-                                                                <span class="info__text"></span>
-                                                                <textarea
-                                                                    class="info__input input-department textarea-input"
-                                                                    cols="30" row="10"></textarea>
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-center info">
-                                                            <div>
-                                                                <span class="info__text"></span>
+                                                                <span class="info__text fact-time"></span>
                                                                 <input type="number"
                                                                     class="info__input input-department">
                                                             </div>
@@ -584,7 +518,7 @@
                                                     <tr>
                                                         <td class="info">
                                                             <div>
-                                                                <span class="info__text"></span>
+                                                                <span class="info__text plan-for-day"></span>
                                                                 <textarea
                                                                     class="info__input input-department textarea-input"
                                                                     cols="30" row="10"></textarea>
@@ -592,14 +526,14 @@
                                                         </td>
                                                         <td class="text-center info">
                                                             <div>
-                                                                <span class="info__text"></span>
+                                                                <span class="info__text planned-time"></span>
                                                                 <input type="number"
                                                                     class="info__input input-department">
                                                             </div>
                                                         </td>
                                                         <td class="info">
                                                             <div>
-                                                                <span class="info__text"></span>
+                                                                <span class="info__text fact-of-day"></span>
                                                                 <textarea
                                                                     class="info__input input-department textarea-input"
                                                                     cols="30" row="10"></textarea>
@@ -607,39 +541,7 @@
                                                         </td>
                                                         <td class="text-center info">
                                                             <div>
-                                                                <span class="info__text"></span>
-                                                                <input type="number"
-                                                                    class="info__input input-department">
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="info">
-                                                            <div>
-                                                                <span class="info__text"></span>
-                                                                <textarea
-                                                                    class="info__input input-department textarea-input"
-                                                                    cols="30" row="10"></textarea>
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-center info">
-                                                            <div>
-                                                                <span class="info__text"></span>
-                                                                <input type="number"
-                                                                    class="info__input input-department">
-                                                            </div>
-                                                        </td>
-                                                        <td class="info">
-                                                            <div>
-                                                                <span class="info__text"></span>
-                                                                <textarea
-                                                                    class="info__input input-department textarea-input"
-                                                                    cols="30" row="10"></textarea>
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-center info">
-                                                            <div>
-                                                                <span class="info__text"></span>
+                                                                <span class="info__text fact-time"></span>
                                                                 <input type="number"
                                                                     class="info__input input-department">
                                                             </div>
@@ -648,7 +550,7 @@
                                                     <tr>
                                                         <td class="info">
                                                             <div>
-                                                                <span class="info__text"></span>
+                                                                <span class="info__text plan-for-day"></span>
                                                                 <textarea
                                                                     class="info__input input-department textarea-input"
                                                                     cols="30" row="10"></textarea>
@@ -656,14 +558,14 @@
                                                         </td>
                                                         <td class="text-center info">
                                                             <div>
-                                                                <span class="info__text"></span>
+                                                                <span class="info__text planned-time"></span>
                                                                 <input type="number"
                                                                     class="info__input input-department">
                                                             </div>
                                                         </td>
                                                         <td class="info">
                                                             <div>
-                                                                <span class="info__text"></span>
+                                                                <span class="info__text fact-of-day"></span>
                                                                 <textarea
                                                                     class="info__input input-department textarea-input"
                                                                     cols="30" row="10"></textarea>
@@ -671,39 +573,7 @@
                                                         </td>
                                                         <td class="text-center info">
                                                             <div>
-                                                                <span class="info__text"></span>
-                                                                <input type="number"
-                                                                    class="info__input input-department">
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="info">
-                                                            <div>
-                                                                <span class="info__text"></span>
-                                                                <textarea
-                                                                    class="info__input input-department textarea-input"
-                                                                    cols="30" row="10"></textarea>
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-center info">
-                                                            <div>
-                                                                <span class="info__text"></span>
-                                                                <input type="number"
-                                                                    class="info__input input-department">
-                                                            </div>
-                                                        </td>
-                                                        <td class="info">
-                                                            <div>
-                                                                <span class="info__text"></span>
-                                                                <textarea
-                                                                    class="info__input input-department textarea-input"
-                                                                    cols="30" row="10"></textarea>
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-center info">
-                                                            <div>
-                                                                <span class="info__text"></span>
+                                                                <span class="info__text fact-time"></span>
                                                                 <input type="number"
                                                                     class="info__input input-department">
                                                             </div>
@@ -712,7 +582,7 @@
                                                     <tr>
                                                         <td class="info">
                                                             <div>
-                                                                <span class="info__text"></span>
+                                                                <span class="info__text plan-for-day"></span>
                                                                 <textarea
                                                                     class="info__input input-department textarea-input"
                                                                     cols="30" row="10"></textarea>
@@ -720,14 +590,14 @@
                                                         </td>
                                                         <td class="text-center info">
                                                             <div>
-                                                                <span class="info__text"></span>
+                                                                <span class="info__text planned-time"></span>
                                                                 <input type="number"
                                                                     class="info__input input-department">
                                                             </div>
                                                         </td>
                                                         <td class="info">
                                                             <div>
-                                                                <span class="info__text"></span>
+                                                                <span class="info__text fact-of-day"></span>
                                                                 <textarea
                                                                     class="info__input input-department textarea-input"
                                                                     cols="30" row="10"></textarea>
@@ -735,39 +605,7 @@
                                                         </td>
                                                         <td class="text-center info">
                                                             <div>
-                                                                <span class="info__text"></span>
-                                                                <input type="number"
-                                                                    class="info__input input-department">
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="info">
-                                                            <div>
-                                                                <span class="info__text"></span>
-                                                                <textarea
-                                                                    class="info__input input-department textarea-input"
-                                                                    cols="30" row="10"></textarea>
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-center info">
-                                                            <div>
-                                                                <span class="info__text"></span>
-                                                                <input type="number"
-                                                                    class="info__input input-department">
-                                                            </div>
-                                                        </td>
-                                                        <td class="info">
-                                                            <div>
-                                                                <span class="info__text"></span>
-                                                                <textarea
-                                                                    class="info__input input-department textarea-input"
-                                                                    cols="30" row="10"></textarea>
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-center info">
-                                                            <div>
-                                                                <span class="info__text"></span>
+                                                                <span class="info__text fact-time"></span>
                                                                 <input type="number"
                                                                     class="info__input input-department">
                                                             </div>
@@ -776,7 +614,7 @@
                                                     <tr>
                                                         <td class="info">
                                                             <div>
-                                                                <span class="info__text"></span>
+                                                                <span class="info__text plan-for-day"></span>
                                                                 <textarea
                                                                     class="info__input input-department textarea-input"
                                                                     cols="30" row="10"></textarea>
@@ -784,14 +622,14 @@
                                                         </td>
                                                         <td class="text-center info">
                                                             <div>
-                                                                <span class="info__text"></span>
+                                                                <span class="info__text planned-time"></span>
                                                                 <input type="number"
                                                                     class="info__input input-department">
                                                             </div>
                                                         </td>
                                                         <td class="info">
                                                             <div>
-                                                                <span class="info__text"></span>
+                                                                <span class="info__text fact-of-day"></span>
                                                                 <textarea
                                                                     class="info__input input-department textarea-input"
                                                                     cols="30" row="10"></textarea>
@@ -799,7 +637,7 @@
                                                         </td>
                                                         <td class="text-center info">
                                                             <div>
-                                                                <span class="info__text"></span>
+                                                                <span class="info__text fact-time"></span>
                                                                 <input type="number"
                                                                     class="info__input input-department">
                                                             </div>
@@ -808,7 +646,7 @@
                                                     <tr>
                                                         <td class="info">
                                                             <div>
-                                                                <span class="info__text"></span>
+                                                                <span class="info__text plan-for-day"></span>
                                                                 <textarea
                                                                     class="info__input input-department textarea-input"
                                                                     cols="30" row="10"></textarea>
@@ -816,14 +654,14 @@
                                                         </td>
                                                         <td class="text-center info">
                                                             <div>
-                                                                <span class="info__text"></span>
+                                                                <span class="info__text planned-time"></span>
                                                                 <input type="number"
                                                                     class="info__input input-department">
                                                             </div>
                                                         </td>
                                                         <td class="info">
                                                             <div>
-                                                                <span class="info__text"></span>
+                                                                <span class="info__text fact-of-day"></span>
                                                                 <textarea
                                                                     class="info__input input-department textarea-input"
                                                                     cols="30" row="10"></textarea>
@@ -831,7 +669,167 @@
                                                         </td>
                                                         <td class="text-center info">
                                                             <div>
-                                                                <span class="info__text"></span>
+                                                                <span class="info__text fact-time"></span>
+                                                                <input type="number"
+                                                                    class="info__input input-department">
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="info">
+                                                            <div>
+                                                                <span class="info__text plan-for-day"></span>
+                                                                <textarea
+                                                                    class="info__input input-department textarea-input"
+                                                                    cols="30" row="10"></textarea>
+                                                            </div>
+                                                        </td>
+                                                        <td class="text-center info">
+                                                            <div>
+                                                                <span class="info__text planned-time"></span>
+                                                                <input type="number"
+                                                                    class="info__input input-department">
+                                                            </div>
+                                                        </td>
+                                                        <td class="info">
+                                                            <div>
+                                                                <span class="info__text fact-of-day"></span>
+                                                                <textarea
+                                                                    class="info__input input-department textarea-input"
+                                                                    cols="30" row="10"></textarea>
+                                                            </div>
+                                                        </td>
+                                                        <td class="text-center info">
+                                                            <div>
+                                                                <span class="info__text fact-time"></span>
+                                                                <input type="number"
+                                                                    class="info__input input-department">
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="info">
+                                                            <div>
+                                                                <span class="info__text plan-for-day"></span>
+                                                                <textarea
+                                                                    class="info__input input-department textarea-input"
+                                                                    cols="30" row="10"></textarea>
+                                                            </div>
+                                                        </td>
+                                                        <td class="text-center info">
+                                                            <div>
+                                                                <span class="info__text planned-time"></span>
+                                                                <input type="number"
+                                                                    class="info__input input-department">
+                                                            </div>
+                                                        </td>
+                                                        <td class="info">
+                                                            <div>
+                                                                <span class="info__text fact-of-day"></span>
+                                                                <textarea
+                                                                    class="info__input input-department textarea-input"
+                                                                    cols="30" row="10"></textarea>
+                                                            </div>
+                                                        </td>
+                                                        <td class="text-center info">
+                                                            <div>
+                                                                <span class="info__text fact-time"></span>
+                                                                <input type="number"
+                                                                    class="info__input input-department">
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="info">
+                                                            <div>
+                                                                <span class="info__text plan-for-day"></span>
+                                                                <textarea
+                                                                    class="info__input input-department textarea-input"
+                                                                    cols="30" row="10"></textarea>
+                                                            </div>
+                                                        </td>
+                                                        <td class="text-center info">
+                                                            <div>
+                                                                <span class="info__text planned-time"></span>
+                                                                <input type="number"
+                                                                    class="info__input input-department">
+                                                            </div>
+                                                        </td>
+                                                        <td class="info">
+                                                            <div>
+                                                                <span class="info__text fact-of-day"></span>
+                                                                <textarea
+                                                                    class="info__input input-department textarea-input"
+                                                                    cols="30" row="10"></textarea>
+                                                            </div>
+                                                        </td>
+                                                        <td class="text-center info">
+                                                            <div>
+                                                                <span class="info__text fact-time"></span>
+                                                                <input type="number"
+                                                                    class="info__input input-department">
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="info">
+                                                            <div>
+                                                                <span class="info__text plan-for-day"></span>
+                                                                <textarea
+                                                                    class="info__input input-department textarea-input"
+                                                                    cols="30" row="10"></textarea>
+                                                            </div>
+                                                        </td>
+                                                        <td class="text-center info">
+                                                            <div>
+                                                                <span class="info__text planned-time"></span>
+                                                                <input type="number"
+                                                                    class="info__input input-department">
+                                                            </div>
+                                                        </td>
+                                                        <td class="info">
+                                                            <div>
+                                                                <span class="info__text fact-of-day"></span>
+                                                                <textarea
+                                                                    class="info__input input-department textarea-input"
+                                                                    cols="30" row="10"></textarea>
+                                                            </div>
+                                                        </td>
+                                                        <td class="text-center info">
+                                                            <div>
+                                                                <span class="info__text fact-time"></span>
+                                                                <input type="number"
+                                                                    class="info__input input-department">
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="info">
+                                                            <div>
+                                                                <span class="info__text plan-for-day"></span>
+                                                                <textarea
+                                                                    class="info__input input-department textarea-input"
+                                                                    cols="30" row="10"></textarea>
+                                                            </div>
+                                                        </td>
+                                                        <td class="text-center info">
+                                                            <div>
+                                                                <span class="info__text planned-time"></span>
+                                                                <input type="number"
+                                                                    class="info__input input-department">
+                                                            </div>
+                                                        </td>
+                                                        <td class="info">
+                                                            <div>
+                                                                <span class="info__text fact-of-day"></span>
+                                                                <textarea
+                                                                    class="info__input input-department textarea-input"
+                                                                    cols="30" row="10"></textarea>
+                                                            </div>
+                                                        </td>
+                                                        <td class="text-center info">
+                                                            <div>
+                                                                <span class="info__text fact-time"></span>
                                                                 <input type="number"
                                                                     class="info__input input-department">
                                                             </div>
@@ -844,9 +842,10 @@
                                                                 <span class="result__text"></span>
                                                             </div>
                                                         </td>
-                                                        <td class="text-center">
-                                                            <div class="result">
-                                                                <span class="result__text"></span>
+                                                        <td class="text-center info">
+                                                            <div>
+                                                                <span class="info__text overtime-planned-time">3</span>
+                                                                <input type="number" class="info__input input-department">
                                                             </div>
                                                         </td>
                                                         <td>
@@ -854,9 +853,513 @@
                                                                 <span class="result__text"></span>
                                                             </div>
                                                         </td>
+                                                        <td class="text-center info">
+                                                            <div>
+                                                                <span class="info__text overtime-fact-time">1</span>
+                                                                <input type="number" class="info__input input-department">
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="th-white-green">
+                                                        <td class="br-1"></td>
+                                                        <td>
+                                                            <div class="result">
+                                                                <span class="result__text-all">Итого минут</span>
+                                                            </div>
+                                                        </td>
                                                         <td class="text-center">
                                                             <div class="result">
+                                                                <span class="result__text-val total-minutes-planned-time">1</span>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="result">
+                                                                <span class="result__text-all">Итого минут</span>
+                                                            </div>
+                                                        </td>
+                                                        <td class="text-center">
+                                                            <div class="result">
+                                                                <span class="result__text-val total-minutes-fact-time">2</span>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="th-white-green">
+                                                        <td class="br-1"></td>
+                                                        <td>
+                                                            <div class="result">
+                                                                <span class="result__text-all">Итого часов</span>
+                                                            </div>
+                                                        </td>
+                                                        <td class="text-center">
+                                                            <div class="result">
+                                                                <span class="result__text-val total-hours-planned-time">3</span>
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="result">
+                                                                <span class="result__text-all">Итого часов</span>
+                                                            </div>
+                                                        </td>
+                                                        <td class="text-center">
+                                                            <div class="result">
+                                                                <span class="result__text-all total-hours-fact-time">4</span>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+
+                                                <thead>
+                                                    <tr class="text-center th-green fs-1">
+                                                        <th class="role-name th-green-department">Руководство</th>
+                                                        <!-- <th class="w-2 role-name th-green-department">Руководство</th> -->
+                                                        <!-- <th class="w-3">План на день</th> -->
+                                                        <th>План на день</th>
+                                                        <th>Планируемое время</th>
+                                                        <!-- <th class="w-3">ФАКТ за день</th> -->
+                                                        <th>ФАКТ за день</th>
+                                                        <th>Фактическое время</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody class="table-employee-data">
+                                                    <tr>
+                                                        <td rowspan="13" class="br-1 data-name">Петрова</td>
+                                                        <td class="info" >
+                                                            <div>
+                                                                <span class="info__text plan-for-day">Пример 2</span>
+                                                                <textarea
+                                                                    class="info__input input-department textarea-input"
+                                                                    cols="30" row="10"></textarea>
+                                                            </div>
+                                                        </td>
+                                                        <td class="text-center info">
+                                                            <div>
+                                                                <span class="info__text planned-time">62</span>
+                                                                <input type="number"
+                                                                    class="info__input input-department">
+                                                            </div>
+                                                        </td>
+                                                        <td class="info">
+                                                            <div>
+                                                                <span class="info__text fact-of-day">Пример 2-1</span>
+                                                                <textarea
+                                                                    class="info__input input-department textarea-input"
+                                                                    cols="30" row="10"></textarea>
+                                                            </div>
+                                                        </td>
+                                                        <td class="text-center info">
+                                                            <div>
+                                                                <span class="info__text fact-time">22</span>
+                                                                <input type="number"
+                                                                    class="info__input input-department">
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="info">
+                                                            <div>
+                                                                <span class="info__text plan-for-day">Ещё один пример 2</span>
+                                                                <textarea
+                                                                    class="info__input input-department textarea-input"
+                                                                    cols="30" row="10"></textarea>
+                                                            </div>
+                                                        </td>
+                                                        <td class="text-center info">
+                                                            <div>
+                                                                <span class="info__text planned-time"> 32</span>
+                                                                <input type="number"
+                                                                    class="info__input input-department">
+                                                            </div>
+                                                        </td>
+                                                        <td class="info">
+                                                            <div>
+                                                                <span class="info__text fact-of-day">Ещё один пример 2-1</span>
+                                                                <textarea
+                                                                    class="info__input input-department textarea-input"
+                                                                    cols="30" row="10"></textarea>
+                                                            </div>
+                                                        </td>
+                                                        <td class="text-center info">
+                                                            <div>
+                                                                <span class="info__text fact-time">12</span>
+                                                                <input type="number"
+                                                                    class="info__input input-department">
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="info">
+                                                            <div>
+                                                                <span class="info__text plan-for-day"></span>
+                                                                <textarea
+                                                                    class="info__input input-department textarea-input"
+                                                                    cols="30" row="10"></textarea>
+                                                            </div>
+                                                        </td>
+                                                        <td class="text-center info">
+                                                            <div>
+                                                                <span class="info__text planned-time"></span>
+                                                                <input type="number"
+                                                                    class="info__input input-department">
+                                                            </div>
+                                                        </td>
+                                                        <td class="info">
+                                                            <div>
+                                                                <span class="info__text fact-of-day"></span>
+                                                                <textarea
+                                                                    class="info__input input-department textarea-input"
+                                                                    cols="30" row="10"></textarea>
+                                                            </div>
+                                                        </td>
+                                                        <td class="text-center info">
+                                                            <div>
+                                                                <span class="info__text fact-time"></span>
+                                                                <input type="number"
+                                                                    class="info__input input-department">
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="info">
+                                                            <div>
+                                                                <span class="info__text plan-for-day"></span>
+                                                                <textarea
+                                                                    class="info__input input-department textarea-input"
+                                                                    cols="30" row="10"></textarea>
+                                                            </div>
+                                                        </td>
+                                                        <td class="text-center info">
+                                                            <div>
+                                                                <span class="info__text planned-time"></span>
+                                                                <input type="number"
+                                                                    class="info__input input-department">
+                                                            </div>
+                                                        </td>
+                                                        <td class="info">
+                                                            <div>
+                                                                <span class="info__text fact-of-day"></span>
+                                                                <textarea
+                                                                    class="info__input input-department textarea-input"
+                                                                    cols="30" row="10"></textarea>
+                                                            </div>
+                                                        </td>
+                                                        <td class="text-center info">
+                                                            <div>
+                                                                <span class="info__text fact-time"></span>
+                                                                <input type="number"
+                                                                    class="info__input input-department">
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="info">
+                                                            <div>
+                                                                <span class="info__text plan-for-day"></span>
+                                                                <textarea
+                                                                    class="info__input input-department textarea-input"
+                                                                    cols="30" row="10"></textarea>
+                                                            </div>
+                                                        </td>
+                                                        <td class="text-center info">
+                                                            <div>
+                                                                <span class="info__text planned-time"></span>
+                                                                <input type="number"
+                                                                    class="info__input input-department">
+                                                            </div>
+                                                        </td>
+                                                        <td class="info">
+                                                            <div>
+                                                                <span class="info__text fact-of-day"></span>
+                                                                <textarea
+                                                                    class="info__input input-department textarea-input"
+                                                                    cols="30" row="10"></textarea>
+                                                            </div>
+                                                        </td>
+                                                        <td class="text-center info">
+                                                            <div>
+                                                                <span class="info__text fact-time"></span>
+                                                                <input type="number"
+                                                                    class="info__input input-department">
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="info">
+                                                            <div>
+                                                                <span class="info__text plan-for-day"></span>
+                                                                <textarea
+                                                                    class="info__input input-department textarea-input"
+                                                                    cols="30" row="10"></textarea>
+                                                            </div>
+                                                        </td>
+                                                        <td class="text-center info">
+                                                            <div>
+                                                                <span class="info__text planned-time"></span>
+                                                                <input type="number"
+                                                                    class="info__input input-department">
+                                                            </div>
+                                                        </td>
+                                                        <td class="info">
+                                                            <div>
+                                                                <span class="info__text fact-of-day"></span>
+                                                                <textarea
+                                                                    class="info__input input-department textarea-input"
+                                                                    cols="30" row="10"></textarea>
+                                                            </div>
+                                                        </td>
+                                                        <td class="text-center info">
+                                                            <div>
+                                                                <span class="info__text fact-time"></span>
+                                                                <input type="number"
+                                                                    class="info__input input-department">
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="info">
+                                                            <div>
+                                                                <span class="info__text plan-for-day"></span>
+                                                                <textarea
+                                                                    class="info__input input-department textarea-input"
+                                                                    cols="30" row="10"></textarea>
+                                                            </div>
+                                                        </td>
+                                                        <td class="text-center info">
+                                                            <div>
+                                                                <span class="info__text planned-time"></span>
+                                                                <input type="number"
+                                                                    class="info__input input-department">
+                                                            </div>
+                                                        </td>
+                                                        <td class="info">
+                                                            <div>
+                                                                <span class="info__text fact-of-day"></span>
+                                                                <textarea
+                                                                    class="info__input input-department textarea-input"
+                                                                    cols="30" row="10"></textarea>
+                                                            </div>
+                                                        </td>
+                                                        <td class="text-center info">
+                                                            <div>
+                                                                <span class="info__text fact-time"></span>
+                                                                <input type="number"
+                                                                    class="info__input input-department">
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="info">
+                                                            <div>
+                                                                <span class="info__text plan-for-day"></span>
+                                                                <textarea
+                                                                    class="info__input input-department textarea-input"
+                                                                    cols="30" row="10"></textarea>
+                                                            </div>
+                                                        </td>
+                                                        <td class="text-center info">
+                                                            <div>
+                                                                <span class="info__text planned-time"></span>
+                                                                <input type="number"
+                                                                    class="info__input input-department">
+                                                            </div>
+                                                        </td>
+                                                        <td class="info">
+                                                            <div>
+                                                                <span class="info__text fact-of-day"></span>
+                                                                <textarea
+                                                                    class="info__input input-department textarea-input"
+                                                                    cols="30" row="10"></textarea>
+                                                            </div>
+                                                        </td>
+                                                        <td class="text-center info">
+                                                            <div>
+                                                                <span class="info__text fact-time"></span>
+                                                                <input type="number"
+                                                                    class="info__input input-department">
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="info">
+                                                            <div>
+                                                                <span class="info__text plan-for-day"></span>
+                                                                <textarea
+                                                                    class="info__input input-department textarea-input"
+                                                                    cols="30" row="10"></textarea>
+                                                            </div>
+                                                        </td>
+                                                        <td class="text-center info">
+                                                            <div>
+                                                                <span class="info__text planned-time"></span>
+                                                                <input type="number"
+                                                                    class="info__input input-department">
+                                                            </div>
+                                                        </td>
+                                                        <td class="info">
+                                                            <div>
+                                                                <span class="info__text fact-of-day"></span>
+                                                                <textarea
+                                                                    class="info__input input-department textarea-input"
+                                                                    cols="30" row="10"></textarea>
+                                                            </div>
+                                                        </td>
+                                                        <td class="text-center info">
+                                                            <div>
+                                                                <span class="info__text fact-time"></span>
+                                                                <input type="number"
+                                                                    class="info__input input-department">
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="info">
+                                                            <div>
+                                                                <span class="info__text plan-for-day"></span>
+                                                                <textarea
+                                                                    class="info__input input-department textarea-input"
+                                                                    cols="30" row="10"></textarea>
+                                                            </div>
+                                                        </td>
+                                                        <td class="text-center info">
+                                                            <div>
+                                                                <span class="info__text planned-time"></span>
+                                                                <input type="number"
+                                                                    class="info__input input-department">
+                                                            </div>
+                                                        </td>
+                                                        <td class="info">
+                                                            <div>
+                                                                <span class="info__text fact-of-day"></span>
+                                                                <textarea
+                                                                    class="info__input input-department textarea-input"
+                                                                    cols="30" row="10"></textarea>
+                                                            </div>
+                                                        </td>
+                                                        <td class="text-center info">
+                                                            <div>
+                                                                <span class="info__text fact-time"></span>
+                                                                <input type="number"
+                                                                    class="info__input input-department">
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="info">
+                                                            <div>
+                                                                <span class="info__text plan-for-day"></span>
+                                                                <textarea
+                                                                    class="info__input input-department textarea-input"
+                                                                    cols="30" row="10"></textarea>
+                                                            </div>
+                                                        </td>
+                                                        <td class="text-center info">
+                                                            <div>
+                                                                <span class="info__text planned-time"></span>
+                                                                <input type="number"
+                                                                    class="info__input input-department">
+                                                            </div>
+                                                        </td>
+                                                        <td class="info">
+                                                            <div>
+                                                                <span class="info__text fact-of-day"></span>
+                                                                <textarea
+                                                                    class="info__input input-department textarea-input"
+                                                                    cols="30" row="10"></textarea>
+                                                            </div>
+                                                        </td>
+                                                        <td class="text-center info">
+                                                            <div>
+                                                                <span class="info__text fact-time"></span>
+                                                                <input type="number"
+                                                                    class="info__input input-department">
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="info">
+                                                            <div>
+                                                                <span class="info__text plan-for-day"></span>
+                                                                <textarea
+                                                                    class="info__input input-department textarea-input"
+                                                                    cols="30" row="10"></textarea>
+                                                            </div>
+                                                        </td>
+                                                        <td class="text-center info">
+                                                            <div>
+                                                                <span class="info__text planned-time"></span>
+                                                                <input type="number"
+                                                                    class="info__input input-department">
+                                                            </div>
+                                                        </td>
+                                                        <td class="info">
+                                                            <div>
+                                                                <span class="info__text fact-of-day"></span>
+                                                                <textarea
+                                                                    class="info__input input-department textarea-input"
+                                                                    cols="30" row="10"></textarea>
+                                                            </div>
+                                                        </td>
+                                                        <td class="text-center info">
+                                                            <div>
+                                                                <span class="info__text fact-time"></span>
+                                                                <input type="number"
+                                                                    class="info__input input-department">
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td class="info">
+                                                            <div>
+                                                                <span class="info__text plan-for-day"></span>
+                                                                <textarea
+                                                                    class="info__input input-department textarea-input"
+                                                                    cols="30" row="10"></textarea>
+                                                            </div>
+                                                        </td>
+                                                        <td class="text-center info">
+                                                            <div>
+                                                                <span class="info__text planned-time"></span>
+                                                                <input type="number"
+                                                                    class="info__input input-department">
+                                                            </div>
+                                                        </td>
+                                                        <td class="info">
+                                                            <div>
+                                                                <span class="info__text fact-of-day"></span>
+                                                                <textarea
+                                                                    class="info__input input-department textarea-input"
+                                                                    cols="30" row="10"></textarea>
+                                                            </div>
+                                                        </td>
+                                                        <td class="text-center info">
+                                                            <div>
+                                                                <span class="info__text fact-time"></span>
+                                                                <input type="number"
+                                                                    class="info__input input-department">
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="tr-gray">
+                                                        <td class="br-1">Сверхурочные часы</td>
+                                                        <td>
+                                                            <div class="result">
                                                                 <span class="result__text"></span>
+                                                            </div>
+                                                        </td>
+                                                        <td class="text-center info">
+                                                            <div>
+                                                                <span class="info__text overtime-planned-time">4</span>
+                                                                <input type="number" class="info__input input-department">
+                                                            </div>
+                                                        </td>
+                                                        <td>
+                                                            <div class="result">
+                                                                <span class="result__text"></span>
+                                                            </div>
+                                                        </td>
+                                                        <td class="text-center info">
+                                                            <div>
+                                                                <span class="info__text overtime-fact-time">2</span>
+                                                                <input type="number" class="info__input input-department">
                                                             </div>
                                                         </td>
                                                     </tr>
@@ -908,505 +1411,6 @@
                                                     </tr>
                                                 </tbody>
 
-                                                <thead>
-                                                    <tr class="text-center th-green fs-1">
-                                                        <th class="w-2 role-name th-green-department">ФИНАНСЫ</th>
-                                                        <th class="w-3">План на день</th>
-                                                        <th>Планируемое время</th>
-                                                        <th class="w-3">ФАКТ за день</th>
-                                                        <th>Фактическое время</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td rowspan="13" class="br-1">ФИО сотрудника</td>
-                                                        <td class="info">
-                                                            <div>
-                                                                <span class="info__text">Lorem, ipsum dolor sit
-                                                                    amet</span>
-                                                                <textarea
-                                                                    class="info__input input-department textarea-input"
-                                                                    cols="30" row="10"></textarea>
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-center info">
-                                                            <div>
-                                                                <span class="info__text">60</span>
-                                                                <input type="number"
-                                                                    class="info__input input-department">
-                                                            </div>
-                                                        </td>
-                                                        <td class="info">
-                                                            <div>
-                                                                <span class="info__text">Lorem ipsum dolor sit amet
-                                                                    consectetur</span>
-                                                                <textarea
-                                                                    class="info__input input-department textarea-input"
-                                                                    cols="30" row="10"></textarea>
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-center info">
-                                                            <div>
-                                                                <span class="info__text">20</span>
-                                                                <input type="number"
-                                                                    class="info__input input-department">
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="info">
-                                                            <div>
-                                                                <span class="info__text"></span>
-                                                                <textarea
-                                                                    class="info__input input-department textarea-input"
-                                                                    cols="30" row="10"></textarea>
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-center info">
-                                                            <div>
-                                                                <span class="info__text"></span>
-                                                                <input type="number"
-                                                                    class="info__input input-department">
-                                                            </div>
-                                                        </td>
-                                                        <td class="info">
-                                                            <div>
-                                                                <span class="info__text"></span>
-                                                                <textarea
-                                                                    class="info__input input-department textarea-input"
-                                                                    cols="30" row="10"></textarea>
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-center info">
-                                                            <div>
-                                                                <span class="info__text"></span>
-                                                                <input type="number"
-                                                                    class="info__input input-department">
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="info">
-                                                            <div>
-                                                                <span class="info__text"></span>
-                                                                <textarea
-                                                                    class="info__input input-department textarea-input"
-                                                                    cols="30" row="10"></textarea>
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-center info">
-                                                            <div>
-                                                                <span class="info__text"></span>
-                                                                <input type="number"
-                                                                    class="info__input input-department">
-                                                            </div>
-                                                        </td>
-                                                        <td class="info">
-                                                            <div>
-                                                                <span class="info__text"></span>
-                                                                <textarea
-                                                                    class="info__input input-department textarea-input"
-                                                                    cols="30" row="10"></textarea>
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-center info">
-                                                            <div>
-                                                                <span class="info__text"></span>
-                                                                <input type="number"
-                                                                    class="info__input input-department">
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="info">
-                                                            <div>
-                                                                <span class="info__text"></span>
-                                                                <textarea
-                                                                    class="info__input input-department textarea-input"
-                                                                    cols="30" row="10"></textarea>
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-center info">
-                                                            <div>
-                                                                <span class="info__text"></span>
-                                                                <input type="number"
-                                                                    class="info__input input-department">
-                                                            </div>
-                                                        </td>
-                                                        <td class="info">
-                                                            <div>
-                                                                <span class="info__text"></span>
-                                                                <textarea
-                                                                    class="info__input input-department textarea-input"
-                                                                    cols="30" row="10"></textarea>
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-center info">
-                                                            <div>
-                                                                <span class="info__text"></span>
-                                                                <input type="number"
-                                                                    class="info__input input-department">
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="info">
-                                                            <div>
-                                                                <span class="info__text"></span>
-                                                                <textarea
-                                                                    class="info__input input-department textarea-input"
-                                                                    cols="30" row="10"></textarea>
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-center info">
-                                                            <div>
-                                                                <span class="info__text"></span>
-                                                                <input type="number"
-                                                                    class="info__input input-department">
-                                                            </div>
-                                                        </td>
-                                                        <td class="info">
-                                                            <div>
-                                                                <span class="info__text"></span>
-                                                                <textarea
-                                                                    class="info__input input-department textarea-input"
-                                                                    cols="30" row="10"></textarea>
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-center info">
-                                                            <div>
-                                                                <span class="info__text"></span>
-                                                                <input type="number"
-                                                                    class="info__input input-department">
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="info">
-                                                            <div>
-                                                                <span class="info__text"></span>
-                                                                <textarea
-                                                                    class="info__input input-department textarea-input"
-                                                                    cols="30" row="10"></textarea>
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-center info">
-                                                            <div>
-                                                                <span class="info__text"></span>
-                                                                <input type="number"
-                                                                    class="info__input input-department">
-                                                            </div>
-                                                        </td>
-                                                        <td class="info">
-                                                            <div>
-                                                                <span class="info__text"></span>
-                                                                <textarea
-                                                                    class="info__input input-department textarea-input"
-                                                                    cols="30" row="10"></textarea>
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-center info">
-                                                            <div>
-                                                                <span class="info__text"></span>
-                                                                <input type="number"
-                                                                    class="info__input input-department">
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="info">
-                                                            <div>
-                                                                <span class="info__text"></span>
-                                                                <textarea
-                                                                    class="info__input input-department textarea-input"
-                                                                    cols="30" row="10"></textarea>
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-center info">
-                                                            <div>
-                                                                <span class="info__text"></span>
-                                                                <input type="number"
-                                                                    class="info__input input-department">
-                                                            </div>
-                                                        </td>
-                                                        <td class="info">
-                                                            <div>
-                                                                <span class="info__text"></span>
-                                                                <textarea
-                                                                    class="info__input input-department textarea-input"
-                                                                    cols="30" row="10"></textarea>
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-center info">
-                                                            <div>
-                                                                <span class="info__text"></span>
-                                                                <input type="number"
-                                                                    class="info__input input-department">
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="info">
-                                                            <div>
-                                                                <span class="info__text"></span>
-                                                                <textarea
-                                                                    class="info__input input-department textarea-input"
-                                                                    cols="30" row="10"></textarea>
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-center info">
-                                                            <div>
-                                                                <span class="info__text"></span>
-                                                                <input type="number"
-                                                                    class="info__input input-department">
-                                                            </div>
-                                                        </td>
-                                                        <td class="info">
-                                                            <div>
-                                                                <span class="info__text"></span>
-                                                                <textarea
-                                                                    class="info__input input-department textarea-input"
-                                                                    cols="30" row="10"></textarea>
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-center info">
-                                                            <div>
-                                                                <span class="info__text"></span>
-                                                                <input type="number"
-                                                                    class="info__input input-department">
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="info">
-                                                            <div>
-                                                                <span class="info__text"></span>
-                                                                <textarea
-                                                                    class="info__input input-department textarea-input"
-                                                                    cols="30" row="10"></textarea>
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-center info">
-                                                            <div>
-                                                                <span class="info__text"></span>
-                                                                <input type="number"
-                                                                    class="info__input input-department">
-                                                            </div>
-                                                        </td>
-                                                        <td class="info">
-                                                            <div>
-                                                                <span class="info__text"></span>
-                                                                <textarea
-                                                                    class="info__input input-department textarea-input"
-                                                                    cols="30" row="10"></textarea>
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-center info">
-                                                            <div>
-                                                                <span class="info__text"></span>
-                                                                <input type="number"
-                                                                    class="info__input input-department">
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="info">
-                                                            <div>
-                                                                <span class="info__text"></span>
-                                                                <textarea
-                                                                    class="info__input input-department textarea-input"
-                                                                    cols="30" row="10"></textarea>
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-center info">
-                                                            <div>
-                                                                <span class="info__text"></span>
-                                                                <input type="number"
-                                                                    class="info__input input-department">
-                                                            </div>
-                                                        </td>
-                                                        <td class="info">
-                                                            <div>
-                                                                <span class="info__text"></span>
-                                                                <textarea
-                                                                    class="info__input input-department textarea-input"
-                                                                    cols="30" row="10"></textarea>
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-center info">
-                                                            <div>
-                                                                <span class="info__text"></span>
-                                                                <input type="number"
-                                                                    class="info__input input-department">
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="info">
-                                                            <div>
-                                                                <span class="info__text"></span>
-                                                                <textarea
-                                                                    class="info__input input-department textarea-input"
-                                                                    cols="30" row="10"></textarea>
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-center info">
-                                                            <div>
-                                                                <span class="info__text"></span>
-                                                                <input type="number"
-                                                                    class="info__input input-department">
-                                                            </div>
-                                                        </td>
-                                                        <td class="info">
-                                                            <div>
-                                                                <span class="info__text"></span>
-                                                                <textarea
-                                                                    class="info__input input-department textarea-input"
-                                                                    cols="30" row="10"></textarea>
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-center info">
-                                                            <div>
-                                                                <span class="info__text"></span>
-                                                                <input type="number"
-                                                                    class="info__input input-department">
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="info">
-                                                            <div>
-                                                                <span class="info__text"></span>
-                                                                <textarea
-                                                                    class="info__input input-department textarea-input"
-                                                                    cols="30" row="10"></textarea>
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-center info">
-                                                            <div>
-                                                                <span class="info__text"></span>
-                                                                <input type="number"
-                                                                    class="info__input input-department">
-                                                            </div>
-                                                        </td>
-                                                        <td class="info">
-                                                            <div>
-                                                                <span class="info__text"></span>
-                                                                <textarea
-                                                                    class="info__input input-department textarea-input"
-                                                                    cols="30" row="10"></textarea>
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-center info">
-                                                            <div>
-                                                                <span class="info__text"></span>
-                                                                <input type="number"
-                                                                    class="info__input input-department">
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td class="info">
-                                                            <div>
-                                                                <span class="info__text"></span>
-                                                                <textarea
-                                                                    class="info__input input-department textarea-input"
-                                                                    cols="30" row="10"></textarea>
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-center info">
-                                                            <div>
-                                                                <span class="info__text"></span>
-                                                                <input type="number"
-                                                                    class="info__input input-department">
-                                                            </div>
-                                                        </td>
-                                                        <td class="info">
-                                                            <div>
-                                                                <span class="info__text"></span>
-                                                                <textarea
-                                                                    class="info__input input-department textarea-input"
-                                                                    cols="30" row="10"></textarea>
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-center info">
-                                                            <div>
-                                                                <span class="info__text"></span>
-                                                                <input type="number"
-                                                                    class="info__input input-department">
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr class="tr-gray">
-                                                        <td class="br-1">Сверхурочные часы</td>
-                                                        <td>
-                                                            <div class="result">
-                                                                <span class="result__text"></span>
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-center">
-                                                            <div class="result">
-                                                                <span class="result__text"></span>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="result">
-                                                                <span class="result__text"></span>
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-center">
-                                                            <div class="result">
-                                                                <span class="result__text"></span>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr class="th-white-green">
-                                                        <td class="br-1"></td>
-                                                        <td>
-                                                            <div class="result">
-                                                                <span class="result__text-all">Итого минут</span>
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-center">
-                                                            <div class="result">
-                                                                <span class="result__text-val">0</span>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="result">
-                                                                <span class="result__text-all">Итого минут</span>
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-center">
-                                                            <div class="result">
-                                                                <span class="result__text-val">0</span>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr class="th-white-green">
-                                                        <td class="br-1"></td>
-                                                        <td>
-                                                            <div class="result">
-                                                                <span class="result__text-all">Итого часов</span>
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-center">
-                                                            <div class="result">
-                                                                <span class="result__text-val">0</span>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <div class="result">
-                                                                <span class="result__text-all">Итого часов</span>
-                                                            </div>
-                                                        </td>
-                                                        <td class="text-center">
-                                                            <div class="result">
-                                                                <span class="result__text-all">0</span>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
                                             </table>
                                         </div>
                                     </div>

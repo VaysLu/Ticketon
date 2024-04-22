@@ -36,7 +36,7 @@ $(document).ready(function () {
             return elm.id ? "<i class='" + $(elm.element).data("icon") + " mr-2'></i>" + elm.text : elm.text
         }
 
-       
+
     });
 });
 
@@ -239,29 +239,29 @@ function theSelect() {
     return department;
 }
 
- function formAjax(result) {
-if(result.length>0)
- $("input[name='date-work']").val(result.join('-'));
-$("#task_scheduler-form").submit();
+function formAjax(result) {
+    if (result.length > 0)
+        $("input[name='date-work']").val(result.join('-'));
+    $("#task_scheduler-form").submit();
     // console.log(theSelect());
-/* 
-    $.post("task_scheduler.html", {
-        action: "task_scheduler.html",
-        department: theSelect(),
-        date: tableDate.textContent,
-        // data: $('#form').serialize()
-        // name: $("input[name='name']").val(),
-        // number: $("input[name='number']").val(),
-    },
-        function (data) {
-            console.log(data.department);
-            console.log(data.date);
-            // const fio = document.querySelector('#fio');
-            // fio.value = data.fio;
-            // console.log(data.otvet.name);
-        }, "json"
-    ); */
-} 
+    /* 
+        $.post("task_scheduler.html", {
+            action: "task_scheduler.html",
+            department: theSelect(),
+            date: tableDate.textContent,
+            // data: $('#form').serialize()
+            // name: $("input[name='name']").val(),
+            // number: $("input[name='number']").val(),
+        },
+            function (data) {
+                console.log(data.department);
+                console.log(data.date);
+                // const fio = document.querySelector('#fio');
+                // fio.value = data.fio;
+                // console.log(data.otvet.name);
+            }, "json"
+        ); */
+}
 
 
 
@@ -280,3 +280,73 @@ $("#task_scheduler-form").submit();
 //                 // console.log(data.otvet.name);
 //             }, "json"
 //         );
+
+
+
+// Кнопка сохранения всех элементов и значений
+// (document.querySelectorAll('.table-employee-data') || []).forEach((cBlock, i) => {
+//     cBlock.id = 'catalogBlock-' + i;
+// });
+
+function saveData() {
+    let dataObj = [];
+
+    $('.table-employee-data').each(function () {
+
+        let employeeObj = {};
+
+        $(this).find('.data-name').each(function () {
+            employeeObj.name_employee = $(this).text();
+        })
+
+        let planForDay = employeeObj.plan_for_day = [];
+        let plannedTime = employeeObj.planned_time = [];
+        let factOfDay = employeeObj.fact_of_day = [];
+        let factTime = employeeObj.fact_time = [];
+
+        employeeObj.overtime_hours = {
+            overtime_planned_time: $(this).find('.overtime-planned-time').text(),
+            overtime_fact_time: $(this).find('.overtime-fact-time').text()
+        };
+
+        employeeObj.total_minute = {
+            total_planned_time: $(this).find('.total-minutes-planned-time').text(),
+            total_fact_time: $(this).find('.total-minutes-fact-time').text()
+        };
+
+        employeeObj.total_hours = {
+            total_planned_time: $(this).find('.total-hours-planned-time').text(),
+            total_fact_time: $(this).find('.total-hours-fact-time').text()
+        };
+
+
+        $(this).find('.plan-for-day').each(function () {
+            planForDay.push($(this).text());
+        })
+
+        $(this).find('.planned-time').each(function () {
+            plannedTime.push($(this).text());
+        })
+        $(this).find('.fact-of-day').each(function () {
+            factOfDay.push($(this).text());
+        })
+        $(this).find('.fact-time').each(function () {
+            factTime.push($(this).text());
+        })
+
+        dataObj.push(employeeObj);
+    })
+
+
+    console.log(dataObj);
+
+    $.post("ajax.php", {
+        act: "task_scheduler",
+        dataObj: dataObj
+    },
+        function (dataObj) {
+            console.log(dataObj);
+
+        }, "json"
+    );
+}
