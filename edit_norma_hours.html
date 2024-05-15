@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <title>
+        Изменить норму сотрудника
+    </title>
+    <meta name="description" content="Page Titile">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no, minimal-ui">
+    <!-- Call App Mode on ios devices -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!-- Remove Tap Highlight on Windows Phone IE -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <!-- base css -->
+    <link rel="stylesheet" media="screen, print" href="css/vendors.bundle.css">
+    <link rel="stylesheet" media="screen, print" href="css/app.bundle.css">
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="img/favicon/site.webmanifest">
+    <!-- <link rel="stylesheet" media="screen, print" href="css/your_styles.css"> -->
+
+    <!-- page related CSS below -->
+    <link rel="stylesheet" media="screen, print" href="css/formplugins/select2/select2.bundle.css">
+
+
+    <!-- <link rel="stylesheet" href="css/formplugins/flatpick/flatpick.css">
+    <link rel="stylesheet" href="css/formplugins/flatpick/style.css"> -->
+</head>
+
+<body class="mod-bg-1 ">
+    <h1 class="visually-hidden">Производственный календарь (Изменить норму сотрудника)</h1>
+
+    <script>
+        'use strict';
+
+        var classHolder = document.getElementsByTagName("BODY")[0],
+
+            themeSettings = (localStorage.getItem('themeSettings')) ? JSON.parse(localStorage.getItem('themeSettings')) :
+                {},
+            themeURL = themeSettings.themeURL || '',
+            themeOptions = themeSettings.themeOptions || '';
+
+        if (themeSettings.themeOptions) {
+            classHolder.className = themeSettings.themeOptions;
+        }
+        if (themeSettings.themeURL && !document.getElementById('mytheme')) {
+            var cssfile = document.createElement('link');
+            cssfile.id = 'mytheme';
+            cssfile.rel = 'stylesheet';
+            cssfile.href = themeURL;
+            document.getElementsByTagName('head')[0].appendChild(cssfile);
+        }
+        var saveSettings = function () {
+            themeSettings.themeOptions = String(classHolder.className).split(/[^\w-]+/).filter(function (item) {
+                return /^(nav|header|mod|display)-/i.test(item);
+            }).join(' ');
+            if (document.getElementById('mytheme')) {
+                themeSettings.themeURL = document.getElementById('mytheme').getAttribute("href");
+            };
+            localStorage.setItem('themeSettings', JSON.stringify(themeSettings));
+        }
+        var resetSettings = function () {
+            localStorage.setItem("themeSettings", "");
+        }
+
+    </script>
+
+    <!-- BEGIN Page Wrapper -->
+    <div class="page-wrapper">
+        <div class="page-inner">
+            <!-- BEGIN Left Aside -->
+            <?php include("aside.php");?>
+            <!-- END Left Aside -->
+            <div class="page-content-wrapper">
+                <header class="page-header" role="banner">
+                    <div class="header-inner">
+                        <div class="page-logo">
+                            <a href="index.html"
+                                class="page-logo-link press-scale-down d-flex align-items-center position-relative"
+                                data-toggle="modal" data-target="#modal-shortcut">
+                                <img src="img/F_white.png" alt="FREEDOM Ticketon" aria-roledescription="logo"
+                                    aria-label="Ссылка на главную страницу">
+                                <!-- <span class="page-logo-text mr-1">SmartAdmin WebApp</span> -->
+                                <span
+                                    class="position-absolute text-white opacity-50 small pos-top pos-right mr-2 mt-n2"></span>
+                                <i class="fal fa-angle-down d-inline-block ml-1 fs-lg color-primary-300"></i>
+                            </a>
+                        </div>
+
+                        <!-- Начало кнопки скрытия сайдбара -->
+                        <div class="hidden-md-down dropdown-icon-menu position-relative">
+                            <button type="button" class="header-btn btn js-waves-off" data-action="toggle"
+                                data-class="nav-function-minify" title="Minify Navigation"
+                                aria-label="Кнопка скрытия сайдбара">
+                                <i class="ni ni-minify-nav"></i>
+                            </button>
+                        </div>
+                        <!-- Конец кнопки скрытия сайдбара -->
+
+                        <div class="hidden-lg-up">
+                            <button href="#" class="header-btn btn press-scale-down" data-action="toggle"
+                                data-class="mobile-nav-on" aria-label="Кнопка бургер-меню">
+                                <i class="ni ni-menu"></i>
+                            </button>
+                        </div>
+
+                        <?php include("dropdown.php");?>
+                    </div>
+                </header>
+
+                <!-- <main id="js-page-content" role="main" class="page-content"></main> -->
+                <main id="js-page-content" role="main" class="page-content">
+                    <ol class="breadcrumb page-breadcrumb">
+                        <li class="breadcrumb-item"><a href="./">FREEDOM Ticketon</a></li>
+                        <li class="breadcrumb-item">
+                            <a href="production_calendar.php">Производственный календарь</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a href="production_norma_hours.php">Норма часов</a>
+                        </li>
+                        <li class="breadcrumb-item active">Изменить норму сотрудника</li>
+                    </ol>
+                    <div class="subheader">
+                        <h2 class="subheader-title">
+                            <i class="fal fa-calendar-alt"></i> Изменить норму сотрудника
+                        </h2>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <!--Basic tables-->
+                            <div id="panel-1" class="panel">
+                                <div class="panel-hdr">
+                                    <h2 class="panel-hdr__date">
+                                        Заполните таблицу
+                                    </h2>
+                                    <div class="panel-toolbar">
+                                        <button class="btn btn-panel" data-action="panel-fullscreen"
+                                            data-toggle="tooltip" data-offset="0,10"
+                                            data-original-title="На весь экран"></button>
+                                    </div>
+                                </div>
+                                <div class="panel-container show">
+                                    <div class="panel-content">
+                                        <form class="year-form" action="" id="year-form" method="POST">
+                                            <select class="select2 form-control w-100" name="department"
+                                                id="department-select">
+                                                <option value="" selected disabled>Выберите сотрудника</option>
+                                                <optgroup label="Руководство">
+                                                    <option value="fio-1">fio-1</option>
+                                                    <option value="fio-2">fio-2</option>
+                                                    <option value="fio-3">fio-3</option>
+                                                </optgroup>
+                                                <optgroup label="Финансы">
+                                                    <option value="fio-1">fio-1</option>
+                                                    <option value="fio-2">fio-2</option>
+                                                    <option value="fio-3">fio-3</option>
+                                                </optgroup>
+                                                <optgroup label="Репортёры">
+                                                    <option value="fio-1">fio-1</option>
+                                                    <option value="fio-2">fio-2</option>
+                                                    <option value="fio-3">fio-3</option>
+                                                </optgroup>
+
+                                            </select>
+
+                                            <ul class="year-form__month-list">
+                                                <li class="year-form__month-item">
+                                                    <div class="form-group">
+                                                        <label class="form-label" for="January">Январь</label>
+                                                        <input class="form-control" type="number" id="January"
+                                                            name="January" required>
+                                                        <div class="invalid-feedback">Не заполненое поле</div>
+                                                    </div>
+                                                </li>
+                                                <li class="year-form__month-item">
+                                                    <div class="form-group">
+                                                        <label class="form-label" for="February">Февраль</label>
+                                                        <input class="form-control" type="number" id="February"
+                                                            name="February" required>
+                                                        <div class="invalid-feedback">Не заполненое поле</div>
+                                                    </div>
+                                                </li>
+                                                <li class="year-form__month-item">
+                                                    <div class="form-group">
+                                                        <label class="form-label" for="March">Март</label>
+                                                        <input class="form-control" type="number" id="March"
+                                                            name="March" required>
+                                                        <div class="invalid-feedback">Не заполненое поле</div>
+                                                    </div>
+                                                </li>
+                                                <li class="year-form__month-item">
+                                                    <div class="form-group">
+                                                        <label class="form-label" for="April">Апрель</label>
+                                                        <input class="form-control" type="number" id="April"
+                                                            name="April" required>
+                                                        <div class="invalid-feedback">Не заполненое поле</div>
+                                                    </div>
+                                                </li>
+                                                <li class="year-form__month-item">
+                                                    <div class="form-group">
+                                                        <label class="form-label" for="May">Май</label>
+                                                        <input class="form-control" type="number" id="May" name="May"
+                                                            required>
+                                                        <div class="invalid-feedback">Не заполненое поле</div>
+                                                    </div>
+                                                </li>
+                                                <li class="year-form__month-item">
+                                                    <div class="form-group">
+                                                        <label class="form-label" for="June">Июнь</label>
+                                                        <input class="form-control" type="number" id="June" name="June"
+                                                            required>
+                                                        <div class="invalid-feedback">Не заполненое поле</div>
+                                                    </div>
+                                                </li>
+                                                <li class="year-form__month-item">
+                                                    <div class="form-group">
+                                                        <label class="form-label" for="July">Июль</label>
+                                                        <input class="form-control" type="number" id="July" name="July"
+                                                            required>
+                                                        <div class="invalid-feedback">Не заполненое поле</div>
+                                                    </div>
+                                                </li>
+                                                <li class="year-form__month-item">
+                                                    <div class="form-group">
+                                                        <label class="form-label" for="August">Август</label>
+                                                        <input class="form-control" type="number" id="August"
+                                                            name="August" required>
+                                                        <div class="invalid-feedback">Не заполненое поле</div>
+                                                    </div>
+                                                </li>
+                                                <li class="year-form__month-item">
+                                                    <div class="form-group">
+                                                        <label class="form-label" for="September">Сентябрь</label>
+                                                        <input class="form-control" type="number" id="September"
+                                                            name="September" required>
+                                                        <div class="invalid-feedback">Не заполненое поле</div>
+                                                    </div>
+                                                </li>
+                                                <li class="year-form__month-item">
+                                                    <div class="form-group">
+                                                        <label class="form-label" for="October">Октябрь</label>
+                                                        <input class="form-control" type="number" id="October"
+                                                            name="October" required>
+                                                        <div class="invalid-feedback">Не заполненое поле</div>
+                                                    </div>
+                                                </li>
+                                                <li class="year-form__month-item">
+                                                    <div class="form-group">
+                                                        <label class="form-label" for="November">Ноябрь</label>
+                                                        <input class="form-control" type="number" id="November"
+                                                            name="November" required>
+                                                        <div class="invalid-feedback">Не заполненое поле</div>
+                                                    </div>
+                                                </li>
+                                                <li class="year-form__month-item">
+                                                    <div class="form-group">
+                                                        <label class="form-label" for="December">Декабрь</label>
+                                                        <input class="form-control" type="number" id="December"
+                                                            name="December" required>
+                                                        <div class="invalid-feedback">Не заполненое поле</div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                            <button class="btn btn--form waves-effect waves-themed"
+                                                type="submit">Сохранить</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+
+                <div class="page-content-overlay" data-action="toggle" data-class="mobile-nav-on"></div>
+
+
+            </div>
+        </div>
+    </div>
+    <!--------------------- Скрипты шаблона ----------------------->
+    <script src="js/vendors.bundle.js"></script>
+
+    <!--------------------- Скрипты шаблона ----------------------->
+    <script src="js/app.bundle.js"></script>
+
+    <!--------- Подключение плагина Select2 ------------->
+    <script type="text/javascript" src="js/formplugins/select2/select2.bundle.js"></script>
+
+    <script>
+        /////////********* */ Инициализация плагина Select2 ------------->
+
+        $(document).ready(function () {
+            $(function () {
+                $('.select2').select2({
+
+                });
+
+                $(".select2-placeholder-multiple").select2(
+                    {
+                        placeholder: "Select State"
+                    });
+                $(".js-hide-search").select2(
+                    {
+                        dropdownParent: $('.select-wrapper'),
+                        minimumResultsForSearch: 1 / 0
+                    });
+                $(".js-max-length").select2(
+                    {
+                        maximumSelectionLength: 2,
+                        placeholder: "Select maximum 2 items"
+                    });
+                $(".select2-placeholder").select2(
+                    {
+                        placeholder: "Select a state",
+                        allowClear: true
+                    });
+                $(".js-select2-icons").select2(
+                    {
+                        minimumResultsForSearch: 1 / 0,
+                        templateResult: icon,
+                        templateSelection: icon,
+                        escapeMarkup: function (elm) {
+                            return elm
+                        }
+                    });
+
+                function icon(elm) {
+                    elm.element;
+                    return elm.id ? "<i class='" + $(elm.element).data("icon") + " mr-2'></i>" + elm.text : elm.text
+                }
+
+            });
+        });
+    </script>
+
+    <script>
+        /////////************ */ Валидация формы -------->
+        $(".btn--form").click(function (event) {
+
+            // Fetch form to apply custom Bootstrap validation
+            var form = $("#year-form")
+
+            if (form[0].checkValidity() === false) {
+                event.preventDefault()
+                event.stopPropagation()
+            }
+
+            form.addClass('was-validated');
+            // Perform ajax submit here...
+        });
+    </script>
+</body>
+
+</html>

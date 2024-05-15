@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <title>
-        Ticketon Оценка внешних клиентов
+        Ticketon Оценка внутреннего клиента
     </title>
     <meta name="description" content="Page Titile">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -30,7 +30,7 @@
 </head>
 
 <body class="mod-bg-1 ">
-    <h1 class="visually-hidden">Оценка внешних клиентов FREEDOM Ticketon</h1>
+    <h1 class="visually-hidden">Оценка внутреннего клиента FREEDOM Ticketon</h1>
 
     <script>
         'use strict';
@@ -318,13 +318,13 @@
                 <main id="js-page-content" role="main" class="page-content">
                     <ol class="breadcrumb page-breadcrumb">
                         <li class="breadcrumb-item"><a href="index.html">FREEDOM Ticketon</a></li>
-                        <li class="breadcrumb-item active">Оценка внешних клиентов</li>
+                        <li class="breadcrumb-item active">Оценка внутреннего клиента</li>
                     </ol>
                     <div class="subheader">
                         <h2 class="subheader-title">
-                            <i class="fal fa-solid fa-user-secret"></i> Оценка внешних клиентов
+                            <i class="fal fa-solid fa-user-secret"></i> Оценка внутреннего клиента
                         </h2>
-                        <form action="" class="subheader-block" id="evaluation_external-form" method="GET">
+                        <form action="" class="subheader-block" id="evaluation_internal-form" method="GET">
                             <input type="text" class="date" name="date">
                         </form>
                     </div>
@@ -346,11 +346,11 @@
                                         <div class="panel-tag">
                                             Пожалуйста, перед отправкой убедитесь, что все поля заполнены верно
                                         </div>
-                                        <form id="Evaluation-external-clients" novalidate="" action="#" method="POST">
+                                        <form id="Evaluation-internal-client" novalidate="" action="#" method="POST">
                                             <div class="form-group">
                                                 <label class="form-label" for="employee-select">Сотрудник</label>
                                                 <select class="select2 form-control w-100" name="employee"
-                                                    id="employee-select">
+                                                    id="employee-select" >
                                                     <!--onchange="theSelect()"-->
                                                     <option value="" disabled selected>Выберите сотрудника</option>
                                                     <optgroup label="role-1">
@@ -371,17 +371,9 @@
                                                 </select>
                                             </div>
                                             <div class="form-group">
-                                                <label class="form-label" for="Evaluation-organizers">Оценка
-                                                    организаторов</label>
-                                                <input class="form-control" id="evaluation-organizers" type="number"
-                                                    name="Evaluation-organizers" value="0">
-                                                <div class="invalid-feedback">Не заполненое поле</div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label class="form-label" for="Customer-evaluation">Оценка
-                                                    покупателей</label>
-                                                <input class="form-control" id="customer-evaluation" type="number"
-                                                    name="Customer-evaluation" value="0">
+                                                <label class="form-label" for="evaluation-internal">Оценка внутреннего клиента</label>
+                                                <input class="form-control" id="evaluation-internal" type="number"
+                                                    name="evaluation-internal" value="0">
                                                 <div class="invalid-feedback">Не заполненое поле</div>
                                             </div>
                                             <div class="center">
@@ -526,7 +518,7 @@
         $(".btn--form").click(function (event) {
 
             // Fetch form to apply custom Bootstrap validation
-            var form = $("#Evaluation-external-clients")
+            var form = $("#Evaluation-internal-client")
 
             if (form[0].checkValidity() === false) {
                 event.preventDefault()
@@ -617,7 +609,7 @@
                     inputDate.value = firstSelect.split('.').join('-');
                 }
 
-                document.querySelector('#evaluation_external-form').submit();
+                document.querySelector('#evaluation_internal-form').submit();
 
             }
         });

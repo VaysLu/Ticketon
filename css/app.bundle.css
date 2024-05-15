@@ -7460,6 +7460,7 @@ $grid-breakpoints: (
 }*/
 .form-label {
   font-weight: 500;
+  user-select: none;
 }
 
 /* select arrow */
@@ -9987,7 +9988,7 @@ body:not(.mobile-detected).modal-open .modal::-webkit-scrollbar-thumb:vertical:h
 }
 
 .btn--form {
-  border: 1px solid #08af3c;
+  border: 1px solid #08af3c !important;
   padding: 0.5rem 3.125rem;
 }
 
@@ -10134,7 +10135,7 @@ body:not(.mobile-detected).modal-open .modal::-webkit-scrollbar-thumb:vertical:h
 }
 
 .tr-gray {
-  background: #dfdfdf;
+  background: #dfdfdf !important;
 }
 
 .p-s {
@@ -10340,7 +10341,7 @@ td {
 
 .task-scheduler .info:hover,
 .table-lpp .info:hover {
-  outline: 1px solid #54ae81!important;
+  outline: 1px solid #54ae81 !important;
   outline-offset: -3px;
 }
 
@@ -10389,42 +10390,48 @@ td {
 }
 
 .no-click {
-  appearance: none!important;
-  -moz-appearance: none!important;
-	-webkit-appearance: none!important;
-  cursor: initial!important;
+  appearance: none !important;
+  -moz-appearance: none !important;
+  -webkit-appearance: none !important;
+  cursor: initial !important;
 }
+
 .no-click::-ms-expand {
-  display: none!important;
+  display: none !important;
 }
+
 .no-click:hover {
-  background: transparent!important;
+  background: transparent !important;
 }
 
 .display-none:hover::after,
 .display-none::after,
 .display-none {
-  display: none!important;
-  background: transparent!important;
+  display: none !important;
+  background: transparent !important;
 }
+
 .cur-year,
 .numInputWrapper {
-  cursor: initial!important;
+  cursor: initial !important;
 }
+
 .cur-year:hover,
 .numInputWrapper:hover {
-  background: transparent!important;
+  background: transparent !important;
 }
+
 .no-click[disabled],
 .cur-year[disabled] {
-  color: #000!important;
+  color: #000 !important;
 }
 
 .position-relativ {
-  position: relative!important;
+  position: relative !important;
 }
+
 .tablesorter-admin .select2-container--open .select2-dropdown {
-  left: -1px!important;
+  left: -1px !important;
 }
 
 
@@ -10435,13 +10442,13 @@ td {
 }
 
 .th-white-blue {
-  background: #9ebcf9!important;
+  background: #9ebcf9 !important;
 }
 
 .alert--none {
-  position: static!important;
-  padding: 0.5rem!important;
-  margin-bottom: 1rem!important;
+  position: static !important;
+  padding: 0.5rem !important;
+  margin-bottom: 1rem !important;
   color: #fd3995;
   border-radius: 8px;
   -webkit-border-radius: 8px;
@@ -10459,16 +10466,18 @@ td {
 .panel-hdr--event {
   background: #F5F5F5;
 }
+
 .panel-hdr--important {
   background: #F57170;
 }
+
 .panel-hdr--birthday {
   background: #FACC2E;
 }
 
 .vert-center {
   text-align: center;
-  vertical-align: middle!important;
+  vertical-align: middle !important;
 }
 
 .tr-gray .info__input {
@@ -10482,8 +10491,9 @@ td {
 .table-lpp th {
   min-width: 115px;
 }
+
 .sorter-false--size-xl {
-  min-width: 225px!important;
+  min-width: 225px !important;
 }
 
 .save-date {
@@ -10517,14 +10527,99 @@ td {
   background-color: #2ed315;
   box-shadow: 0 0 4px 2px rgba(55, 188, 35, 1);
 }
+
 .thead-color-i {
-  background: #54ae81!important;
+  background: #54ae81 !important;
 }
 
 .fw-medium {
-  font-weight: 500!important;
+  font-weight: 500 !important;
 }
 
 .border-color {
-  border-color: #54ae81!important;
+  border-color: #54ae81 !important;
+}
+
+.info__text {
+  pointer-events: none;
+}
+
+.panel-tag__error {
+  display: none;
+  border-color: #c91d1d;
+  background: #fdeef1;
+}
+
+.panel-content--error .panel-tag__error {
+  display: block;
+}
+
+.w-100p {
+  width: 100px;
+}
+
+.w-200p {
+  width: 200px;
+}
+
+/* .element::-webkit-scrollbar { width: 0 !important }
+.element { -ms-overflow-style: none; }
+.element { overflow: -moz-scrollbars-none; } */
+
+.mh-44p {
+  height: 44px;
+}
+
+.c-add--font {
+  text-transform: uppercase;
+  color: #FFFFFF;
+  display: flex !important;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 150px;
+  gap: 20px;
+  padding: 0.5rem 1.125rem !important;
+}
+
+.p-tblr {
+  padding: 0.5rem 1rem !important;
+}
+
+.subheader-block--flex {
+  max-width: 200px;
+}
+
+.subheader-block--flex2 {
+  max-width: 400px;
+}
+
+.link-edit {
+  white-space: nowrap;
+  width: 100%;
+}
+
+.year-form__month-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.year-form__month-item {
+  flex: 1 0 30%;
+}
+
+.year-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+.forms__wrapper {
+  display: grid;
+  gap: 30px;
 }
